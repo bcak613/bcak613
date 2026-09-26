@@ -1,0 +1,25 @@
+name: Rue Radio 1.5 deployment
+on:
+  push:
+    branches: [rue-radio-deploy-v150]
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check deployment network and recover current public build
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p staging
+          curl -L --connect-timeout 10 --max-time 40 -sS -o staging/current.html -w 'Current game HTTP %{http_code}\n' https://rue-radio-demo.vercel.app/ || true
+          if [ -f staging/current.html ]; then sha256sum staging/current.html; wc -c staging/current.html; fi
+          curl --connect-timeout 10 --max-time 30 -sS -o staging/endpoint-status.txt -w 'Deploy service HTTP %{http_code}\n' https://codex-deploy-skills.vercel.sh/api/deploy || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rue-radio-deploy-preflight
+          path: staging/
+          retention-days: 1
