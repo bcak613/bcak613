@@ -4,77 +4,164 @@ on:
     branches: [rue-radio-deploy-v150]
     paths: ['deployment/**', '.github/workflows/rue-radio-deploy.yml']
 permissions:
-  contents: read
+  contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
-      - name: Restore exact recovered artifact and deploy to Vercel
-        id: publish
+        with:
+          ref: rue-radio-deploy-v150
+      - name: Publish exact recovered artifact without changing main
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p result public
           python3 - <<'PY'
-          import base64, ctypes as C, ctypes.util, hashlib, io, json, pathlib, tarfile, time, urllib.request, urllib.error, uuid
-          ROOT=pathlib.Path('result'); report={}; root=pathlib.Path('public')
+          import base64, ctypes as C, ctypes.util, hashlib, io, json, os, pathlib, shutil, subprocess, tarfile, time, urllib.request, urllib.error, urllib.parse, uuid
+          ROOT=pathlib.Path('result');report={};root=pathlib.Path('public')
           BASE='69de7d8cfcb50271984d951fb1fe9532909caec187582033204d1b1678e5aac5'
           TARGET='701d1fcba386b13fce9eacb0b727c5a9011fd5b82836db1a01d972672f20eb88'
           def save(): (ROOT/'verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
-          try:
-            with urllib.request.urlopen('https://rue-radio-demo.vercel.app/',timeout=35) as r: old=r.read()
-            assert hashlib.sha256(old).hexdigest()==BASE, 'Base build changed; stopping without publishing incorrect code'
-            delta=base64.b64decode(pathlib.Path('deployment/game.delta.b64').read_text(),validate=False)
-            z=C.CDLL(ctypes.util.find_library('zstd'))
-            z.ZSTD_createDCtx.restype=C.c_void_p
-            z.ZSTD_decompress_usingDict.argtypes=[C.c_void_p,C.c_void_p,C.c_size_t,C.c_void_p,C.c_size_t,C.c_void_p,C.c_size_t]
-            z.ZSTD_decompress_usingDict.restype=C.c_size_t
-            z.ZSTD_freeDCtx.argtypes=[C.c_void_p]
-            out=C.create_string_buffer(177312); ctx=z.ZSTD_createDCtx()
-            n=z.ZSTD_decompress_usingDict(ctx,out,len(out),delta,len(delta),old,len(old));z.ZSTD_freeDCtx(ctx)
-            assert n==177312, 'Delta decompression failed'
-            source=out.raw[:n]
-            assert hashlib.sha256(source).hexdigest()==TARGET, 'Recovered artifact checksum mismatch'
-            (root/'index.html').write_bytes(source)
-            version={'build':'1.5.0-3d-30s','sha256':TARGET,'presetCount':6,'durationSeconds':30}
-            (root/'version.json').write_text(json.dumps(version))
-            report.update(version,artifactBytes=n)
-            save();print('Exact recovered 1.5.0 HTML verified:',TARGET)
+          def run(args,**kwargs):return subprocess.run(args,check=True,text=True,**kwargs)
+          with urllib.request.urlopen('https://rue-radio-demo.vercel.app/',timeout=35) as r:old=r.read()
+          assert hashlib.sha256(old).hexdigest()==BASE,'Base changed; stop without publishing incorrect code'
+          delta=base64.b64decode(pathlib.Path('deployment/game.delta.b64').read_text())
+          z=C.CDLL(ctypes.util.find_library('zstd'));z.ZSTD_createDCtx.restype=C.c_void_p
+          z.ZSTD_decompress_usingDict.argtypes=[C.c_void_p,C.c_void_p,C.c_size_t,C.c_void_p,C.c_size_t,C.c_void_p,C.c_size_t];z.ZSTD_decompress_usingDict.restype=C.c_size_t;z.ZSTD_freeDCtx.argtypes=[C.c_void_p]
+          out=C.create_string_buffer(177312);ctx=z.ZSTD_createDCtx();n=z.ZSTD_decompress_usingDict(ctx,out,len(out),delta,len(delta),old,len(old));z.ZSTD_freeDCtx(ctx)
+          assert n==177312 and hashlib.sha256(out.raw[:n]).hexdigest()==TARGET,'Artifact verification failed'
+          source=out.raw[:n];(root/'index.html').write_bytes(source)
+          version={'build':'1.5.0-3d-30s','sha256':TARGET,'presetCount':6,'durationSeconds':30}
+          (root/'version.json').write_text(json.dumps(version));report.update(version,artifactBytes=n);save()
+          run(['git','config','user.name','github-actions[bot]']);run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'])
+          run(['git','add','--','public/index.html','public/version.json'])
+          if subprocess.run(['git','diff','--cached','--quiet']).returncode:
+            run(['git','commit','-m','Publish exact recovered Rue Radio 1.5.0 [skip ci]'])
+            run(['git','push','origin','HEAD:rue-radio-deploy-v150'])
+          commit=run(['git','rev-parse','HEAD'],capture_output=True).stdout.strip()
+          report['publishedCommit']=commit
+          fallback='https://rawcdn.githack.com/bcak613/bcak613/'+commit+'/public/index.html'
+          report['fallbackUrl']=fallback;save();print('Published isolated game commit:',commit)
+          chosen=None;token=os.environ.get('VERCEL_TOKEN','')
+          report['hasExistingVercelDeploySecret']=bool(token)
+          if token:
+            stage=pathlib.Path('vercel-stage');stage.mkdir();shutil.copy(root/'index.html',stage/'index.html');shutil.copy(root/'version.json',stage/'version.json');(stage/'.vercel').mkdir()
+            (stage/'.vercel/project.json').write_text(json.dumps({'projectId':'prj_MiIBVK0lOhoo3M8FnbaQ0UO4s3l0','orgId':'team_JjpJxaFJKK4s2tLjJKITkeTm'}))
+            try:
+              done=subprocess.run(['npx','--yes','vercel@latest','deploy','--prod','--yes','--token',token],cwd=stage,capture_output=True,text=True,timeout=180)
+              report['vercelCLIExit']=done.returncode;report['vercelCLIOutput']=(done.stdout+'\n'+done.stderr).replace(token,'[REDACTED]')[-5000:]
+              if done.returncode==0:chosen='https://rue-radio-demo.vercel.app/'
+            except Exception as e:report['vercelCLIError']=str(e).replace(token,'[REDACTED]')
+          if not chosen:
             bundle=io.BytesIO()
             with tarfile.open(fileobj=bundle,mode='w:gz') as t:
               for p in root.iterdir():t.add(p,arcname=p.name)
             boundary='RueRadio'+uuid.uuid4().hex
             body=(('--'+boundary+'\r\nContent-Disposition: form-data; name="framework"\r\n\r\nnull\r\n--'+boundary+'\r\nContent-Disposition: form-data; name="file"; filename="project.tgz"\r\nContent-Type: application/gzip\r\n\r\n').encode()+bundle.getvalue()+('\r\n--'+boundary+'--\r\n').encode())
-            # Official endpoint from vercel-labs/agent-skills deploy-codex.sh.
-            req=urllib.request.Request('https://codex-deploy-skills.vercel.sh/api/deploy',data=body,headers={'Content-Type':'multipart/form-data; boundary='+boundary},method='POST')
-            with urllib.request.urlopen(req,timeout=120) as r:
-              result=json.load(r);report['deployHTTP']=r.status
-            (ROOT/'deployment.json').write_text(json.dumps(result,indent=2))
-            assert result.get('previewUrl'), 'Deploy service returned no preview URL'
-            url=result['previewUrl'];report['previewUrl']=url;print('Vercel preview:',url);save()
-            assert url.startswith('https://') and urllib.request.urlparse(url).hostname.endswith('.vercel.app'), 'Unexpected preview URL'
-            for attempt in range(36):
-              try:
-                with urllib.request.urlopen(url,timeout=20) as r:
-                  live=r.read();report['liveHTTP']=r.status
-                  report['liveSha256']=hashlib.sha256(live).hexdigest()
-                  if r.status==200 and report['liveSha256']==TARGET:
-                    report['verified']=True;save();print('LIVE HTML VERIFIED, HTTP 200, exact original SHA256');break
-              except Exception as e:report['lastFetchError']=str(e)
-              save();time.sleep(5)
-            else:raise RuntimeError('Deployment returned a URL but live content has not matched the original artifact')
-          except urllib.error.HTTPError as e:
-            report['error']=str(e);report['errorResponse']=e.read().decode(errors='replace')[:6000];save();raise
-          except Exception as e:
-            report['error']=str(e);save();raise
+            # Other official claimable endpoint in vercel-labs/agent-skills deploy.sh.
+            req=urllib.request.Request('https://claude-skills-deploy.vercel.com/api/deploy',data=body,headers={'Content-Type':'multipart/form-data; boundary='+boundary},method='POST')
+            try:
+              with urllib.request.urlopen(req,timeout=75) as r:result=json.load(r);report['vercelServiceHTTP']=r.status
+              (ROOT/'deployment.json').write_text(json.dumps(result,indent=2))
+              url=result.get('previewUrl','')
+              if url.startswith('https://') and urllib.parse.urlparse(url).hostname.endswith('.vercel.app'):chosen=url
+              else:report['vercelServiceError']='No deployment URL returned'
+            except Exception as e:report['vercelServiceError']=str(e)
+          chosen=chosen or fallback;report['playUrl']=chosen;report['host']='Vercel' if '.vercel.app' in chosen else 'GitHub + rawcdn.githack.com';save()
+          for attempt in range(18):
+            try:
+              with urllib.request.urlopen(chosen,timeout=25) as r:
+                live=r.read();report['liveHTTP']=r.status;report['contentType']=r.headers.get('Content-Type');report['liveSha256']=hashlib.sha256(live).hexdigest()
+                if r.status==200 and report['liveSha256']==TARGET:
+                  report['verified']=True;save();print('PUBLIC URL VERIFIED:',chosen);break
+            except Exception as e:report['lastFetchError']=str(e)
+            save();time.sleep(5)
+          else:raise RuntimeError('Live content did not match the recovered build')
           PY
-      - name: Save deploy receipt and exact recovered game
+      - name: Install browser verification tools
+        run: |
+          python3 -m pip -q install playwright
+          python3 -m playwright install --with-deps chromium
+          npm install -g agent-browser
+      - name: Verify actual public page and full game round
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from playwright.sync_api import sync_playwright
+          import json,pathlib,subprocess,os
+          root=pathlib.Path('result');deploy=json.loads((root/'verification.json').read_text());url=deploy['playUrl']
+          report={'url':url,'limitations':['No physical iPhone test; browser audio signal verified, not speaker output']}
+          errors=[]
+          with sync_playwright() as p:
+            # Also exercise agent-browser against the real public URL.
+            env=dict(os.environ);env['AGENT_BROWSER_EXECUTABLE_PATH']=p.chromium.executable_path
+            for cmd in [['agent-browser','open',url],['agent-browser','snapshot','-i'],['agent-browser','close']]:
+              try:
+                r=subprocess.run(cmd,env=env,capture_output=True,text=True,timeout=45)
+                with (root/'agent-browser.txt').open('a') as f:f.write(' '.join(cmd)+'\n'+r.stdout+r.stderr+'\n')
+              except Exception as e:
+                with (root/'agent-browser.txt').open('a') as f:f.write(str(e)+'\n')
+            browser=p.chromium.launch(headless=True,args=['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+            context=browser.new_context(viewport={'width':1365,'height':850})
+            page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)))
+            page.goto(url+'?debug=1',wait_until='domcontentloaded',timeout=45000)
+            # Accept the CDN's documented destination confirmation via its normal button, never spoof its cookies.
+            if not page.locator('meta[name="rue-radio-build"]').count():
+              (root/'entry-page.txt').write_text(page.locator('body').inner_text())
+              page.screenshot(path=str(root/'entry-confirmation.png'))
+              for role in ['button','link']:
+                for name in ['Continue','Proceed','Open','I understand']:
+                  buttons=page.get_by_role(role,name=name,exact=False)
+                  if buttons.count():
+                    try:buttons.first.click(timeout=5000);break
+                    except Exception:pass
+                if page.locator('meta[name="rue-radio-build"]').count():break
+            page.wait_for_function('!!window.__RR_TEST__',timeout=45000)
+            report['build']=page.locator('meta[name="rue-radio-build"]').get_attribute('content')
+            report['renderer']=page.evaluate('__RR_TEST__.stats.renderer')
+            assert report['build']=='1.5.0-3d-30s'
+            page.screenshot(path=str(root/'desktop-menu.png'))
+            page.click('#intro-upload');report['presetCount']=page.locator('.preset-card').count();assert report['presetCount']==6
+            page.screenshot(path=str(root/'song-library.png'))
+            page.locator('[data-preset="lang-nghe"] .preset-listen').click()
+            page.wait_for_function('__RR_TEST__.sound.ctx?.state==="running"')
+            page.evaluate('''()=>{const c=__RR_TEST__.sound.ctx;window.meterNode=c.createAnalyser();meterNode.fftSize=2048;__RR_TEST__.sound.master.connect(meterNode);if(__RR_TEST__.music.gain)__RR_TEST__.music.gain.connect(meterNode);window.audioPeak=0;window.meterTimer=setInterval(()=>{const a=new Float32Array(2048);meterNode.getFloatTimeDomainData(a);audioPeak=Math.max(audioPeak,Math.sqrt(a.reduce((s,x)=>s+x*x,0)/a.length));},25)}''')
+            page.wait_for_timeout(6500);page.screenshot(path=str(root/'desktop-game.png'))
+            page.wait_for_function('__RR_TEST__.state.mode==="finished"',timeout=45000)
+            report['round']=page.evaluate('({notes:__RR_TEST__.state.notes,total:__RR_TEST__.notes().length,missed:__RR_TEST__.state.missed,time:__RR_TEST__.state.time,audioPeak,renderer:__RR_TEST__.stats.renderer})')
+            assert report['round']['time']==30 and report['round']['notes']==report['round']['total']
+            assert report['round']['audioPeak']>.001
+            page.screenshot(path=str(root/'desktop-result.png'))
+            # Use the same origin/session after confirming its destination. Touch emulation is not a real iPhone test.
+            context.close();context=browser.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True)
+            page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.goto(url+'?debug=1',wait_until='domcontentloaded',timeout=45000)
+            if not page.locator('meta[name="rue-radio-build"]').count():
+              for role in ['button','link']:
+                for name in ['Continue','Proceed','Open','I understand']:
+                  buttons=page.get_by_role(role,name=name,exact=False)
+                  if buttons.count():
+                    try:buttons.first.click(timeout=5000);break
+                    except Exception:pass
+                if page.locator('meta[name="rue-radio-build"]').count():break
+            page.wait_for_function('!!window.__RR_TEST__',timeout=45000)
+            page.tap('#intro-upload');page.locator('[data-preset="lang-nghe"] .preset-play').tap()
+            page.locator('[data-lane="2"]').tap();assert page.evaluate('__RR_TEST__.state.x')==4.2
+            page.locator('[data-lane="-2"]').tap();assert page.evaluate('__RR_TEST__.state.x')==-4.2
+            page.screenshot(path=str(root/'mobile-game.png'))
+            report['touchLaneControl']=True;report['mobileOverflow']=page.evaluate('document.documentElement.scrollWidth>innerWidth');report['errors']=errors
+            assert not report['mobileOverflow'] and not errors
+            report['passed']=True;browser.close()
+          (root/'browser-results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False))
+          PY
+      - name: Save public URL, deploy receipt and browser evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: rue-radio-150-deployment
+          name: rue-radio-150-live
           path: |
             result/
             public/
