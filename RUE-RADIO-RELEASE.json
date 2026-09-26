@@ -1,0 +1,30 @@
+{
+  "build": "1.5.0-3d-30s",
+  "status": "public-preview-browser-verified",
+  "playUrl": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/bcak613/bcak613/78a861de76fdfcce32a556f684048600a50f2b2d/public/index.html",
+  "host": "GitHub HTML Preview",
+  "sourceCommit": "78a861de76fdfcce32a556f684048600a50f2b2d",
+  "sourcePath": "public/index.html",
+  "sha256": "701d1fcba386b13fce9eacb0b727c5a9011fd5b82836db1a01d972672f20eb88",
+  "bytes": 177312,
+  "presetCount": 6,
+  "roundSeconds": 30,
+  "verification": {
+    "runUrl": "https://github.com/bcak613/bcak613/actions/runs/36212963892",
+    "passed": true,
+    "renderer": "webgl",
+    "testedTrack": "Lắng Nghe Nước Mắt",
+    "notesCollected": 51,
+    "notesTotal": 51,
+    "roundSeconds": 30,
+    "audioSignalDetected": true,
+    "emulatedTouchLaneControls": true,
+    "pageErrors": []
+  },
+  "limitations": [
+    "The old rue-radio-demo.vercel.app domain has NOT been updated.",
+    "Built-in melodies are simplified synthesized instrumental practice arrangements, not original vocal recordings.",
+    "No physical iPhone audio test has been performed."
+  ],
+  "recoveryNote": "This is the recovered 1.5.0 release with built-in Siro melodies. Do not replace it with older 1.3.x upload-only builds. Main branch was not changed."
+}
