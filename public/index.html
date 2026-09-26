@@ -1,0 +1,1340 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eee8d7">
+  <meta name="description" content="Phố giấy 3D trở lại. Sáu bản luyện tập 30 giây bằng tiếng đàn, lặp chủ đề có sẵn. Chọn bài là chơi, không cần upload.">
+  <title>Rue Radio — Đường phố biết hát</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23698e88'/%3E%3Cpath d='M20 42V25h24v17H20zm4-22 17-8M26 30v8m6-8v8m6-8v8' fill='none' stroke='%23f7edcf' stroke-width='4'/%3E%3C/svg%3E">
+  <style>
+:root{--paper:#f3eedf;--ink:#354d47;--muted:#7b8170;--accent:#b77149;--teal:#6a9188;--line:#c7c9b780;--sans:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--serif:Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#eee8d7;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}body{overscroll-behavior:none}button,input,select{font:inherit}button{color:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #c08c52;outline-offset:5px}button{border:0}button svg{pointer-events:none}button:disabled{opacity:.45;cursor:wait}button:active{transform:translateY(1px)}[hidden],.hidden{display:none!important}#world{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}.paper-grain{pointer-events:none;position:fixed;inset:0;z-index:10;opacity:.1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.4' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:multiply}.screen-frame{position:fixed;inset:12px;z-index:9;border:1px solid #f8f3e195;pointer-events:none}.topbar{position:absolute;top:max(30px,env(safe-area-inset-top));left:42px;right:42px;display:flex;align-items:center;justify-content:space-between;z-index:12}.brand{display:flex;align-items:center;gap:11px;background:none;padding:0;text-align:left}.brand svg{height:40px;width:40px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}.brand>span{font-weight:700;font-size:17px;letter-spacing:3px;line-height:1.2}.brand small{display:block;font-size:8px;font-weight:500;letter-spacing:1.65px;margin-top:7px}.top-actions{display:flex;align-items:center;gap:10px}.offline-mark{font-size:9px;letter-spacing:1.5px;margin-right:17px;color:#6b7868}.offline-mark i{display:inline-block;border-radius:50%;height:5px;width:5px;background:#739578;margin-right:7px}.icon-btn{width:38px;height:38px;display:grid;place-items:center;background:#f5efdcb3;border:1px solid #9da78d5e;border-radius:50%;transition:background .2s}.icon-btn:hover{background:#fff9e8}.icon-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.loading{position:absolute;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#eee8d7}.loading-radio{font-size:56px;color:var(--teal);animation:pulse 1.3s infinite alternate}.loading p{font-family:var(--serif);font-size:26px;margin:15px}.loading small{font-size:11px;color:var(--muted);margin-top:22px}.loading-line{width:210px;height:2px;background:#d6d5c5}.loading-line i{display:block;height:100%;background:var(--teal);width:0;transition:width .1s}.error{position:fixed;inset:0;z-index:50;background:var(--paper);padding:15vh 10vw}.error h1{font-size:30px;font-family:var(--serif)}.error p{max-width:600px;line-height:1.8}.error button{padding:12px 28px;background:var(--ink);color:var(--paper)}
+.intro{position:absolute;inset:0;z-index:11;background:linear-gradient(90deg,#f0ecddf2 0%,#f0ecddd9 28%,#f0ecdd6e 43%,transparent 63%);pointer-events:none}.intro-copy{position:absolute;left:8%;top:23%;width:490px;max-width:44vw;pointer-events:auto}.eyebrow{font-size:9px;letter-spacing:1.7px;font-weight:600;display:flex;align-items:center;gap:11px;margin-bottom:27px;white-space:nowrap}.tiny-line{width:24px;height:1px;background:var(--accent)}h1{font:normal clamp(64px,6.8vw,104px)/1.05 var(--serif);letter-spacing:-5px;position:relative;margin:0 0 29px}h1 em,h2 em{color:var(--accent);font-weight:normal}.title-star{font:normal 43px var(--serif);position:absolute;left:328px;bottom:24px;color:var(--accent);transform:rotate(-10deg)}.intro-description{font-size:14px;line-height:1.85;color:#6d7867;margin:0 0 30px}.intro-buttons{display:flex;align-items:flex-start;flex-direction:column;gap:14px}.primary{background:var(--ink);color:#f5eedb;padding:17px 23px;min-height:53px;display:flex;align-items:center;justify-content:space-between;gap:45px;font-size:13px;letter-spacing:.1px;position:relative;transition:background .2s}.primary:hover{background:#547066}.primary span{font-size:23px;line-height:1}.text-btn{background:none;padding:4px 0;font-size:12px;display:inline-flex;gap:12px;align-items:center;border-bottom:1px solid transparent}.text-btn:hover{border-bottom-color:var(--accent)}.text-btn span{font-size:18px}.intro-hint{display:flex;gap:12px;align-items:center;margin-top:31px;color:#747e6d;font-size:11px}.headphones{font-size:29px}.intro-hint small{display:block;font-size:9px;margin-top:6px;color:#89917f}.scene-caption{position:absolute;right:8%;bottom:20%;transform:rotate(-3deg);text-align:left}.scene-caption>span{font-size:9px;letter-spacing:1.8px}.caption-rule{height:1px;width:175px;background:#6e807261;margin:12px 0}.scene-caption p{font:italic 21px/1.4 var(--serif);margin:0}.intro-footer{position:absolute;bottom:34px;left:42px;right:42px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;align-items:center;font-size:9px;letter-spacing:1.3px}.intro-footer b{font-size:18px;font-weight:normal;margin-left:13px}.footer-controls{font-size:10px;letter-spacing:0;color:#71816e;display:flex;align-items:center;gap:5px}.footer-controls i{margin:0 5px}kbd{font-family:var(--sans);font-size:9px;font-weight:600;border:1px solid #a1ac944f;background:#f2efdf7a;padding:3px 5px;border-radius:3px;display:inline-block;line-height:1.15;min-width:19px;text-align:center}
+.hud{position:absolute;inset:0;z-index:11;pointer-events:none}.hud button{pointer-events:auto}.chapter{position:absolute;top:39px;left:50%;transform:translateX(-50%);text-align:center;min-width:200px}.chapter>span{font-size:10px;letter-spacing:1.5px;font-weight:650}.chapter small{display:block;font-size:8px;letter-spacing:1.7px;color:#7e8776;margin-top:8px}.scorecard{position:absolute;top:110px;right:44px;text-align:right}.score-label{font-size:8px;letter-spacing:1.7px;color:#77816d}.scorecard>div{margin-top:6px;display:flex;align-items:baseline;justify-content:flex-end;gap:8px}.scorecard b{font:normal 49px/1.05 var(--serif);font-variant-numeric:tabular-nums;letter-spacing:-2px}.scorecard>div span{font-size:10px;color:#7e856f}.scorecard small{font-size:11px;display:block;margin-top:9px}.scorecard small i{margin:0 7px;color:#9ba48d}#combo{font-weight:700;color:var(--accent)}.dashboard{position:absolute;left:43px;bottom:96px;display:flex;align-items:center;gap:24px}.speedometer{display:flex;align-items:center;gap:7px}.speedometer>b{font:normal 54px/.9 var(--serif);font-variant-numeric:tabular-nums;letter-spacing:-3px}.speedometer>span{font-size:9px;letter-spacing:1.5px}.speedometer small{font-size:7px;letter-spacing:1px;display:block;margin-top:6px;color:#8b947e}.radio-display{border-left:1px solid #9ba79266;padding-left:23px;display:flex;gap:11px;align-items:center}.radio-dot{width:6px;height:6px;border-radius:50%;background:#b18d51}.radio-display small{display:block;font-size:8px;letter-spacing:1.4px;color:#7f8773}.radio-display b{font-size:13px;letter-spacing:1px;font-weight:500;display:block;margin-top:6px}.equalizer{display:flex;align-items:center;gap:2px;height:24px;margin-left:2px}.equalizer i{display:block;width:2px;height:18px;background:#6b8b76;transform-origin:center;animation:equalize .7s infinite alternate ease-in-out}.equalizer i:nth-child(2n){animation-delay:-.3s;height:11px}.equalizer i:nth-child(3n){animation-delay:-.5s;height:23px}.equalizer.off i{animation-play-state:paused;transform:scaleY(.2)}.boost-display{position:absolute;top:62px;width:193px;font-size:8px;letter-spacing:1px}.boost-display>span{display:flex;justify-content:space-between}.boost-display>div{width:100%;height:3px;margin:7px 0;background:#a7b49c50}.boost-display i{width:100%;height:100%;background:#ad955a;display:block;transition:width .08s linear}.boost-display>small{display:none;font-size:7px;color:#8d927d}.boost-display span small{font-size:8px}.melody{position:absolute;bottom:94px;left:50%;transform:translateX(-50%);text-align:center}.melody>span{font-size:7px;letter-spacing:1.5px;color:#74826d;display:block;margin-bottom:10px}.melody-keys{display:flex;gap:6px}.melody button{background:#f5f0e1a1;border:1px solid #8d9b8059;border-radius:50%;width:41px;height:41px;font:normal 12px var(--serif);position:relative;transition:background .14s,border .14s}.melody button small{position:absolute;top:-6px;right:-2px;font:7px var(--sans);background:#e8e5d2;display:grid;place-items:center;border-radius:50%;width:13px;height:13px}.melody button.active{background:#718f7f;color:#fff1cc;border-color:#57776b}.melody button.hit{background:#b5894d;color:#fff5d6;border-color:#b5894d;transform:scale(1.14)}.camera-btn{position:absolute;bottom:106px;right:43px;background:#f6efdbb3;border:1px solid #a1ab945c;padding:10px 12px;display:flex;align-items:center;gap:9px;font-size:18px}.camera-btn span{font-size:10px}.camera-btn kbd{font-size:8px}.journey-progress{position:absolute;bottom:29px;left:43px;right:43px}.progress-track{position:relative;height:3px;background:#98a38e50}.progress-track>i{display:block;width:0;height:3px;background:#6f8872}.progress-track>span{position:absolute;top:-3px;width:1px;height:9px;background:#8b9982}.progress-labels{display:flex;justify-content:space-between;align-items:center;font-size:8px;letter-spacing:.9px;margin-top:11px;color:#73826b}.progress-labels time{font-variant-numeric:tabular-nums;letter-spacing:1.5px}.event-toast{position:absolute;left:50%;top:66%;transform:translate(-50%,5px);font:italic 21px var(--serif);color:#8d683d;opacity:0;transition:opacity .16s,transform .2s;white-space:nowrap}.event-toast.show{opacity:1;transform:translate(-50%,0)}.zone-banner{position:absolute;top:26%;left:50%;transform:translate(-50%,12px);text-align:center;opacity:0;transition:opacity .65s,transform .65s;min-width:340px;text-shadow:0 0 18px #eee8d7}.zone-banner.show{opacity:1;transform:translate(-50%,0)}.zone-banner small{display:block;font-size:9px;letter-spacing:2.5px;color:#66785e}.zone-banner strong{font:normal 41px/1.25 var(--serif);display:block;margin-top:10px}.zone-banner>span{font:italic 17px var(--serif);margin-top:9px;display:block;color:#7c826b}.takeover{position:absolute;top:106px;left:43px;background:#f2eddbce;border:1px solid #9da88975;padding:11px 16px;font-size:10px}.takeover span{color:#957640}.touch-controls{position:absolute;inset:0;pointer-events:none;z-index:14}.touch-controls button{pointer-events:auto;-webkit-user-select:none;user-select:none;touch-action:none;-webkit-touch-callout:none}.steer-pad{position:absolute;bottom:105px;left:22px;display:flex;gap:12px}.steer-pad button{width:61px;height:61px;background:#eee9d9de;border:1px solid #83967a80;border-radius:50%;font-size:27px}.steer-pad button.pressed,.touch-boost.pressed{background:#a0b19b}.touch-boost{position:absolute;right:22px;bottom:105px;border-radius:50%;width:70px;height:70px;background:#e9dec0dc;border:1px solid #a39e7780;font:normal 30px/1 var(--serif)}.touch-boost small{font:7px var(--sans);display:block;letter-spacing:1.5px;margin-top:5px}
+.paper-dialog{background:#f5efdf;color:var(--ink);width:min(480px,calc(100vw - 36px));border:1px solid #aab19a;padding:40px 44px;max-height:90dvh;overflow:auto;box-shadow:0 25px 90px #3d4c3933}.paper-dialog::backdrop{background:#63726555;backdrop-filter:blur(6px)}.dialog-kicker{font-size:8px;letter-spacing:1.9px;color:#87917b;margin-bottom:21px}.paper-dialog h2{font:normal 45px/1.14 var(--serif);letter-spacing:-1.5px;margin:0 0 17px}.paper-dialog>p{font-size:12px;color:#77826c;line-height:1.8;margin:0 0 25px}.paper-dialog>.primary,.paper-dialog>.secondary{width:100%;margin-top:12px}.paper-dialog>.text-btn{display:flex;justify-content:center;width:100%;margin-top:15px}.secondary{background:transparent;border:1px solid #afbaa080;padding:14px;font-size:12px}.secondary:hover{background:#e4e6d4}.dialog-footnote{display:block;text-align:center;font-size:7px;letter-spacing:1px;color:#87917d;margin-top:25px}.settings-dialog{width:min(590px,calc(100vw - 28px));padding:36px 36px}.settings-dialog h2{font-size:37px;margin-bottom:26px}.close-dialog{position:absolute;top:20px;right:20px;background:none;font-size:25px}.setting-row{display:flex;align-items:center;justify-content:space-between;padding:17px 0;border-top:1px solid #b5beaa52;gap:20px;font-size:12px}.setting-row small{font-size:9px;color:#8a917f;display:block;margin-top:7px;line-height:1.6}.setting-row input[type=range]{width:110px;min-width:90px;accent-color:#688879}.setting-row select{background:#eee9d7;border:1px solid #abb59b6e;padding:8px;font-size:11px;color:var(--ink)}.setting-row input[type=checkbox]{width:17px;height:17px;accent-color:#688879}.control-guide{background:#e9e6d7;margin-top:15px;padding:18px 20px}.control-guide h3{font-size:10px;font-weight:600;margin:0 0 10px}.control-guide p{font-size:10px;line-height:2;color:#77816c;margin:0 0 17px}.control-guide p:last-child{margin-bottom:0}.control-guide kbd{padding:2px 4px;font-size:8px;margin-right:3px;min-width:17px}.settings-dialog>.about-note{margin:18px 0 0;font-size:9px;line-height:1.7;color:#8c937f}.finish-dialog{width:min(510px,calc(100vw - 30px));text-align:center;padding:35px 42px}.finish-dialog h2{font-size:42px}.finish-dialog>.dialog-kicker{margin-bottom:12px}.finish-stamp{font-size:34px;color:#b58d50;margin-bottom:12px}.finish-dialog>p{font-size:11px;margin-bottom:15px}.finish-score b{font:normal 60px var(--serif);display:block;letter-spacing:-2px}.finish-score span{font-size:8px;letter-spacing:2px;color:#89927e}.finish-stats{display:grid;grid-template-columns:repeat(3,1fr);margin:26px 0 20px}.finish-stats>div{border-right:1px solid #bbc2ad6b}.finish-stats>div:last-child{border-right:0}.finish-stats b{display:block;font:normal 23px var(--serif)}.finish-stats span{font-size:9px;color:#87917a;display:block;margin-top:7px}.finish-dialog>.best-score{font-size:10px;color:#a37c46;margin-bottom:20px}
+@keyframes equalize{from{transform:scaleY(.22)}to{transform:scaleY(1)}}@keyframes pulse{from{opacity:.4;transform:rotate(-8deg)}to{opacity:1;transform:rotate(8deg)}}
+@media(max-height:780px) and (min-width:821px){.intro-copy{top:22%}h1{font-size:80px;margin-bottom:18px}.eyebrow{margin-bottom:20px}.intro-description{font-size:13px;margin-bottom:21px}.intro-hint{margin-top:23px}.primary{padding:14px 21px;min-height:48px}.title-star{left:273px;bottom:21px}.intro-footer{bottom:25px}.intro-buttons{gap:9px}}
+@media(max-width:1100px) and (min-width:821px){.topbar{left:30px;right:30px}.intro-copy{left:6%;max-width:49vw}.intro-description{font-size:13px}.title-star{left:285px}.radio-display{display:none}.chapter{left:52%}.dashboard{left:30px}.camera-btn{right:30px}.journey-progress{left:30px;right:30px}.scorecard{right:30px}}
+@media(max-width:820px){.screen-frame{inset:7px}.topbar{top:max(19px,env(safe-area-inset-top));left:21px;right:21px}.brand{gap:7px}.brand svg{width:30px;height:30px}.brand>span{font-size:12px;letter-spacing:2px}.brand small{font-size:6px;letter-spacing:1px;margin-top:5px}.top-actions{gap:7px}.icon-btn{width:34px;height:34px}.offline-mark{display:none}.intro{background:linear-gradient(90deg,#f0ecddd6,transparent 95%),linear-gradient(0deg,#ece8d8,transparent 24%)}.intro-copy{left:8%;top:19%;max-width:80vw;width:auto}.eyebrow{font-size:7px;letter-spacing:1.1px;margin-bottom:19px}.tiny-line{width:17px}h1{font-size:73px;letter-spacing:-3.7px;line-height:1.03;margin-bottom:22px}.title-star{left:250px;bottom:18px;font-size:29px}.intro-description{font-size:12px;line-height:1.85;margin-bottom:26px}.primary{padding:15px 21px;font-size:12px;min-height:49px;gap:40px}.intro-buttons{gap:12px}.text-btn{font-size:11px}.intro-hint{margin-top:23px;font-size:9px;align-items:flex-start}.intro-hint small{font-size:8px;max-width:230px;line-height:1.6}.headphones{font-size:22px}.scene-caption{right:9%;bottom:16%;font-size:10px;display:none}.intro-footer{bottom:24px;left:22px;right:22px;padding-top:15px;font-size:7px;letter-spacing:1px}.footer-controls{display:none}.chapter{top:76px;left:22px;transform:none;text-align:left}.chapter>span{font-size:8px;letter-spacing:1px}.chapter small{font-size:6px;letter-spacing:1px;margin-top:5px}.scorecard{top:83px;right:24px}.score-label{font-size:6px;letter-spacing:.7px}.scorecard b{font-size:33px;letter-spacing:-1px}.scorecard>div{margin-top:4px;gap:4px}.scorecard>div span{font-size:8px}.scorecard small{font-size:9px;margin-top:4px}.dashboard{left:24px;bottom:196px;gap:14px}.speedometer>b{font-size:36px;letter-spacing:-2px}.speedometer>span{font-size:7px;letter-spacing:1px}.speedometer small{font-size:6px}.radio-display{display:none}.boost-display{top:43px;width:125px;font-size:7px}.boost-display span small{font-size:7px}.boost-display>div{margin-top:5px}.melody{bottom:50px}.melody>span{font-size:6px;letter-spacing:.8px;margin-bottom:6px}.melody-keys{gap:7px}.melody button{width:33px;height:33px;font-size:10px}.melody button small{display:none}.journey-progress{bottom:20px;left:23px;right:23px}.progress-labels{font-size:7px;letter-spacing:.1px;margin-top:7px}.progress-labels>span:nth-child(2){display:none}.camera-btn{bottom:194px;right:26px;padding:7px 10px;font-size:15px;background:#f3eddba6}.camera-btn span{font-size:8px}.camera-btn kbd{display:none}.zone-banner{top:26%;min-width:280px;width:90vw}.zone-banner strong{font-size:30px}.zone-banner small{font-size:7px}.zone-banner>span{font-size:13px}.event-toast{top:60%;font-size:18px}.takeover{left:24px;top:126px;font-size:8px;padding:8px 10px}.settings-dialog{padding:28px 24px}.settings-dialog h2{font-size:30px}.settings-dialog .dialog-kicker{margin-bottom:14px;font-size:7px}.setting-row{font-size:11px;gap:14px}.setting-row small{font-size:8px}.control-guide{padding:15px}.close-dialog{top:15px;right:15px}.paper-dialog:not(.settings-dialog){padding:30px}.paper-dialog h2{font-size:39px}.finish-dialog h2{font-size:35px}.finish-score b{font-size:49px}}
+@media(max-width:820px) and (orientation:landscape){.intro-copy{top:26%;left:7%;max-width:50vw}.eyebrow{font-size:6px;margin-bottom:12px}h1{font-size:49px;letter-spacing:-2px;margin-bottom:12px;line-height:1.03}.title-star{font-size:23px;left:170px;bottom:12px}.intro-description{font-size:9px;line-height:1.65;margin-bottom:15px}.intro-description br:last-of-type{display:none}.intro-hint{display:none}.intro-buttons{flex-direction:row;align-items:center;gap:18px}.primary{padding:10px 14px;min-height:37px;font-size:9px;gap:17px}.primary span{font-size:18px}.text-btn{font-size:9px}.intro-footer{bottom:17px;padding-top:10px}.chapter{top:27px;left:50%;transform:translateX(-50%);text-align:center}.scorecard{top:77px}.dashboard{left:22px;bottom:134px}.steer-pad{left:20px;bottom:51px;gap:10px}.steer-pad button{width:50px;height:50px;font-size:23px}.touch-boost{right:20px;bottom:51px;width:58px;height:58px;font-size:25px}.camera-btn{bottom:128px;right:25px}.melody{bottom:46px}.zone-banner{top:24%}.zone-banner strong{font-size:27px}.event-toast{top:65%}.takeover{top:81px;left:22px}.boost-display{top:43px;width:109px}.paper-dialog{max-height:92dvh}.scene-caption{display:block;bottom:27%;right:12%}.scene-caption p{font-size:17px}.scene-caption>span{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.equalizer i,.loading-radio{animation:none}*{scroll-behavior:auto!important}.zone-banner,.event-toast{transition:opacity .15s}}
+/* Music shelf: paper textures, quiet green, visible third-party playback. */
+[hidden]{display:none!important}#music-btn{font-size:24px}.music-dialog{width:min(620px,calc(100vw - 24px));padding:32px;overscroll-behavior:contain}.music-dialog h2{font-size:38px;letter-spacing:-1px;margin-bottom:12px}.music-dialog>.music-intro{font-size:12px;margin-bottom:20px}.music-personal{display:grid;grid-template-columns:1fr 1fr;gap:10px}.music-default,.music-upload{position:relative;display:flex;gap:12px;align-items:center;padding:15px 12px;text-align:left;background:#e8e7d7;border:1px solid #a9b5a366;cursor:pointer;min-height:77px;line-height:1.5}.music-default>span,.music-upload>span{font-size:22px}.music-default b,.music-upload b{font-size:12px;line-height:1.5;font-weight:600}.music-default small,.music-upload small{display:block;font-size:9px;font-weight:400;color:#637366;margin-top:3px}.music-upload input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.music-upload:focus-within{outline:2px solid #385e51;outline-offset:2px}.music-default:hover,.music-upload:hover{background:#d9dfcd}.music-shelf-heading{display:flex;justify-content:space-between;align-items:center;padding:22px 0 8px}.music-shelf-heading h3{font-size:11px;letter-spacing:2px;margin:0}.music-shelf-heading>span{font-size:8px;letter-spacing:1px;color:#6b7b68}.music-tracks{display:grid;grid-template-columns:1fr 1fr;gap:8px}.music-track{display:flex;gap:11px;align-items:center;text-align:left;border:1px solid #b5beaa80;background:#f8f3e7;padding:13px 10px;min-height:67px}.music-track .track-number{font:19px var(--serif);color:#7c8c74}.music-track>span:nth-child(2){flex:1;min-width:0}.music-track b{display:block;font-size:11px;line-height:1.55}.music-track small{display:block;font-size:8px;color:#6b7b68;margin-top:4px}.music-track[aria-pressed=true]{background:#dce7d4;border-color:#6b8d70}.music-track:hover{border-color:#6b8d70}.music-dialog>.music-disclosure{font-size:10px;line-height:1.7;color:#65755f;margin:16px 0 0}.music-dialog>.music-error{color:#9e3c30;font-size:11px;min-height:0;margin:8px 0 0}.music-dock{position:fixed;z-index:16;top:92px;right:30px;width:min(370px,calc(100vw - 36px));max-height:calc(100dvh - 115px);overflow:auto;overscroll-behavior:contain;background:#f5efdf;border:1px solid #93a388;box-shadow:0 10px 35px #3d4c391c;padding:12px;color:#354d47;pointer-events:auto}.music-dock-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.music-dock-head>div{min-width:0}.music-dock-head small{display:flex;align-items:center;gap:6px;font-size:8px;letter-spacing:1px;color:#607057}.music-dock-head b{display:block;font-size:12px;margin-top:5px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.music-dock-head button{border:0;background:transparent;font-size:25px;min-width:36px;min-height:36px}#music-live-dot{width:5px;height:5px;border-radius:50%;background:#a6ad9b;display:inline-block}#music-live-dot.on{background:#548561}.music-dock audio{width:100%;height:42px}.music-volume-note{display:block;font-size:9px;margin-top:8px;color:#68775f}.music-dock p{font-size:10px;line-height:1.6;margin:8px 0;color:#647459}.music-dock #music-status{color:#4d624b;font-size:10px}.music-dock #stream-player{min-height:152px;background:#e4e5d6}.music-dock[data-provider=youtube] #stream-player{min-height:200px}.music-dock iframe{display:block;width:100%;border:0}.music-dock-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;border-top:1px solid #b5beaa66;padding-top:8px}.music-dock-actions button,.music-dock-actions a,#music-alternatives button{padding:7px 5px;background:none;border:0;font-size:10px;color:#3d6654;text-decoration:none;min-height:30px}.music-dock-actions a{margin-left:auto}#music-alternatives{display:flex;align-items:center;gap:8px;font-size:9px;border-top:1px solid #b5beaa55;margin-top:5px}#music-alternatives button:disabled{opacity:.5;cursor:default}body[data-music=stream] .scorecard,body[data-music=file] .scorecard{right:425px}.radio-display #radio-station{max-width:140px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:15px}
+@media(max-width:820px){.music-dialog{padding:26px 20px}.music-dialog h2{font-size:31px!important}.music-dialog>.music-intro{font-size:11px}.music-dock{right:16px;top:155px;width:min(340px,calc(100vw - 32px));max-height:calc(100dvh - 390px);padding:10px}body[data-music=stream] .scorecard,body[data-music=file] .scorecard{right:24px}.music-track{padding:10px 8px;gap:8px}.music-track b{font-size:10px}.music-track small{font-size:8px}.music-dock #music-provider-note{font-size:9px}.music-dock #music-status{font-size:9px}.music-dock[data-provider=youtube]{max-height:calc(100dvh - 270px)}}
+@media(max-width:400px){.music-personal{grid-template-columns:1fr}.music-default,.music-upload{min-height:58px;padding:10px}.music-tracks{grid-template-columns:1fr}.music-track{min-height:56px}.music-dialog{padding:25px 18px}.music-shelf-heading{padding-top:18px}.music-dock{max-height:calc(100dvh - 330px)}}
+@media(orientation:landscape) and (max-height:600px){.music-dock{width:300px;top:70px;right:12px;max-height:calc(100dvh - 130px)}body[data-music=stream] .scorecard,body[data-music=file] .scorecard{right:330px}.music-dock[data-provider=youtube]{max-height:calc(100dvh - 90px)}}
+/* Audio-to-notes: compact music studio, in the game's paper/ink system. */
+.upload-hero{margin-bottom:16px}.intro-buttons{gap:17px}.music-dialog{width:min(620px,calc(100vw - 24px));max-height:90dvh;padding:30px;overscroll-behavior:contain}.music-dialog h2{font-size:38px;line-height:1.03}.music-intro{font-size:12px;line-height:1.75;max-width:490px}.note-upload{position:relative;display:flex;align-items:center;flex-direction:column;justify-content:center;gap:8px;padding:24px;border:1.5px dashed #78937b;background:#e8ecdf;cursor:pointer}.note-upload b{font-size:14px}.note-upload small{font-size:10px;color:#62775e}.note-upload input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.note-upload:focus-within{outline:2px solid #395d50;outline-offset:3px}.upload-glyph{font-size:30px;line-height:1.1;color:#426e58}.upload-glyph sup{font-size:16px}.music-top-options{display:flex;justify-content:space-between;gap:12px;margin:10px 0 14px}.music-top-options button,.chart-advanced button,.analysis-progress button{background:none;border:0;color:#466b56;font-size:10px;padding:8px 0;text-decoration:underline;text-underline-offset:3px;min-height:30px}.analysis-progress{margin:18px 0}.analysis-progress>div{display:flex;justify-content:space-between;gap:14px;font-size:11px}.analysis-progress progress{width:100%;height:7px;margin-top:12px;accent-color:#496f56}.chart-result{border-top:1px solid #a8bba56b;padding-top:18px;margin-top:12px}.result-label{display:flex;justify-content:space-between;font-size:9px;letter-spacing:1.2px;color:#678069}.result-label span{font-size:8px}.chart-result h3{font-size:17px;line-height:1.4;margin:12px 0 15px;overflow-wrap:anywhere}.chart-stats{display:grid;grid-template-columns:.8fr .8fr 1.4fr;gap:12px;margin-bottom:14px}.chart-stats b{font-size:20px;font-weight:500}.chart-stats>div:last-child b{font-size:14px}.chart-stats small{display:block;font-size:9px;margin-top:4px;color:#6c7d64}#chart-preview{display:block;width:100%;height:92px;background:#ede9d9}.chart-caption{font-size:9px;line-height:1.6;margin:7px 0 16px;color:#748067}.chart-options{display:grid;grid-template-columns:1fr 1.25fr;gap:12px}.chart-options label{font-size:10px;color:#566b52}.chart-options select{display:block;width:100%;margin-top:6px;font:inherit;font-size:11px;background:#f4f1e7;border:1px solid #a4b198;padding:10px 8px;color:#354e43;min-height:42px}.chart-advanced{border-bottom:1px solid #a8bba54d;padding:12px 0;font-size:10px}.chart-advanced summary{cursor:pointer;padding:5px 0;color:#637a60}.chart-advanced label{display:block;margin-top:12px}.chart-advanced b{float:right}.chart-advanced input{display:block;width:100%;margin:14px 0;accent-color:#426e58}.chart-advanced small{display:block;font-size:9px;color:#73856c}.chart-advanced>div{display:flex;gap:25px}.chart-actions{display:flex;align-items:stretch;gap:10px;margin-top:18px}.chart-actions .primary{padding:14px 20px;font-size:12px;flex:1}.chart-actions .secondary{padding:13px 12px;margin:0;font-size:10px}.chart-actions button:disabled{opacity:.4;cursor:not-allowed}.music-dialog>.music-disclosure{font-size:10px;line-height:1.7;margin-top:14px;color:#687961}.note-dock{width:280px;top:96px;padding:12px}.song-timeline{height:3px;background:#ced7c2;margin-top:12px;overflow:hidden}.song-timeline i{display:block;height:100%;width:0;background:#446f56}#song-note-now{margin-left:auto;font-size:12px}body[data-music=song] .scorecard{right:340px}body[data-music=song] .boost-display,body[data-music=song] #touch-boost{display:none}body[data-music=song] .melody>span{font-size:9px}.song-countdown{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;background:#eee8d724;z-index:17;pointer-events:none;color:#2f5648}.song-countdown small{font-size:10px;letter-spacing:3px}.song-countdown b{font-family:var(--serif);font-size:100px;line-height:1}.song-countdown span{font-size:11px}.note-dock #music-status{margin:8px 0 0}body[data-music=song] .camera-btn{bottom:145px}
+@media(max-width:820px){.music-dialog{padding:25px 20px}.music-dialog h2{font-size:32px!important}.note-upload{padding:18px 12px}.note-dock{top:calc(88px + env(safe-area-inset-top,0px));right:16px;width:210px;padding:9px}.note-dock .music-dock-head small{font-size:6px;letter-spacing:.5px}.note-dock .music-dock-head b{font-size:10px}.note-dock .music-dock-head{margin:0}.note-dock .music-dock-head button{min-width:25px;min-height:25px;font-size:21px}.note-dock .music-dock-actions{padding-top:3px;gap:3px}.note-dock .music-dock-actions button{font-size:9px;padding:4px 0;min-height:24px}.note-dock #music-status{font-size:9px}.note-dock .song-timeline{margin-top:8px}body[data-music=song] .scorecard{right:auto;left:24px;top:95px;text-align:left}body[data-music=song] .chapter{top:56px}.upload-hero{min-height:43px;font-size:12px;margin-bottom:10px}.intro-buttons .primary{min-height:35px;font-size:10px;padding:8px 12px}.music-dialog>.music-intro{font-size:11px}.chart-stats{gap:8px}.chart-stats b{font-size:18px}.chart-stats>div:last-child b{font-size:12px}.chart-options{grid-template-columns:1fr}.chart-actions{flex-direction:column}.chart-actions .secondary{min-height:37px}.chart-result h3{font-size:15px}.music-top-options{flex-wrap:wrap}.music-top-options button{font-size:9px}.note-dock{max-height:190px}body[data-music=song] .takeover{top:230px}.song-countdown b{font-size:80px}}
+@media(orientation:landscape) and (max-height:600px){.note-dock{top:75px;width:215px}body[data-music=song] .scorecard{top:80px;left:25px}.intro-copy .upload-hero{font-size:10px;padding:8px 15px;min-height:32px;margin-bottom:8px}.intro-description{margin-bottom:10px}.intro-buttons .primary{font-size:8px;padding:5px 10px;min-height:28px}}
+/* 1.3.1: reliable song runway + direct touch controls. */
+#note-world{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.intro-hint{margin-top:20px}.audio-gate{position:fixed;z-index:22;left:50%;top:46%;transform:translate(-50%,-50%);width:min(340px,85vw);padding:24px;background:#354d47;color:#f4eedc;border:2px solid #d3b47a;font-weight:600;box-shadow:0 10px 60px #334d4740}.audio-gate small{display:block;font-size:11px;line-height:1.5;margin-top:10px;font-weight:400}
+body[data-renderer=canvas2d] .camera-btn{display:none}
+.chart-actions{position:sticky;bottom:-1px;z-index:2;background:#f5efdf;padding:12px 0 4px;border-top:1px solid #bcc7ac}
+.chart-actions .primary,.chart-actions .secondary{min-height:47px}
+.music-dialog{scroll-padding-bottom:125px}
+.version-tag{position:fixed;bottom:6px;right:22px;z-index:11;font-size:7px;letter-spacing:.5px;color:#73806b;pointer-events:none}
+
+/* v1.4: built-in excerpt library; never hides a third-party media player. */
+.preset-shelf{margin:22px 0 15px}.preset-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid #bac2ab;padding-bottom:12px;margin-bottom:12px}.preset-heading>span{font:600 14px var(--sans);letter-spacing:2px}.preset-heading>b{font-size:9px;font-weight:500;letter-spacing:.8px;color:#63745e}.preset-list{display:grid;gap:9px}.preset-card{display:grid;grid-template-columns:30px minmax(0,1fr) auto;align-items:center;gap:12px;border:1px solid #bcc5ae;background:#faf5e8;padding:13px 12px}.preset-index{font:24px var(--serif);color:#84977c}.preset-copy h3{font-size:13px;line-height:1.5;letter-spacing:0;font-weight:600;margin:0}.preset-copy p{font-size:10px!important;margin:3px 0 0!important;color:#708068}.preset-actions{display:flex;gap:4px;align-items:center;flex-direction:column}.preset-actions button{min-width:78px;min-height:36px;font-size:10px;border:0;padding:8px 10px;cursor:pointer}.preset-play{background:#3d6957;color:#faf3dd}.preset-play:hover{background:#2c5143}.preset-listen{background:transparent;color:#52684e}.preset-listen:hover{text-decoration:underline}.preset-disclaimer{font-size:10px!important;line-height:1.7;color:#6c7961;margin-top:13px!important}.preset-source{font-size:11px;line-height:1.7;display:inline-block;margin:0 0 12px;color:#416b55;text-underline-offset:3px}.custom-file-section{border-top:1px solid #b9c3ac;padding-top:15px;margin-top:18px}.custom-file-section>summary{cursor:pointer;font-size:12px;font-weight:500;padding:8px 0 15px}.music-dialog{width:min(650px,calc(100vw - 24px))}.intro-copy .intro-buttons{gap:18px}.intro-copy #start-btn{background:transparent;color:var(--ink);border:1px solid #8b9c81;font-size:11px;padding:13px 16px}.intro-copy #tour-btn{display:none}.intro-copy .quick-demo{font-size:12px}.music-dialog .chart-actions{position:static}.result-label>span{font-size:8px}.preset-play:focus-visible,.preset-listen:focus-visible{outline:3px solid #bc8f4f;outline-offset:3px}
+@media(max-width:820px){.preset-card{grid-template-columns:23px minmax(0,1fr) 73px;gap:8px;padding:10px 9px}.preset-copy h3{font-size:12px}.preset-index{font-size:21px}.preset-actions button{min-width:71px;min-height:36px;font-size:10px;padding:8px 5px}.preset-heading>b{font-size:8px}.music-dialog .music-intro{font-size:12px;line-height:1.7}.intro-copy #start-btn{font-size:10px;white-space:normal}.intro-copy .intro-hint{display:block;font-size:11px}.intro-copy .headphones{display:none}}
+@media(max-width:360px){.preset-card{grid-template-columns:18px minmax(0,1fr) 64px;gap:6px}.preset-copy h3{font-size:11px}.preset-actions button{min-width:62px}.preset-heading>b{font-size:7px}}
+
+button,a,input,summary{-webkit-tap-highlight-color:transparent}
+
+/* 1.5: restore the original 3D street and keep the song controls unobtrusive. */
+.original-actions{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.original-actions .primary{padding:18px 23px;font-size:13px;min-width:238px}
+.original-actions #quick-demo{background:none;color:var(--ink);padding:0;min-height:26px;min-width:0;margin:0;font-size:12px}
+.original-actions .classic-link{font-size:10px;color:#788270;min-height:20px;margin-top:-8px;padding:0}
+.intro-copy .intro-hint{display:flex;margin-top:27px}.intro-copy .headphones{display:block}
+.intro-copy{max-width:510px}.intro-copy .intro-description{margin-bottom:26px}
+.music-dialog{scroll-padding-bottom:50px}.preset-copy p{line-height:1.6}
+body[data-music=song] .dashboard,body[data-music=song] .chapter,body[data-music=song] .camera-btn{display:block}
+body[data-music=song] .chapter{top:36px;left:50%;text-align:center;transform:translateX(-50%)}
+body[data-music=song] .dashboard{left:42px;bottom:100px}
+body[data-music=song] .boost-display,body[data-music=song] .speedometer,body[data-music=song] #touch-boost{display:none}
+body[data-music=song] .scorecard{left:auto;right:42px;top:110px;text-align:right}
+body[data-music=song] .note-dock{top:112px;left:42px;right:auto;width:256px;max-height:155px;padding:12px;background:#f5efdfeb}
+body[data-music=song] .takeover{top:287px;left:42px}
+body[data-music=song] .melody{bottom:91px;width:auto;left:50%;transform:translateX(-50%)}
+body[data-music=song] .melody-keys{display:flex;gap:8px}
+body[data-music=song] .melody button{width:55px;height:57px;font-family:var(--sans);font-size:11px}
+body[data-music=song] .melody button small{font-family:var(--sans)}
+body[data-music=song] .melody>span{font-size:8px;letter-spacing:1px;margin-bottom:13px}
+body[data-music=song] .camera-btn{right:42px;bottom:100px}
+body[data-music=song] .journey-progress{display:block}
+body[data-renderer=canvas2d] .camera-btn{display:none!important}
+.graphics-notice{position:fixed;left:50%;top:76px;transform:translateX(-50%);z-index:13;background:#fff5deeb;border:1px solid #bca675;padding:10px 13px;width:min(90vw,460px);font-size:10px;text-align:center}
+.graphics-notice button{background:none;text-decoration:underline;margin-left:8px;font-size:10px}
+.song-countdown{top:36%;pointer-events:none}.version-tag{opacity:.65}
+@media(max-width:820px){
+ .intro-copy{left:8%;top:16%;width:84%;max-width:440px}
+ .intro-copy h1{font-size:70px;line-height:1.02;margin-bottom:22px}
+ .intro-copy .eyebrow{font-size:7px;margin-bottom:25px}
+ .intro-copy .intro-description{font-size:12px;line-height:1.8;margin-bottom:25px}
+ .original-actions{gap:17px}.original-actions .primary{font-size:12px;min-width:220px;min-height:49px;padding:15px 20px}
+ .intro-copy .intro-hint{font-size:10px;margin-top:23px}.intro-copy .intro-hint small{font-size:8px}
+ body[data-music=song] .chapter{top:77px;left:22px;text-align:left;transform:none;max-width:70vw}
+ body[data-music=song] .chapter>span{font-size:9px}.chapter small{font-size:7px}
+ body[data-music=song] .note-dock{top:113px;left:20px;width:calc(100vw - 145px);padding:9px;max-height:140px}
+ body[data-music=song] .note-dock .music-dock-head b{font-size:10px}
+ body[data-music=song] .note-dock .music-dock-head small{font-size:6px;letter-spacing:.3px}
+ body[data-music=song] .note-dock .music-dock-actions{padding-top:4px;gap:5px}
+ body[data-music=song] .note-dock .music-dock-actions button{font-size:9px;min-height:26px;padding:3px}
+ body[data-music=song] .note-dock #music-status{font-size:9px;margin:5px 0}
+ body[data-music=song] .scorecard{top:119px;right:21px;left:auto}
+ body[data-music=song] .scorecard .score-label{font-size:6px;letter-spacing:.5px}
+ body[data-music=song] .takeover{top:270px;left:20px;padding:8px 10px;font-size:8px}
+ body[data-music=song] .dashboard{left:22px;bottom:171px}
+ body[data-music=song] .radio-display{display:none}
+ body[data-music=song] .melody{width:calc(100vw - 42px);bottom:max(58px,calc(env(safe-area-inset-bottom) + 42px))}
+ body[data-music=song] .melody-keys{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+ body[data-music=song] .melody button{width:100%;height:58px;font-size:10px}
+ body[data-music=song] .melody>span{font-size:7px;letter-spacing:.6px}
+ body[data-music=song] .camera-btn{right:22px;bottom:148px}
+ body[data-music=song] .steer-pad{left:22px;bottom:149px;gap:9px}
+ body[data-music=song] .steer-pad button{width:44px;height:39px;font-size:20px}
+ body[data-music=song] .journey-progress{bottom:20px}.song-countdown{top:37%}
+ .graphics-notice{top:77px;font-size:9px}
+}
+@media(max-height:740px) and (max-width:820px) and (orientation:portrait){
+ .intro-copy{top:16%}.intro-copy h1{font-size:59px;margin-bottom:17px}.intro-copy .eyebrow{margin-bottom:18px}
+ .intro-copy .intro-description{margin-bottom:18px}.original-actions{gap:11px}.intro-copy .intro-hint{margin-top:16px}
+}
+@media(orientation:landscape) and (max-height:600px){
+ .intro-copy{top:24%;left:7%;width:53%;max-width:53%}.intro-copy h1{font-size:49px;margin-bottom:10px}
+ .intro-copy .eyebrow{margin-bottom:12px;font-size:6px}.intro-copy .intro-description{font-size:10px;margin-bottom:14px}
+ .original-actions{gap:9px}.original-actions .primary{min-height:34px;padding:9px 14px;font-size:10px;min-width:190px}
+ .original-actions #quick-demo{font-size:10px;min-height:18px}.original-actions .classic-link,.intro-copy .intro-hint{display:none}
+ body[data-music=song] .chapter{top:28px;left:50%;transform:translateX(-50%);max-width:35%;text-align:center}
+ body[data-music=song] .note-dock{top:82px;left:20px;width:185px;max-height:145px}
+ body[data-music=song] .scorecard{top:85px;right:22px}
+ body[data-music=song] .takeover{top:238px;left:20px}
+ body[data-music=song] .melody{bottom:43px;width:300px}.melody button{height:45px!important}
+ body[data-music=song] .camera-btn,body[data-music=song] .steer-pad{bottom:65px}
+ .song-countdown{top:24%}.version-tag{font-size:6px}
+}
+
+.original-actions #tour-btn{display:inline-flex}
+
+</style>
+  
+  
+  
+  
+  
+  
+<meta name="rue-radio-build" content="1.5.0-3d-30s">
+</head>
+<body>
+  <canvas id="world" aria-label="Đường phố 3D. Dùng A và D hoặc phím mũi tên để lái xe; Shift để tăng tốc."></canvas>
+  <canvas hidden id="note-world" aria-label="Đường nốt nhạc. Chạm năm phím làn bên dưới để lái."></canvas>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <div class="screen-frame" aria-hidden="true"></div>
+
+  <div id="loading" class="loading"><span class="loading-radio">▥</span><p>Đang gấp một thành phố…</p><div class="loading-line"><i id="loading-fill"></i></div><small>Có chế độ nhẹ khi đồ họa 3D không khả dụng.</small></div>
+  <section id="error" class="error hidden" role="alert"><h1>Chuyến xe chưa khởi hành được.</h1><p id="error-text"></p><button onclick="location.reload()">Thử lại</button></section>
+
+  <header class="topbar">
+    <button id="brand" class="brand" aria-label="Rue Radio — về màn hình chính">
+      <svg viewBox="0 0 42 42" aria-hidden="true"><path d="M10 16h24v18H10zM15 12l16-7M15 21v8m5-8v8m8-6h2m-2 5h2"/></svg>
+      <span>RUE RADIO<small>A LITTLE MUSICAL DETOUR</small></span>
+    </button>
+    <div class="top-actions">
+      <span class="offline-mark"><i></i> WEBGL · RADIO</span>
+      <button id="music-btn" class="icon-btn" aria-label="Chọn nhạc" title="Chọn nhạc">♫</button>
+      <button id="sound-btn" class="icon-btn" aria-label="Bật âm thanh" title="Âm thanh · M"><svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4zM17 8a6 6 0 0 1 0 8"/><path id="mute-slash" d="m4 3 17 18"/></svg></button>
+      <button id="settings-btn" class="icon-btn" aria-label="Cài đặt và hướng dẫn" title="Cài đặt"><svg viewBox="0 0 24 24"><path d="M4 7h7m4 0h5M4 17h3m4 0h9"/><circle cx="13" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+      <button id="pause-btn" class="icon-btn hidden" aria-label="Tạm dừng" title="Tạm dừng · Esc"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button>
+    </div>
+  </header>
+
+  <main id="intro" class="intro hidden">
+    <div class="intro-copy">
+      <div class="eyebrow"><span class="tiny-line"></span> MỘT CHUYẾN ĐI KHÔNG THEO TRỌNG LỰC</div>
+      <h1>Đường phố<br>biết <em>hát.</em><span class="title-star" aria-hidden="true">✳</span></h1>
+      <p class="intro-description">Một chiếc xe. Một chiếc radio.<br>Phố giấy cũ, những bản đàn dài hơn.<br>Chọn một bài. Chơi trọn 30 giây.</p>
+      <div class="original-actions">
+        <button id="intro-upload" class="primary" onclick="document.getElementById('music-btn').click()">Chọn bài · 30 giây <span>↗</span></button>
+        <button id="quick-demo" class="text-btn" type="button">Ngồi nghe, xe tự lái <span>→</span></button>
+        <button id="tour-btn" class="text-btn classic-link" type="button">Khám phá phố · Radio Papier</button>
+        <button id="start-btn" hidden type="button">Chơi ngay</button>
+      </div>
+      <div class="intro-hint"><span class="headphones">♬</span><span>Đeo tai nghe, để con đường ngân nga.<small>06 bản đàn · 30 giây mỗi lượt · chơi ngay, không upload.</small></span></div>
+    </div>
+    <div class="scene-caption" aria-hidden="true"><span>01 — LA VILLE EN PAPIER</span><div class="caption-rule"></div><p>Gấp một con phố.<br>Mở một giai điệu.</p></div>
+    <footer class="intro-footer"><span>INK, PAPER & IMPOSSIBLE ROADS.</span><span class="footer-controls"><kbd>A</kbd><kbd>D</kbd> lái xe <i>·</i> <kbd>SHIFT</kbd> tăng tốc <i>·</i> hỗ trợ cảm ứng</span><span>VOL. 06 / 30 SECONDS <b>↗</b></span></footer>
+  </main>
+
+  <section id="hud" class="hud hidden" aria-label="Thông tin chuyến đi">
+    <div class="chapter"><span id="chapter-label">01 / 04 — PHỐ BAN MAI</span><small id="chapter-sub">LA VILLE EN PAPIER</small></div>
+    <div class="scorecard"><span class="score-label">GIAI ĐIỆU CỦA ANH</span><div><b id="score">0</b><span>điểm</span></div><small><span id="notes-count">0</span> nốt nhạc <i>·</i> <span id="combo">×1</span></small></div>
+    <div id="event-toast" class="event-toast" role="status" aria-live="polite"></div>
+    <button id="takeover-btn" class="takeover hidden">Tự lái đang bật <span>· Cầm vô-lăng →</span></button>
+    <div id="zone-banner" class="zone-banner"><small id="zone-kicker"></small><strong id="zone-title"></strong><span id="zone-description"></span></div>
+    <div class="dashboard">
+      <div class="speedometer"><b id="speed">00</b><span>KM/H<small id="drive-status">CRUISING</small></span></div>
+      <div class="radio-display"><span class="radio-dot"></span><div><small>RADIO PAPIER</small><b id="radio-station">96.0 FM</b></div><div id="equalizer" class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="boost-display"><span>ÉLAN <small id="boost-percent">100%</small></span><div><i id="boost-fill"></i></div><small>GIỮ SHIFT ĐỂ TĂNG TỐC</small></div>
+    </div>
+    <div class="melody"><span>THU NỐT NHẠC TRÊN ĐƯỜNG</span><div class="melody-keys"><button data-lane="-2" aria-label="Làn 1, Đô"><small>1</small>Đô</button><button data-lane="-1" aria-label="Làn 2, Rê"><small>2</small>Rê</button><button data-lane="0" aria-label="Làn 3, Mi"><small>3</small>Mi</button><button data-lane="1" aria-label="Làn 4, Sol"><small>4</small>Sol</button><button data-lane="2" aria-label="Làn 5, La"><small>5</small>La</button></div></div>
+    <button id="camera-btn" class="camera-btn" title="Đổi góc máy · C" aria-label="Đổi góc máy">↗ <span>Góc máy</span><kbd>C</kbd></button>
+    <div class="journey-progress"><div class="progress-track"><i id="progress-fill"></i><span style="left:15.17%"></span><span style="left:29.24%"></span><span style="left:57.10%"></span></div><div class="progress-labels"><span id="distance">0 / 1.450 m</span><span>PHỐ → TƯỜNG → TRẦN → KHUÔNG NHẠC</span><time id="elapsed">00:00</time></div></div>
+  </section>
+
+  <div id="touch-controls" class="touch-controls hidden">
+    <div class="steer-pad"><button id="left-btn" aria-label="Giữ để lái sang trái">←</button><button id="right-btn" aria-label="Giữ để lái sang phải">→</button></div>
+    <button id="touch-boost" class="touch-boost" aria-label="Giữ để tăng tốc">↗<small>BOOST</small></button>
+  </div>
+
+  <dialog id="pause-dialog" class="paper-dialog"><div class="dialog-kicker">PAUSE / UN PETIT SILENCE</div><h2>Nghỉ một <em>nhịp.</em></h2><p>Con phố vẫn ở đây, đợi anh chơi tiếp.</p><button id="resume-btn" class="primary">Tiếp tục chuyến đi <span>→</span></button><button id="restart-btn" class="secondary">Đi lại từ đầu</button><button id="home-btn" class="text-btn">Về đầu trang</button><small class="dialog-footnote">ESC ĐỂ TIẾP TỤC · M ĐỂ BẬT/TẮT ÂM THANH</small></dialog>
+
+  <dialog id="settings-dialog" class="paper-dialog settings-dialog">
+    <button id="close-settings" class="close-dialog icon-btn" aria-label="Đóng cài đặt">×</button>
+    <div class="dialog-kicker">ĐIỀU CHỈNH TẦN SỐ</div><h2>Một chút <em>vừa vặn.</em></h2>
+    <label class="setting-row"><span>Âm lượng<small>Bài gốc hoặc tiếng đàn của các nốt đã nhận diện.</small></span><input id="volume" aria-label="Âm lượng" type="range" min="0" max="100" value="55"></label>
+    <div class="setting-row"><span>Kiểm tra âm thanh · v1.5.0<small id="audio-status" role="status">Bấm Thử tiếng để nghe ba nốt nhạc.</small></span><button id="audio-test-btn" class="secondary" type="button" style="white-space:nowrap">Thử tiếng</button></div>
+    <div class="setting-row"><span>Nhạc cho chuyến đi<small>Sáu bản đàn 30 giây hoặc chọn file riêng.</small></span><button id="settings-music-btn" type="button" class="secondary">Chọn nhạc</button></div>
+    <label class="setting-row"><span>Chất lượng hình ảnh<small>Giảm nếu thiết bị chạy chậm.</small></span><select id="quality"><option value="auto">Tự động</option><option value="high">Cao</option><option value="low">Nhẹ</option></select></label>
+    <label class="setting-row"><span>Máy quay êm hơn<small>Giảm rung và độ nghiêng khi đánh lái.</small></span><input id="comfort" type="checkbox" role="switch"></label>
+    <div class="control-guide"><h3>Trên máy tính</h3><p><kbd>A</kbd><kbd>D</kbd> hoặc <kbd>←</kbd><kbd>→</kbd> lái xe<br><kbd>W</kbd><kbd>↑</kbd> ga · <kbd>S</kbd><kbd>↓</kbd> phanh<br><kbd>SHIFT</kbd> tăng tốc · <kbd>1</kbd>–<kbd>5</kbd> chọn làn<br><kbd>C</kbd> đổi góc máy · <kbd>ESC</kbd> tạm dừng</p><h3>Trên điện thoại</h3><p>Giữ hai nút mũi tên để lái. Giữ BOOST để tăng tốc.<br>Chạm Đô / Rê / Mi / Sol / La để chọn làn.</p></div>
+    <p class="about-note">Bản dựng độc lập lấy cảm hứng từ mô tả công khai trong bài đăng của Chetan Ankola. Không sử dụng mã nguồn hay hình ảnh của tác giả; không phải bản sao khớp từng khung hình.</p>
+  </dialog>
+
+  <dialog id="finish-dialog" class="paper-dialog finish-dialog"><div class="dialog-kicker">LA FIN ? NON. UN REFRAIN.</div><div class="finish-stamp" aria-hidden="true">♫</div><h2>Thành phố đã<br>nghe anh <em>hát.</em></h2><p id="finish-message">Một chuyến đi nhỏ. Một bản nhạc của riêng anh.</p><div class="finish-score"><b id="final-score">0</b><span>ĐIỂM GIAI ĐIỆU</span></div><div class="finish-stats"><div><b id="final-notes">0</b><span>nốt đã thu</span></div><div><b id="final-combo">0</b><span>chuỗi dài nhất</span></div><div><b id="final-time">00:00</b><span>thời gian</span></div></div><p id="best-score" class="best-score"></p><button id="again-btn" class="primary">Thêm một chuyến nữa <span>↗</span></button><button id="finish-home" class="text-btn">Về đầu trang</button></dialog>
+  <dialog id="music-dialog" class="paper-dialog music-dialog" aria-labelledby="music-heading">
+    <button id="music-close" class="close-dialog icon-btn" aria-label="Đóng chọn nhạc">×</button>
+    <div class="dialog-kicker">VOL. 05 / CHỌN BÀI → THU NỐT → TIẾNG ĐÀN</div>
+    <h2 id="music-heading">Giai điệu sẵn.<br><em>Chạm là chơi.</em></h2>
+    <p class="music-intro">Chọn bài, rồi cầm vô-lăng qua phố giấy 3D. Mỗi lượt dài 30 giây; Tự lái giúp nghe trọn bản đàn.</p>
+    <section class="preset-shelf" aria-label="Sáu bản nốt Mr. Siro có sẵn"><div class="preset-heading"><span>MR. SIRO</span><b>06 BẢN ĐÀN · 30 GIÂY</b></div><div id="preset-list" class="preset-list"></div><p class="preset-disclaimer">Bản luyện tập 30 giây, ghép lặp chủ đề từ đoạn demo có sẵn; nhịp giản lược. Không phải 30 giây bản thu gốc, không có giọng hát và không phải sản phẩm chính thức của nghệ sĩ.</p></section>
+    <details class="custom-file-section"><summary>Hoặc chuyển bài hát của riêng anh thành nốt</summary>
+    <label class="note-upload" for="music-file"><span class="upload-glyph">♫<sup>＋</sup></span><b>Chọn bài hát từ máy</b><small>MP3 / M4A / WAV · tối đa 40 MB, 8 phút</small><input id="music-file" type="file" accept="audio/*,.mp3,.m4a,.wav,.aac,.ogg,.flac,.opus"></label>
+    <div class="music-top-options"><button id="music-demo" type="button">Nghe thử bằng giai điệu mẫu ↗</button><button id="music-default" type="button">Về Radio Papier</button></div>
+    </details>
+    <p id="music-file-error" class="music-error" role="alert"></p>
+    <div id="music-progress" class="analysis-progress" hidden><div><span id="analysis-label">Đang đọc file…</span><b id="analysis-percent">0%</b></div><progress id="analysis-bar" max="1" value="0"></progress><button id="music-cancel" type="button">Hủy phân tích</button></div>
+    <section id="music-result" class="chart-result" hidden aria-label="Kết quả chuyển đổi">
+      <div class="result-label">BẢN NỐT CỦA ANH <span id="result-origin">LOCAL ANALYSIS</span></div><h3 id="chart-title"></h3>
+      <div class="chart-stats"><div><b id="chart-count">0</b><small>nốt trên đường</small></div><div><b id="chart-duration">0:00</b><small>thời lượng bài</small></div><div><b id="chart-range"></b><small id="chart-raw"></small></div></div>
+      <canvas id="chart-preview" width="1000" height="166" aria-label="Sóng âm và bản nốt theo thời gian"></canvas><p id="chart-preview-caption" class="chart-caption"></p><a id="preset-source" class="preset-source" target="_blank" rel="noopener noreferrer" hidden></a>
+      <div class="chart-options"><label>Mật độ nốt<select id="music-difficulty"><option value="easy">Thưa · dễ lái</option><option value="normal" selected>Vừa · cân bằng</option><option value="dense">Dày · nhiều nốt</option></select></label><label>Âm thanh khi chơi<select id="music-render-mode"><option value="song">Bài gốc + nốt đồng bộ</option><option value="melody" selected>Thu nốt → tiếng đàn</option></select></label></div>
+      <details class="chart-advanced"><summary>Căn độ trễ & xuất bản nốt</summary><label>Bù trễ tai nghe <b id="music-offset-value">+0 ms</b><input id="music-offset" aria-label="Bù trễ âm thanh" type="range" min="-200" max="500" step="10" value="0"></label><small>Tăng khi âm thanh đến tai muộn hơn hình. Nốt sẽ đến xe muộn tương ứng.</small><div><button id="music-midi" type="button">Tải nốt MIDI ↗</button><button id="music-json" type="button">Tải chart JSON ↗</button></div></details>
+    </section>
+    <div class="chart-actions"><button id="music-play" class="primary" type="button" disabled>Chơi bản nốt <span>→</span></button><button id="music-tour" class="secondary" type="button" disabled>Tự lái · nghe bản nốt</button></div>
+    <p class="music-disclosure"><b>Phân tích thử nghiệm:</b> tìm một đường cao độ nổi bật, chưa tách riêng giọng hát. Bài nhiều nhạc cụ có thể nhận nhầm nhạc đệm; piano hoặc giọng đơn thường dễ kiểm tra hơn. 5 làn là vùng cao độ, không phải 5 nốt cố định.</p>
+    <p class="music-disclosure">File được xử lý ngay trên thiết bị, không gửi lên server. Sáu đoạn thử có sẵn luôn nằm trong game; chỉ file tự chọn mới cần chọn lại sau khi tải lại trang.</p>
+  </dialog>
+  <aside id="music-dock" class="music-dock note-dock" aria-label="Bài hát đang chơi" hidden>
+    <div class="music-dock-head"><div><small><i id="music-live-dot"></i><span id="music-source">BÀI GỐC + NỐT ĐỒNG BỘ</span></small><b id="music-title"></b></div><button id="music-stop" type="button" aria-label="Về nhạc game">×</button></div>
+    <div class="song-timeline"><i id="song-fill"></i></div><p id="music-status" role="status"></p>
+    <div class="music-dock-actions"><button id="music-library-btn" type="button">♫ Đổi bài / bản nốt</button><span id="song-note-now">—</span></div>
+  </aside>
+  <div id="song-countdown" class="song-countdown" hidden aria-live="polite"><small>VÀO LÀN SẴN SÀNG</small><b id="countdown-number">3</b><span>Xe chạy theo đồng hồ của bài hát</span></div>
+
+  <button id="audio-gate" class="audio-gate" type="button" hidden>Chạm để bật tiếng và bắt đầu <small>Trình duyệt đang chờ một lần chạm.</small></button>
+  <div id="graphics-notice" class="graphics-notice" hidden>Thiết bị chưa chạy được phố 3D. Đang dùng chế độ nhẹ. <button type="button" onclick="location.href=location.pathname">Thử lại 3D</button></div>
+  <span class="version-tag">v1.5.0 · PHỐ GIẤY 3D · 30S</span>
+  <noscript><div class="error">Game cần JavaScript. Hãy bật JavaScript trong trình duyệt để bắt đầu.</div></noscript>
+<script>
+/* Rue Radio • small, dependency-free WebGL renderer and procedural track.
+   All world geometry and game code are original. Coordinates are in metres.
+   A route frame contains right (r), surface normal (u), and forward (f).
+   The camera and car use the SAME frame: walls and ceilings are real 3D. */
+(function (root) {
+  'use strict';
+  const TAU = Math.PI * 2;
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  const lerp = (a,b,t) => a + (b-a)*t;
+  const smooth = t => { t=clamp(t,0,1); return t*t*(3-2*t); };
+  const add=(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]];
+  const sub=(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]];
+  const mul=(a,s)=>[a[0]*s,a[1]*s,a[2]*s];
+  const dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2];
+  const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+  const norm=a=>mul(a,1/(Math.hypot(...a)||1));
+  const mix=(a,b,t)=>a.map((v,i)=>lerp(v,b[i],t));
+  function color(hex,alpha=1) {
+    if(Array.isArray(hex)) return hex;
+    hex=hex.replace('#','');
+    return [parseInt(hex.slice(0,2),16)/255,parseInt(hex.slice(2,4),16)/255,parseInt(hex.slice(4,6),16)/255,alpha];
+  }
+  const tint=(c,f)=>[clamp(c[0]*f,0,1),clamp(c[1]*f,0,1),clamp(c[2]*f,0,1),c[3]??1];
+  function rng(seed) {return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t^=t+Math.imul(t^t>>>7,61|t);return ((t^t>>>14)>>>0)/4294967296;};}
+  function local(fr,x,y,z=0) {return [fr.p[0]+fr.r[0]*x+fr.u[0]*y+fr.f[0]*z,fr.p[1]+fr.r[1]*x+fr.u[1]*y+fr.f[1]*z,fr.p[2]+fr.r[2]*x+fr.u[2]*y+fr.f[2]*z];}
+  function direction(fr,a) {return [fr.r[0]*a[0]+fr.u[0]*a[1]+fr.f[0]*a[2],fr.r[1]*a[0]+fr.u[1]*a[1]+fr.f[1]*a[2],fr.r[2]*a[0]+fr.u[2]*a[1]+fr.f[2]*a[2]];}
+  const identityFrame={p:[0,0,0],r:[1,0,0],u:[0,1,0],f:[0,0,1]};
+  function shifted(fr,x,y,z) {return {...fr,p:local(fr,x,y,z)};}
+  function yawFrame(fr,angle) {const c=Math.cos(angle),s=Math.sin(angle);return {p:fr.p,r:add(mul(fr.r,c),mul(fr.f,-s)),u:fr.u,f:add(mul(fr.r,s),mul(fr.f,c))};}
+  const ZONES=[
+    {start:0,end:220,name:'Phố ban mai',sub:'LA VILLE EN PAPIER',color:'#c8814e',bpm:96},
+    {start:220,end:424,name:'Bức tường màu nắng',sub:'LA GRAVITÉ EST UNE IDÉE',color:'#b18a28',bpm:104},
+    {start:424,end:828,name:'Thế giới lộn ngược',sub:'LE CIEL SOUS LES ROUES',color:'#587e84',bpm:108},
+    {start:828,end:1450,name:'Đại lộ ngân nga',sub:'LA ROUTE DEVIENT MUSIQUE',color:'#b96b60',bpm:100}
+  ];
+  const routeLength=1450;
+  function zoneAt(s){return s<220?0:s<424?1:s<828?2:3;}
+  function orientation(s) {
+    let p=0;
+    if(s<220)p=0;
+    else if(s<267)p=(s-220)/47*Math.PI/2;
+    else if(s<377)p=Math.PI/2;
+    else if(s<424)p=Math.PI/2+(s-377)/47*Math.PI/2;
+    else if(s<624)p=Math.PI;
+    else if(s<671)p=Math.PI+(s-624)/47*Math.PI/2;
+    else if(s<781)p=Math.PI*1.5;
+    else if(s<828)p=Math.PI*1.5+(s-781)/47*Math.PI/2;
+    else p=TAU;
+    let yaw=0;
+    if(s<190)yaw=.13*Math.sin(s/51)*Math.sin(Math.PI*s/190);
+    else if(s<267)yaw=0;
+    else if(s<377)yaw=.40*smooth((s-267)/110);
+    else if(s<671)yaw=.40;
+    else if(s<781)yaw=lerp(.40,-.42,smooth((s-671)/110));
+    else if(s<850)yaw=-.42;
+    else yaw=-.42+.22*Math.sin((s-850)/100)*smooth((s-850)/40);
+    const cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(p),sp=Math.sin(p);
+    return {r:[cy,0,sy],u:[-sy*sp,cp,cy*sp],f:[sy*cp,sp,-cy*cp],pitch:p};
+  }
+  class Route {
+    constructor(){
+      this.length=routeLength;this.points=[];this.step=.5;
+      let pos=[0,0,0]; this.points.push(pos.slice());
+      for(let s=0;s<this.length+400;s+=this.step){pos=add(pos,mul(orientation(s+this.step/2).f,this.step));this.points.push(pos);}
+    }
+    at(s){
+      const o=orientation(s);
+      if(s<0)return {...o,p:[0,0,-s]};
+      const t=clamp(s/this.step,0,this.points.length-1.001),i=Math.floor(t);
+      return {...o,p:mix(this.points[i],this.points[i+1],t-i)};
+    }
+  }
+  const INK=color('#3a4947',.50), PAPER=color('#f4eedb');
+  class Batch {
+    constructor(){this.vertices=[];this.edges=[];}
+    vertex(arr,p,n,c){arr.push(p[0],p[1],p[2],n[0],n[1],n[2],c[0],c[1],c[2],c[3]??1);}
+    tri(a,b,c,col,normal){const n=normal||norm(cross(sub(b,a),sub(c,a)));this.vertex(this.vertices,a,n,col);this.vertex(this.vertices,b,n,col);this.vertex(this.vertices,c,n,col);}
+    quad(a,b,c,d,col,normal,edge=false){this.tri(a,b,c,col,normal);this.tri(a,c,d,col,normal);if(edge){this.line(a,b);this.line(b,c);this.line(c,d);this.line(d,a);}}
+    line(a,b,col=INK){this.vertex(this.edges,a,[0,0,0],col);this.vertex(this.edges,b,[0,0,0],col);}
+    box(fr,x,y,z,w,h,d,col,edge=true){
+      col=color(col); const p=[];
+      for(let i=0;i<8;i++)p.push(local(fr,x+(i&1?w/2:-w/2),y+(i&2?h/2:-h/2),z+(i&4?d/2:-d/2)));
+      [[0,4,6,2,[-1,0,0]],[1,3,7,5,[1,0,0]],[0,1,5,4,[0,-1,0]],[2,6,7,3,[0,1,0]],[0,2,3,1,[0,0,-1]],[4,5,7,6,[0,0,1]]].forEach(f=>this.quad(p[f[0]],p[f[1]],p[f[2]],p[f[3]],col,direction(fr,f[4])));
+      if(edge)[[0,1],[0,2],[0,4],[1,3],[1,5],[2,3],[2,6],[3,7],[4,5],[4,6],[5,7],[6,7]].forEach(e=>this.line(p[e[0]],p[e[1]]));
+    }
+    polygon(fr,pts,col,n=[0,1,0],edge=false){
+      const wp=pts.map(p=>local(fr,...p));
+      for(let i=1;i<wp.length-1;i++)this.tri(wp[0],wp[i],wp[i+1],color(col),direction(fr,n));
+      if(edge)wp.forEach((v,i)=>this.line(v,wp[(i+1)%wp.length]));
+    }
+    sphere(fr,x,y,z,rx,ry,rz,col,seg=9,rings=6,rough=0){
+      col=color(col);const point=(i,j)=>{let t=i/seg*TAU,p=j/rings*Math.PI;let r=1+rough*Math.sin(i*18.1+j*43.5);return local(fr,x+Math.cos(t)*Math.sin(p)*rx*r,y+Math.cos(p)*ry*r,z+Math.sin(t)*Math.sin(p)*rz*r);};
+      for(let j=0;j<rings;j++)for(let i=0;i<seg;i++){const a=point(i,j),b=point(i+1,j),c=point(i+1,j+1),d=point(i,j+1);const ct=local(fr,x,y,z);const n=norm(sub(mul(add(add(a,b),add(c,d)),.25),ct));this.quad(a,b,c,d,tint(col,1+.035*Math.sin(i*3+j*7)),n);}
+    }
+    cylinder(fr,x,y,z,rt,rb,h,col,seg=9,edge=true){
+      col=color(col);const top=local(fr,x,y+h/2,z),bot=local(fr,x,y-h/2,z);
+      for(let i=0;i<seg;i++){
+        let a=i/seg*TAU,b=(i+1)/seg*TAU;
+        const p=local(fr,x+Math.cos(a)*rt,y+h/2,z+Math.sin(a)*rt),q=local(fr,x+Math.cos(b)*rt,y+h/2,z+Math.sin(b)*rt),r=local(fr,x+Math.cos(b)*rb,y-h/2,z+Math.sin(b)*rb),t=local(fr,x+Math.cos(a)*rb,y-h/2,z+Math.sin(a)*rb);
+        this.quad(p,q,r,t,col,direction(fr,norm([Math.cos((a+b)/2),(rb-rt)/Math.max(h,.001),Math.sin((a+b)/2)])));
+        this.tri(top,p,q,col,fr.u);this.tri(bot,t,r,tint(col,.85),mul(fr.u,-1));
+        if(edge){this.line(p,q);this.line(r,t);if(i%3===0)this.line(p,t);}
+      }
+    }
+    ribbon(a,b,w,col,normal=[0,1,0]){const r=mul(norm(cross(sub(b,a),normal)),w/2);this.quad(add(a,r),sub(a,r),sub(b,r),add(b,r),color(col),normal);}
+    disc(fr,x,y,z,rx,rz,col){const pts=[];for(let i=0;i<20;i++)pts.push([x+Math.cos(i/20*TAU)*rx,y,z+Math.sin(i/20*TAU)*rz]);this.polygon(fr,pts,col);}
+    transformed(other,fr){
+      for(const k of ['vertices','edges']){const a=other[k],dest=this[k];for(let i=0;i<a.length;i+=10){const p=local(fr,a[i],a[i+1],a[i+2]),n=direction(fr,[a[i+3],a[i+4],a[i+5]]);dest.push(...p,...n,a[i+6],a[i+7],a[i+8],a[i+9]);}}
+    }
+  }
+  function perspective(fovy,aspect,near,far){const f=1/Math.tan(fovy/2),nf=1/(near-far);return new Float32Array([f/aspect,0,0,0,0,f,0,0,0,0,(far+near)*nf,-1,0,0,2*far*near*nf,0]);}
+  function lookAt(eye,target,up){const z=norm(sub(eye,target)),x=norm(cross(up,z)),y=cross(z,x);return new Float32Array([x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-dot(x,eye),-dot(y,eye),-dot(z,eye),1]);}
+  function matmul(a,b){const out=new Float32Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++)for(let k=0;k<4;k++)out[c*4+r]+=a[k*4+r]*b[c*4+k];return out;}
+  const VERT=`attribute vec3 aPosition;attribute vec3 aNormal;attribute vec4 aColor;uniform mat4 uVP;uniform vec3 uEye;varying vec3 vNormal;varying vec4 vColor;varying vec3 vPosition;varying float vDistance;void main(){gl_Position=uVP*vec4(aPosition,1.);vNormal=aNormal;vColor=aColor;vPosition=aPosition;vDistance=length(aPosition-uEye);}`;
+  const FRAG=`precision mediump float;varying vec3 vNormal;varying vec4 vColor;varying vec3 vPosition;varying float vDistance;uniform vec3 uFog;uniform float uGrain;float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}void main(){float edge=step(length(vNormal),.1);float lit=.81+.19*max(dot(normalize(vNormal+vec3(.00001)),normalize(vec3(-.6,1.,.35))),0.);lit=mix(lit,1.,edge);float stain=sin(vPosition.x*1.07+vPosition.y*.83)*sin(vPosition.z*.79+vPosition.y*.31)*.012;float grain=(hash(floor(gl_FragCoord.xy))-.5)*.037*uGrain;vec3 c=vColor.rgb*lit+vec3(stain+grain)*(1.-edge);float fog=smoothstep(78.,290.,vDistance);c=mix(c,uFog,fog*.97);gl_FragColor=vec4(c,vColor.a*(1.-fog*.55));}`;
+  class Renderer {
+    constructor(canvas){
+      this.canvas=canvas;
+      const gl=this.gl=canvas.getContext('webgl',{antialias:true,alpha:false,powerPreference:'high-performance',preserveDrawingBuffer:false});
+      if(!gl)throw new Error('WebGL không khả dụng. Hãy bật tăng tốc đồ họa trong trình duyệt.');
+      const shader=(type,src)=>{const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(s));return s;};
+      this.program=gl.createProgram();gl.attachShader(this.program,shader(gl.VERTEX_SHADER,VERT));gl.attachShader(this.program,shader(gl.FRAGMENT_SHADER,FRAG));gl.linkProgram(this.program);if(!gl.getProgramParameter(this.program,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(this.program));gl.useProgram(this.program);
+      this.attrs=['aPosition','aNormal','aColor'].map(n=>gl.getAttribLocation(this.program,n));
+      this.uniforms={};['uVP','uEye','uFog','uGrain'].forEach(n=>this.uniforms[n]=gl.getUniformLocation(this.program,n));
+      gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);gl.disable(gl.CULL_FACE);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
+      this.dynamic=this.upload(new Batch(),true);this.drawCalls=0;this.triangles=0;
+    }
+    resize(w,h,dpr=1.4){const width=Math.round(w*dpr),height=Math.round(h*dpr);if(this.canvas.width!==width||this.canvas.height!==height){this.canvas.width=width;this.canvas.height=height;this.gl.viewport(0,0,width,height);}this.aspect=w/h;}
+    upload(batch,dynamic=false){const gl=this.gl,m={};for(const key of ['vertices','edges']){m[key]={buffer:gl.createBuffer(),count:batch[key].length/10};gl.bindBuffer(gl.ARRAY_BUFFER,m[key].buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(batch[key]),dynamic?gl.DYNAMIC_DRAW:gl.STATIC_DRAW);}return m;}
+    update(mesh,batch){const gl=this.gl;for(const k of ['vertices','edges']){gl.bindBuffer(gl.ARRAY_BUFFER,mesh[k].buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(batch[k]),gl.DYNAMIC_DRAW);mesh[k].count=batch[k].length/10;}}
+    begin(eye,target,up,fov=55,fog=[.949,.931,.871],grain=1){const gl=this.gl;this.eye=eye;this.drawCalls=0;this.triangles=0;gl.clearColor(...fog,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(this.program);this.vp=matmul(perspective(fov*Math.PI/180,this.aspect,.2,1000),lookAt(eye,target,up));gl.uniformMatrix4fv(this.uniforms.uVP,false,this.vp);gl.uniform3fv(this.uniforms.uEye,eye);gl.uniform3fv(this.uniforms.uFog,fog);gl.uniform1f(this.uniforms.uGrain,grain);}
+    drawPart(part,lines=false){if(!part.count)return;const gl=this.gl;gl.bindBuffer(gl.ARRAY_BUFFER,part.buffer);[3,3,4].forEach((size,i)=>{gl.enableVertexAttribArray(this.attrs[i]);gl.vertexAttribPointer(this.attrs[i],size,gl.FLOAT,false,40,[0,12,24][i]);});if(lines){gl.disable(gl.POLYGON_OFFSET_FILL);gl.depthMask(false);}else{gl.enable(gl.POLYGON_OFFSET_FILL);gl.polygonOffset(1,1);gl.depthMask(true);}gl.drawArrays(lines?gl.LINES:gl.TRIANGLES,0,part.count);gl.depthMask(true);this.drawCalls++;if(!lines)this.triangles+=part.count/3;}
+    project(pos,w,h){const m=this.vp,p=[...pos,1],q=[0,0,0,0];for(let r=0;r<4;r++)for(let k=0;k<4;k++)q[r]+=m[k*4+r]*p[k];return {x:(q[0]/q[3]*.5+.5)*w,y:(-.5*q[1]/q[3]+.5)*h,visible:q[3]>0};}
+  }
+  const PALETTES=[['#d9b875','#eccdaf','#a3bec1','#d1bd9a','#e5baaa','#f0deb6'],['#e1bc55','#f0d98e','#c1b481','#eed3a0','#d9a065'],['#aec6c2','#c2c9bc','#dfb3a1','#a5b9be','#e7d6b6'],['#e1c4b7','#e3d9b1','#b7c5b2','#b6cbd0','#e7bba0']];
+  function building(b,fr,side,random,zone){
+    const dep=10+random()*8,w=8+random()*7,h=8+random()*14;
+    const x=side*(10+w/2),baseCol=color(PALETTES[zone][Math.floor(random()*PALETTES[zone].length)]),face=x-side*w/2;
+    b.box(fr,x,h/2,0,w,h,dep,baseCol);
+    b.box(fr,x,h+.15,0,w+.5,.4,dep+.4,tint(baseCol,.90));
+    b.box(fr,x,.27,0,w+.15,.55,dep+.1,'#c1b8a0');
+    if(random()>.48){b.box(fr,x+side*1.5,h+1.1,-2,1.05,1.9,1.2,tint(baseCol,.83));b.box(fr,x+side*1.5,h+2.12,-2,1.3,.25,1.4,'#b4a58e');}
+    const win=color(random()>.48?'#618284':'#718b80');
+    const rows=Math.floor((h-3)/3.1),cols=Math.max(2,Math.floor(dep/3.7));
+    for(let row=0;row<rows;row++)for(let col=0;col<cols;col++){
+      const zz=(col-(cols-1)/2)*3.45,yy=4.4+row*3.1;
+      b.box(fr,face-side*.065,yy,zz,.13,1.9,1.5,'#f5e6c7',false);
+      b.box(fr,face-side*.145,yy+.06,zz,.055,1.58,1.15,win);
+      b.box(fr,face-side*.19,yy+.06,zz,.055,.065,1.16,'#e5d9ba',false);
+      b.box(fr,face-side*.19,yy+.06,zz,.055,1.6,.06,'#e5d9ba',false);
+      if((row+col)%3===0){b.box(fr,face-side*.25,yy-.95,zz,.45,.25,1.7,'#b57755');b.sphere(fr,face-side*.38,yy-.7,zz,.30,.32,.70,'#81946c',6,3);}
+      if(random()>.72){b.box(fr,face-side*.15,yy,zz-1.04,.08,1.8,.45,tint(win,1.05));b.box(fr,face-side*.15,yy,zz+1.04,.08,1.8,.45,tint(win,1.05));}
+    }
+    b.box(fr,face-side*.12,1.32,0,.13,2.65,2.15,tint(win,.86));
+    b.box(fr,face-side*.22,1.55,0,.05,1.78,1.57,'#b6c6bb',false);
+    b.box(fr,face-side*.27,1.5,0,.04,.09,1.60,'#456360',false);
+    b.box(fr,face-side*.30,1.2,.64,.09,.09,.09,'#dfb56b',false);
+    if(random()>.28){
+      const awCol=zone===1?'#96795f':random()>.5?'#a66350':'#728f81';
+      for(let i=0;i<7;i++){
+        b.polygon(fr,[[face-side*.15,3.08,-3.5+i],[face-side*2.3,2.6,-3.5+i],[face-side*2.3,2.6,-2.5+i],[face-side*.15,3.08,-2.5+i]],i%2?'#f0e2c5':awCol,[0,.95,0],true);
+        b.box(fr,face-side*2.3,2.43,-3+i,.09,.35,1,i%2?'#f0e2c5':awCol,false);
+      }
+    }
+    // A few facade pencil strokes, deliberately not a dense wireframe.
+    for(let i=0;i<7;i++){const z=-dep/2+random()*dep,yy=1+random()*(h-1);b.line(local(fr,face-side*.06,yy,z),local(fr,face-side*.06,yy+.045,z+.4+random()*.4),color('#6c6955',.22));}
+  }
+  function tree(b,fr,x,random,zone){
+    const h=3.1+random()*1.6;
+    b.disc(fr,x,.045,0,1.4,1.0,'#c9c6b0');
+    b.cylinder(fr,x,.35,0,.54,.40,.70,'#bc8c69',8);
+    b.cylinder(fr,x,h/2+.35,0,.10,.15,h,'#7b7159',7);
+    const cols=zone===1?['#a7ae65','#bec077','#a6ac6c']:['#93aa88','#b4bf98','#a3b591'];
+    b.sphere(fr,x,h+.5,0,1.35,1.4,1.25,cols[0],8,5,.07);
+    b.sphere(fr,x-.57,h+.23,.25,1.02,1.05,.98,cols[1],7,4,.08);
+    b.sphere(fr,x+.59,h+.10,-.16,.94,.85,1.03,cols[2],7,4,.08);
+    for(let i=0;i<4;i++){const a=i*1.4;b.line(local(fr,x,h*.5,0),local(fr,x+Math.sin(a)*.70,h+.4,Math.cos(a)*.6),color('#6e8068',.38));}
+  }
+  function lamp(b,fr,x){
+    b.cylinder(fr,x,2.35,0,.043,.075,4.7,'#59675f',6,false);
+    b.cylinder(fr,x,.15,0,.16,.22,.30,'#52615b',7);
+    b.box(fr,x-.30,4.6,0,.65,.07,.07,'#53635d',false);
+    b.cylinder(fr,x-.58,4.43,0,.17,.34,.32,'#627268',8);
+    b.sphere(fr,x-.58,4.26,0,.17,.14,.17,'#f2dca0',6,4);
+  }
+  function roadChunk(route,start,end,random){
+    const b=new Batch(),zone=zoneAt((start+end)/2);
+    for(let s=start;s<end;s+=4){const next=Math.min(s+4,end),a=route.at(s),f=route.at(next);const c=zoneAt(s),col=color(c===1?'#e5c262':c===2?'#e9e4d2':c===3?'#f4efde':'#e2ddca');
+      b.quad(local(a,-6,0),local(a,6,0),local(f,6,0),local(f,-6,0),col,a.u);
+      for(const side of [-1,1]){
+        b.quad(local(a,side*6,-.02),local(a,side*10,-.02),local(f,side*10,-.02),local(f,side*6,-.02),color(c===1?'#d9b458':'#d7ceb5'),a.u);
+        b.quad(local(a,side*6,.01),local(a,side*6.15,.01),local(f,side*6.15,.01),local(f,side*6,.01),color('#687d72'),a.u);
+        b.line(local(a,side*6,.025),local(f,side*6,.025),color('#697467',.65));
+      }
+      if(c===3){
+        for(let lane=-2;lane<=2;lane++)b.quad(local(a,lane*2.1-.035,.03),local(a,lane*2.1+.035,.03),local(f,lane*2.1+.035,.03),local(f,lane*2.1-.035,.03),color('#646e64'),a.u);
+      }else if(Math.floor(s/4)%3!==0){
+        for(const lane of [-3.15,-1.05,1.05,3.15])b.quad(local(a,lane-.025,.025),local(a,lane+.025,.025),local(f,lane+.025,.025),local(f,lane-.025,.025),color('#bcb9a2'),a.u);
+      }
+    }
+    for(let s=Math.ceil(start/24)*24;s<end;s+=24){const fr=route.at(s);
+      if(zoneAt(s)===3)b.box(fr,0,.035,0,11.9,.014,.09,'#70786d',false);
+      for(const side of [-1,1]){
+        if(s>8&&s<routeLength-24)building(b,fr,side,random,zoneAt(s));
+        tree(b,shifted(fr,0,0,-8),side*8.1,random,zoneAt(s));
+        if(Math.floor(s/24)%2===0)lamp(b,shifted(fr,0,0,8),side*6.8);
+        if(Math.floor(s/24)%3===1){b.box(fr,side*7.5,.65,5,.65,.14,2,'#a9926e');for(const zz of [4.3,5.7])b.box(fr,side*7.5,.30,zz,.46,.60,.12,'#667564',false);b.box(fr,side*7.84,1,5,.12,.6,2,'#b7a077');}
+      }
+    }
+    for(let s=Math.ceil(start/112)*112;s<end;s+=112){if(s<30)continue;const fr=route.at(s);
+      for(let j=0;j<16;j++){let x1=-9+j*18/16,x2=-9+(j+1)*18/16;let h1=7.5-Math.cos(x1/9*Math.PI/2)*1.4,h2=7.5-Math.cos(x2/9*Math.PI/2)*1.4;b.line(local(fr,x1,h1),local(fr,x2,h2),color('#536e67',.6));if(j%2===0){const h=7.5-Math.cos((x1+.4)/9*Math.PI/2)*1.4;b.polygon(fr,[[x1,h,0],[x1+.82,h-.04,0],[x1+.42,h-1.03,.04]],['#c68a66','#92a7a1','#dbbc68','#b4b995'][j/2%4],[0,0,1],true);}}
+    }
+    return b;
+  }
+  function backdrop(route){
+    const b=new Batch(),rand=rng(893);
+    b.box(identityFrame,-80,-2,-100,1500,2,1500,'#e4dfcd',false);
+    for(let i=0;i<120;i++){
+      const x=(rand()-.5)*600,z=(rand()-.5)*900-150,h=10+rand()*30;
+      if(Math.abs(x)<43||Math.hypot(x+200,z+600)<35)continue;
+      b.box(identityFrame,x,h/2-1,z,8+rand()*10,h,9+rand()*12,['#d8d5bd','#d6c9ab','#c5ccc0','#ddd0b7'][i%4],i%3===0);
+    }
+    // Oversized paper sun and clouds, geometrical rather than image assets.
+    b.sphere(identityFrame,92,98,-258,22,22,3.5,'#deb376',36,20);
+    for(let i=0;i<15;i++){const x=-240+rand()*470,y=110+rand()*100,z=-430+rand()*600;for(let j=0;j<3;j++)b.sphere(identityFrame,x+j*11,y+Math.sin(j*2)*3,z,13,4+rand()*2,6,'#f4efdc',9,5);}
+    // The wall is a real upright surface; it gives the vertical chapter scale.
+    for(const [s,w,len] of [[310,100,65],[514,110,140]]){
+      const fr=route.at(s);b.box(fr,0,-1.2,0,w,1.2,len,s<400?'#e6c575':'#dedfd0',false);
+      for(let i=0;i<8;i++)b.line(local(fr,-w/2,-.54,-len/2+i*len/8),local(fr,w/2,-.54,-len/2+i*len/8),color('#8e947c',.2));
+    }
+    return b;
+  }
+  function carModel(){
+    const b=new Batch(),fr=identityFrame;
+    b.box(fr,0,.50,0,1.72,.59,3.0,'#5b9293');
+    b.box(fr,0,.85,.95,1.68,.25,1.05,'#82adaa');
+    b.box(fr,0,.69,-1.50,1.62,.18,.16,'#ece4cc');
+    b.box(fr,0,.41,-1.57,1.8,.16,.13,'#617571');
+    b.box(fr,0,.41,1.56,1.8,.16,.13,'#617571');
+    b.box(fr,0,1.11,-.12,1.51,.73,1.65,'#e4ddc4');
+    b.box(fr,0,1.51,-.12,1.60,.17,1.78,'#eae3ca');
+    b.box(fr,0,1.15,.725,1.31,.53,.026,'#739899');
+    b.box(fr,0,1.17,-.964,1.28,.47,.025,'#699092');
+    for(const x of [-.767,.767]){
+      b.box(fr,x,1.16,-.10,.023,.5,1.4,'#75969a');
+      b.box(fr,x*1.01,1.17,-.13,.027,.53,.065,'#eae3c9',false);
+      b.box(fr,x*1.015,.84,-.33,.04,.035,.23,'#ecdec1',false);
+      b.box(fr,x*1.18,1.08,.58,.24,.17,.25,'#8db0a8');
+    }
+    for(const x of [-.61,.61]){b.box(fr,x,.71,1.516,.38,.23,.045,'#f8eac1');b.box(fr,x,.68,-1.599,.27,.20,.045,'#b86550');}
+    b.box(fr,0,.60,-1.598,.48,.14,.025,'#f4e9ca',false);
+    // Analogue radio on the roof: speaker, tuning window, carry handle, aerial.
+    b.box(fr,0,1.91,-.05,1.13,.61,.47,'#b78b59');
+    b.box(fr,0,1.91,-.30,1.01,.49,.024,'#d7bc87');
+    b.box(fr,-.25,1.93,-.324,.41,.35,.012,'#546961');
+    for(let i=0;i<6;i++)b.line(local(fr,-.435,1.78+i*.055,-.338),local(fr,-.065,1.78+i*.055,-.338),color('#dabf86',.75));
+    b.box(fr,.25,2.03,-.323,.34,.095,.02,'#f0db9d',false);
+    b.box(fr,.24,1.82,-.336,.18,.12,.04,'#677564');
+    b.box(fr,-.34,2.29,-.05,.055,.21,.06,'#69735d',false);b.box(fr,.34,2.29,-.05,.055,.21,.06,'#69735d',false);b.box(fr,0,2.39,-.05,.73,.055,.06,'#69735d',false);
+    b.line(local(fr,.44,2.22,.02),local(fr,.72,3.06,.1),color('#4c625e',1));
+    for(const x of [-.91,.91])for(const z of [-.94,.99]){
+      const wh={p:local(fr,x,.38,z),r:[0,0,1],u:[1,0,0],f:[0,1,0]};
+      b.cylinder(wh,0,0,0,.35,.35,.21,'#435652',14);
+      b.cylinder(shifted(wh,0,x>0?.12:-.12,0),0,0,0,.185,.185,.024,'#d9d7bb',12,false);
+    }
+    return b;
+  }
+  function noteModel(col='#cf9c44',scale=1){
+    const b=new Batch(),fr=identityFrame;
+    b.sphere(fr,-.15,0,0,.35,.24,.19,col,10,6);
+    b.box(fr,.11,.55,0,.075,1.10,.075,col,false);
+    b.polygon(fr,[[.08,1.10,0],[.56,.92,0],[.60,.69,0],[.18,.83,0]],col,[0,0,1],true);
+    return b;
+  }
+  function obstacleModel(){const b=new Batch(),fr=identityFrame;b.cylinder(fr,0,.42,0,.48,.37,.84,'#6b7972',9);b.cylinder(fr,0,.84,0,.51,.51,.06,'#bd9975',9);b.disc(fr,0,.879,0,.40,.40,'#354e4b');b.box(fr,0,.43,-.38,.38,.20,.055,'#dec794',false);return b;}
+  root.RREngine={TAU,clamp,lerp,smooth,add,sub,mul,dot,cross,norm,mix,color,tint,rng,local,direction,shifted,yawFrame,identityFrame,Route,ZONES,zoneAt,routeLength,Batch,Renderer,roadChunk,backdrop,carModel,noteModel,obstacleModel,orientation};
+  if(typeof module!=='undefined'&&module.exports)module.exports=root.RREngine;
+})(typeof window!=='undefined'?window:globalThis);
+
+</script>
+<script>
+/* Rue Radio 1.3 — local, deterministic audio-to-note analysis.
+ * Original implementation. No model download, uploads or third-party services.
+ * This extracts one salient pitch at a time, NOT an isolated vocal stem.
+ * Mixed recordings may follow an instrument instead of the singer.
+ */
+(function(root){
+  'use strict';
+  function* analyzeSteps(samples, sampleRate) {
+    if(!(samples instanceof Float32Array)||!samples.length||sampleRate<8000)throw new Error('Dữ liệu âm thanh không hợp lệ.');
+    // Downsample an already band-limited decoded signal. The short box filter
+    // reduces aliasing; all analyzed harmonics stay below the new Nyquist rate.
+    const stride=Math.max(1,Math.floor(sampleRate/11025)),sr=sampleRate/stride;
+    const pcm=new Float32Array(Math.floor(samples.length/stride));
+    for(let i=0;i<pcm.length;i++){let v=0;for(let j=0;j<stride;j++)v+=samples[i*stride+j]||0;pcm[i]=v/stride;}
+    const N=2048,HOP=256,half=N/2,frames=Math.ceil(pcm.length/HOP),duration=samples.length/sampleRate;
+    const win=new Float32Array(N),re=new Float64Array(N),im=new Float64Array(N),mag=new Float64Array(half),prevMag=new Float64Array(half),rev=new Uint16Array(N);
+    for(let i=0;i<N;i++){win[i]=.5-.5*Math.cos(2*Math.PI*i/(N-1));let x=i,r=0;for(let k=0;k<11;k++){r=(r<<1)|(x&1);x>>=1;}rev[i]=r;}
+    const minMidi=48,maxMidi=88,candidates=[];
+    for(let m=minMidi;m<=maxMidi;m++)candidates.push({m,f:440*Math.pow(2,(m-69)/12)});
+    const data=[],rmsValues=[],fluxValues=[],waveform=[];
+    let maxRms=0,previousPitch=-1;
+    const binValue=f=>{const k=f*N/sr;if(k<2||k>half-3)return 0;const c=Math.round(k);return Math.max(mag[c-1]*.75,mag[c],mag[c+1]*.75);};
+    for(let frame=0;frame<frames;frame++){
+      const center=frame*HOP;let power=0,mean=0;
+      for(let j=0;j<N;j++)mean+=pcm[center+j-half]||0;mean/=N;
+      for(let j=0;j<N;j++){const x=(pcm[center+j-half]||0)-mean;power+=x*x;re[rev[j]]=x*win[j];im[rev[j]]=0;}
+      let centerPower=0;for(let j=-HOP/2;j<HOP/2;j++){const v=pcm[center+j]||0;centerPower+=v*v;}const localRms=Math.sqrt(centerPower/HOP);const rms=Math.sqrt(power/N);maxRms=Math.max(maxRms,rms);rmsValues.push(rms);
+      for(let len=2;len<=N;len*=2){const angle=-2*Math.PI/len,wr0=Math.cos(angle),wi0=Math.sin(angle);for(let i=0;i<N;i+=len){let wr=1,wi=0;for(let j=0;j<len/2;j++){const a=i+j,b=a+len/2,tr=re[b]*wr-im[b]*wi,ti=re[b]*wi+im[b]*wr;re[b]=re[a]-tr;im[b]=im[a]-ti;re[a]+=tr;im[a]+=ti;const next=wr*wr0-wi*wi0;wi=wr*wi0+wi*wr0;wr=next;}}}
+      let total=0,flux=0,maxMagnitude=0;
+      for(let k=1;k<half;k++){mag[k]=Math.hypot(re[k],im[k]);if(k>20&&k<450){total+=mag[k];flux+=Math.max(0,mag[k]-prevMag[k]);maxMagnitude=Math.max(maxMagnitude,mag[k]);}prevMag[k]=mag[k];}
+      flux/=Math.max(.001,total);fluxValues.push(flux);
+      let best=null,bestScore=0,second=0;
+      for(const p of candidates){
+        const fundamental=binValue(p.f);if(fundamental<maxMagnitude*.085)continue;
+        const harmonic=fundamental+.52*binValue(p.f*2)+.30*binValue(p.f*3)+.16*binValue(p.f*4);
+        // Penalize octave errors where a lower fundamental is actually present.
+        const lower=binValue(p.f/2),penalty=lower>fundamental*.65?.20*lower:0;
+        const continuity=previousPitch>=0&&Math.abs(p.m-previousPitch)<=2?1.06:1;
+        const score=(harmonic-penalty)*continuity;
+        if(score>bestScore){second=bestScore;bestScore=score;best=p;}else second=Math.max(second,score);
+      }
+      const tonal=bestScore/Math.max(.001,total),confidence=Math.min(1,tonal*3.5);
+      const midi=best&&rms>.0018&&tonal>.035?best.m:-1;
+      data.push({time:center/sr,midi,rms,localRms,confidence,flux});
+      if(midi>=0)previousPitch=midi;
+      if(frame%40===0)yield frame/frames*.9;
+    }
+    const floor=Math.max(.0022,maxRms*.024);
+    // Median filter removes single-frame jumps without quantizing note timing
+    // to a beat grid. The timestamps still come from the uploaded recording.
+    const filtered=data.map((f,i)=>{
+      if(f.localRms<floor)return -1;
+      const neighbors=data.slice(Math.max(0,i-1),Math.min(data.length,i+2)).filter(x=>x.midi>=0&&x.localRms>=floor).map(x=>x.midi).sort((a,b)=>a-b);
+      return neighbors.length>=2?neighbors[Math.floor(neighbors.length/2)]:f.midi;
+    });
+    const segments=[];let active=null;
+    function end(at){if(active){active.duration=Math.max(0,at-active.time);if(active.duration>=.078&&active.count>=3){active.confidence/=active.count;active.velocity=Math.max(.25,Math.min(.95,Math.sqrt(active.power/active.count/Math.max(maxRms,.001))*.85));delete active.power;delete active.count;segments.push(active);}active=null;}}
+    for(let i=0;i<data.length;i++){
+      const f=data[i],pitch=filtered[i],at=Math.max(0,f.time-HOP/sr*.5);
+      const repeated=active&&pitch===active.midi&&at-active.time>.19&&f.flux>.34&&i>2&&f.rms>data[i-2].rms*1.30;
+      if(pitch<0){end(at);continue;}
+      if(!active||pitch!==active.midi||repeated){end(at);active={time:at,midi:pitch,duration:0,confidence:0,power:0,count:0};}
+      active.confidence+=f.confidence;active.power+=f.rms;active.count++;
+    }
+    end(duration);
+    const merged=[];
+    for(const n of segments){const last=merged[merged.length-1];if(last&&last.midi===n.midi&&n.time-(last.time+last.duration)<.06){last.duration=n.time+n.duration-last.time;last.confidence=(last.confidence+n.confidence)/2;}else merged.push({...n});}
+    for(let b=0;b<256;b++){const a=Math.floor(b*rmsValues.length/256),z=Math.max(a+1,Math.floor((b+1)*rmsValues.length/256));let v=0;for(let i=a;i<z;i++)v=Math.max(v,rmsValues[i]||0);waveform.push(v/Math.max(maxRms,.001));}
+    // Approximate tempo from onset-envelope autocorrelation, presented as an
+    // estimate only. Gameplay uses exact note times, never this BPM estimate.
+    let bpm=null,peak=0;const fps=sr/HOP;
+    for(let b=65;b<=170;b++){const lag=Math.round(fps*60/b);let corr=0;for(let i=lag;i<fluxValues.length;i++)corr+=fluxValues[i]*fluxValues[i-lag];corr/=Math.max(1,fluxValues.length-lag);if(corr>peak){peak=corr;bpm=b;}}
+    yield 1;
+    return {version:1,algorithm:'spectral-melody-v1',duration,sampleRate:sr,notes:merged,waveform,bpm,confidence:merged.length?merged.reduce((s,n)=>s+n.confidence,0)/merged.length:0,limitations:'Một đường cao độ nổi bật; chưa tách giọng hát khỏi nhạc đệm.'};
+  }
+  function analyzePCM(samples,sampleRate,progress=function(){}){
+    const iterator=analyzeSteps(samples,sampleRate);for(;;){const step=iterator.next();if(step.done)return step.value;progress(step.value);}
+  }
+  function makeChart(raw,difficulty='normal'){
+    const gap={easy:.53,normal:.34,dense:.22}[difficulty]||.34;
+    const source=raw.notes.filter(n=>n.duration>=.08&&n.confidence>.09).sort((a,b)=>a.time-b.time);
+    if(!source.length)return [];
+    const pitches=source.map(n=>n.midi).sort((a,b)=>a-b),lo=pitches[Math.floor(pitches.length*.08)],hi=pitches[Math.floor(pitches.length*.92)],range=Math.max(7,hi-lo),out=[];
+    for(const n of source){
+      let lane=Math.max(-2,Math.min(2,Math.round((n.midi-lo)/range*4)-2));const prev=out[out.length-1];
+      if(prev){const dt=n.time-prev.time;if(dt<gap)continue;
+        // Limit the horizontal jump to what the car can actually reach.
+        const reach=Math.max(1,Math.floor((dt-.08)*7.2/2.1));lane=Math.max(prev.lane-reach,Math.min(prev.lane+reach,lane));
+      }
+      out.push({...n,lane});
+    }
+    return out;
+  }
+  const noteName=m=>['Đô','Đô♯','Rê','Rê♯','Mi','Fa','Fa♯','Sol','Sol♯','La','La♯','Si'][((m%12)+12)%12]+(Math.floor(m/12)-1);
+  function midiBytes(notes){
+    const events=[],ticks=960;
+    for(const n of notes){events.push({t:Math.round(n.time*ticks),data:[0x90,n.midi,Math.round((n.velocity||.65)*100)]});events.push({t:Math.round((n.time+n.duration)*ticks),data:[0x80,n.midi,0]});}
+    events.sort((a,b)=>a.t-b.t||a.data[0]-b.data[0]);
+    const bytes=[0,0xff,0x51,3,7,0xa1,0x20];let last=0;
+    const vlq=n=>{let b=[n&127];while(n>>=7)b.unshift((n&127)|128);return b;};
+    for(const e of events){bytes.push(...vlq(e.t-last),...e.data);last=e.t;}bytes.push(0,0xff,0x2f,0);
+    const n=bytes.length;return new Uint8Array([77,84,104,100,0,0,0,6,0,0,0,1,1,224,77,84,114,107,(n>>>24)&255,(n>>>16)&255,(n>>>8)&255,n&255,...bytes]);
+  }
+  const api={analyzePCM,analyzeSteps,makeChart,noteName,midiBytes};
+  if(typeof module!=='undefined')module.exports=api;
+  root.RRTranscribe=api;
+})(typeof window!=='undefined'?window:globalThis);
+
+</script>
+<script>
+/* A real Canvas 2D renderer, not a test stub. Time-based 3-second note runway.
+   The WebGL city remains available for free driving on supported devices. */
+(function () {
+  'use strict';
+  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+  class RRLite {
+    constructor(canvas) {
+      this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});
+      if(!this.ctx)throw new Error('Trình duyệt không tạo được màn hình game.');
+      this.w=1;this.h=1;this.dpr=1;this.paints=0;this.hit=0;this.previousScore=0;
+      this.palette=['#66887d','#b99455','#b96f50','#688b9c','#9b7997'];
+    }
+    resize(w,h,dpr=1){this.w=w;this.h=h;this.dpr=Math.min(dpr,1.5);this.canvas.width=Math.round(w*this.dpr);this.canvas.height=Math.round(h*this.dpr);}
+    polygon(points,fill,stroke){const c=this.ctx;c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.closePath();if(fill){c.fillStyle=fill;c.fill();}if(stroke){c.strokeStyle=stroke;c.stroke();}}
+    label(text,x,y,size=12,color='#405951',align='center'){const c=this.ctx;c.fillStyle=color;c.font=`500 ${size}px system-ui, sans-serif`;c.textAlign=align;c.fillText(text,x,y);}
+    paint(state,notes,obstacles,music,time,dt) {
+      const c=this.ctx,w=this.w,h=this.h,portrait=w/h<.9,compact=h<540;
+      const song=!!music?.custom,menu=state.mode==='menu',t=song?music.noteClock:state.s/17;
+      c.setTransform(this.dpr,0,0,this.dpr,0,0);c.clearRect(0,0,w,h);c.fillStyle='#efe9d9';c.fillRect(0,0,w,h);
+      const horizon=compact?h*.3:portrait?h*.36:h*.28;
+      const hitY=compact?h-122:portrait?h-193:h-168;
+      const cx=menu&&!portrait?w*.70:w*.5;
+      const roadW=Math.min(w*.88,portrait?540:810),farW=roadW*.17;
+      const yNear=Math.max(horizon+45,hitY);
+      const proj=(lane,p)=>{const q=Math.pow(clamp(p,0,1.2),1.30);return {x:cx+lane/5*(farW+(roadW-farW)*q),y:horizon+(yNear-horizon)*q,scale:.2+.8*q};};
+      // Small paper city. Baked geometric scenery stays cheap on older phones.
+      c.fillStyle='#e2e0cf';c.beginPath();c.ellipse(cx-130,horizon-32,200,56,0,Math.PI,0);c.fill();
+      c.fillStyle='#dbc792';c.beginPath();c.arc(w*.78,horizon-95,compact?20:34,0,Math.PI*2);c.fill();
+      const bw=portrait?42:74;
+      for(let i=0;i<Math.ceil(w/bw)+1;i++){
+        const x=i*bw-5,bh=32+(i*41%71),by=horizon-bh,nearCenter=Math.abs(x+bw/2-cx)<farW*.73;
+        if(nearCenter)continue;
+        c.fillStyle=['#d3d4be','#e3cbae','#c0cfc4','#d9c1ac'][i%4];c.fillRect(x,by,bw-4,bh);
+        c.strokeStyle='#7c8d7750';c.strokeRect(x,by,bw-4,bh);
+        for(let row=0;row<3;row++)for(let col=0;col<3;col++){if(by+13+row*22>horizon-12)continue;c.fillStyle='#f8f1db';c.fillRect(x+9+col*(bw-15)/3,by+10+row*22,6,9);}
+      }
+      c.fillStyle='#c9d2bb';c.fillRect(0,horizon,w,h-horizon);
+      this.polygon([[cx-farW*.64,horizon],[cx+farW*.64,horizon],[cx+roadW*.69,h],[cx-roadW*.69,h]],'#e4dcc5');
+      this.polygon([[cx-farW/2,horizon],[cx+farW/2,horizon],[cx+roadW*.64,h],[cx-roadW*.64,h]],'#eae5d5','#899883');
+      // Five lanes represent pitch ranges. Lane width stays fixed regardless of song length.
+      for(let lane=-2;lane<=2;lane++){
+        const a=proj(lane-.5,0),b=proj(lane+.5,0),d=proj(lane-.5,1.3),e=proj(lane+.5,1.3);
+        if(lane===Math.round(state.x/2.1)){c.globalAlpha=.10;this.polygon([[a.x,a.y],[b.x,b.y],[e.x,e.y],[d.x,d.y]],this.palette[lane+2]);c.globalAlpha=1;}
+      }
+      for(let j=-2.5;j<=2.5;j++){
+        const a=proj(j,0),b=proj(j,1.3);c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.strokeStyle='#73857060';c.lineWidth=1;c.stroke();
+      }
+      // Moving cross-lines communicate progression even during a sustained note.
+      const travel=menu?time*.35:t*.65;
+      for(let j=0;j<10;j++){const p=((j/10+travel/10)%1+1)%1,a=proj(-2.5,p),b=proj(2.5,p);c.strokeStyle='#86927b20';c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.stroke();}
+      const lookahead=3.2;
+      const visible=notes.filter(n=>!n.passed&&(song?n.time-t>=-.18&&n.time-t<=lookahead:n.s-state.s>=-3&&n.s-state.s<=64)).slice().reverse();
+      for(const n of visible){
+        const until=song?n.time-t:(n.s-state.s)/17,p=1-until/lookahead;if(p<0||p>1.07)continue;
+        const a=proj(n.lane,p),r=(portrait?12:15)*a.scale+4,ink=this.palette[n.lane+2];
+        // The tail communicates duration, but only the note onset is scored.
+        if(song&&n.duration>.19){const tail=proj(n.lane,Math.max(0,p-Math.min(.65,n.duration/lookahead)));c.strokeStyle=ink+'55';c.lineWidth=Math.max(3,r*.6);c.beginPath();c.moveTo(tail.x,tail.y);c.lineTo(a.x,a.y);c.stroke();}
+        c.fillStyle=ink;c.beginPath();c.ellipse(a.x,a.y,r,r*.64,-.25,0,Math.PI*2);c.fill();c.strokeStyle='#f6f0dc';c.lineWidth=1.5;c.stroke();
+        c.strokeStyle=ink;c.lineWidth=Math.max(2,2.5*a.scale);c.beginPath();c.moveTo(a.x+r*.78,a.y);c.lineTo(a.x+r*.78,a.y-r*2.1);c.stroke();
+        if(p>.44&&song)this.label(window.RRTranscribe.noteName(n.midi),a.x,a.y+r+13,Math.max(9,11*a.scale),ink);
+      }
+      if(!song)for(const o of obstacles){const p=1-(o.s-state.s)/54;if(o.hit||p<0||p>1)continue;const a=proj(o.lane,p),r=15*a.scale;this.polygon([[a.x-r,a.y],[a.x,a.y-r*2],[a.x+r,a.y]],'#b76f50','#586c60');}
+      // Hit line, then the car, are rendered above approaching notes.
+      const left=proj(-2.5,1),right=proj(2.5,1);
+      c.strokeStyle='#526e61';c.lineWidth=2;c.setLineDash([4,5]);c.beginPath();c.moveTo(left.x,left.y);c.lineTo(right.x,right.y);c.stroke();c.setLineDash([]);
+      const car=proj(state.x/2.1,1),cw=portrait?32:40,ch=portrait?50:59;
+      c.save();c.translate(car.x,car.y+13);c.rotate(clamp(state.vx*.007,-.06,.06));
+      c.fillStyle='#49645324';c.beginPath();c.ellipse(0,ch*.36,cw*.8,ch*.26,0,0,Math.PI*2);c.fill();
+      c.fillStyle='#40544b';c.fillRect(-cw*.59,-ch*.12,8,ch*.4);c.fillRect(cw*.4,-ch*.12,8,ch*.4);
+      this.polygon([[-cw*.48,ch*.35],[-cw*.45,-ch*.24],[-cw*.34,-ch*.52],[cw*.34,-ch*.52],[cw*.45,-ch*.24],[cw*.48,ch*.35]],'#819e8c','#40574d');
+      this.polygon([[-cw*.31,-ch*.26],[-cw*.23,-ch*.47],[cw*.23,-ch*.47],[cw*.31,-ch*.26]],'#d8e0d1','#557263');
+      c.fillStyle='#e8c678';c.fillRect(-cw*.3,-ch*.79,cw*.6,ch*.27);c.strokeStyle='#556c59';c.strokeRect(-cw*.3,-ch*.79,cw*.6,ch*.27);
+      c.beginPath();c.moveTo(cw*.14,-ch*.79);c.lineTo(cw*.34,-ch*.99);c.stroke();
+      c.fillStyle='#415e51';for(let j=0;j<4;j++)c.fillRect(-cw*.22+j*cw*.13,-ch*.72,2,ch*.12);
+      c.fillStyle='#bf7854';c.fillRect(-cw*.35,ch*.18,8,4);c.fillRect(cw*.12,ch*.18,8,4);c.restore();
+      if(state.score>this.previousScore)this.hit=.35;this.previousScore=state.score;this.hit=Math.max(0,this.hit-dt);
+      if(this.hit>0){c.globalAlpha=this.hit/.35;c.strokeStyle='#b58e4d';c.lineWidth=2;c.beginPath();c.ellipse(car.x,car.y,40+(1-this.hit/.35)*38,17+(1-this.hit/.35)*12,0,0,Math.PI*2);c.stroke();c.globalAlpha=1;}
+
+      this.paints++;
+    }
+  }
+  window.RRLite=RRLite;
+})();
+
+</script>
+<script>
+/* 30-second practice arrangements of the short themes in the supplied demo.
+ * No additional song passages, lyrics, original recordings or external requests.
+ * Repeated themes and simplified timing are disclosed in the UI and manifest.
+ */
+(function(){'use strict';
+const songs=[{"id":"mot-buoc","title":"Một Bước Yêu Vạn Dặm Đau","tag":"Một chút muộn phiền","url":"https://hocthoisao.com/cam-am-mot-buoc-yeu-van-dam-dau/","publisher":"Sáo Trúc Hoàng Anh","section":"Hai câu đầu phần verse; cao độ chuyển từ cảm âm.","notes":[{"time":0.55,"midi":62,"duration":0.4697,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.1224,"midi":69,"duration":0.4697,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.6949,"midi":69,"duration":0.4697,"confidence":1,"velocity":0.65,"phrase":1},{"time":2.2673,"midi":67,"duration":0.4697,"confidence":1,"velocity":0.65,"phrase":1},{"time":2.8397,"midi":69,"duration":0.9601,"confidence":1,"velocity":0.65,"phrase":1},{"time":4.0106,"midi":65,"duration":0.4697,"confidence":1,"velocity":0.65,"phrase":1},{"time":4.583,"midi":64,"duration":0.4697,"confidence":1,"velocity":0.65,"phrase":1},{"time":5.1554,"midi":72,"duration":0.4697,"confidence":1,"velocity":0.65,"phrase":1},{"time":5.7279,"midi":72,"duration":1.2268,"confidence":1,"velocity":0.65,"phrase":1},{"time":7.224,"midi":67,"duration":0.3838,"confidence":1,"velocity":0.65,"phrase":1},{"time":7.6923,"midi":69,"duration":0.3838,"confidence":1,"velocity":0.65,"phrase":1},{"time":8.1607,"midi":65,"duration":0.3838,"confidence":1,"velocity":0.65,"phrase":1},{"time":8.629,"midi":69,"duration":0.3838,"confidence":1,"velocity":0.65,"phrase":1},{"time":9.0974,"midi":69,"duration":0.3838,"confidence":1,"velocity":0.65,"phrase":1},{"time":9.5657,"midi":67,"duration":0.3838,"confidence":1,"velocity":0.65,"phrase":1},{"time":10.0341,"midi":69,"duration":0.8743,"confidence":1,"velocity":0.65,"phrase":1},{"time":11.1009,"midi":67,"duration":0.3838,"confidence":1,"velocity":0.65,"phrase":1},{"time":11.5692,"midi":69,"duration":0.3838,"confidence":1,"velocity":0.65,"phrase":1},{"time":12.0376,"midi":72,"duration":0.4697,"confidence":1,"velocity":0.65,"phrase":1},{"time":12.61,"midi":64,"duration":0.4697,"confidence":1,"velocity":0.65,"phrase":1},{"time":13.1824,"midi":69,"duration":0.4697,"confidence":1,"velocity":0.65,"phrase":1},{"time":13.7549,"midi":69,"duration":1.1201,"confidence":1,"velocity":0.65,"phrase":1},{"time":15.275,"midi":62,"duration":0.4697,"confidence":1,"velocity":0.71,"phrase":2},{"time":15.8474,"midi":69,"duration":0.4697,"confidence":1,"velocity":0.71,"phrase":2},{"time":16.4199,"midi":69,"duration":0.4697,"confidence":1,"velocity":0.71,"phrase":2},{"time":16.9923,"midi":67,"duration":0.4697,"confidence":1,"velocity":0.71,"phrase":2},{"time":17.5647,"midi":69,"duration":0.9601,"confidence":1,"velocity":0.71,"phrase":2},{"time":18.7356,"midi":65,"duration":0.4697,"confidence":1,"velocity":0.71,"phrase":2},{"time":19.308,"midi":64,"duration":0.4697,"confidence":1,"velocity":0.71,"phrase":2},{"time":19.8804,"midi":72,"duration":0.4697,"confidence":1,"velocity":0.71,"phrase":2},{"time":20.4529,"midi":72,"duration":1.2268,"confidence":1,"velocity":0.71,"phrase":2},{"time":21.949,"midi":67,"duration":0.3838,"confidence":1,"velocity":0.71,"phrase":2},{"time":22.4173,"midi":69,"duration":0.3838,"confidence":1,"velocity":0.71,"phrase":2},{"time":22.8857,"midi":65,"duration":0.3838,"confidence":1,"velocity":0.71,"phrase":2},{"time":23.354,"midi":69,"duration":0.3838,"confidence":1,"velocity":0.71,"phrase":2},{"time":23.8224,"midi":69,"duration":0.3838,"confidence":1,"velocity":0.71,"phrase":2},{"time":24.2907,"midi":67,"duration":0.3838,"confidence":1,"velocity":0.71,"phrase":2},{"time":24.7591,"midi":69,"duration":0.8743,"confidence":1,"velocity":0.71,"phrase":2},{"time":25.8259,"midi":67,"duration":0.3838,"confidence":1,"velocity":0.71,"phrase":2},{"time":26.2942,"midi":69,"duration":0.3838,"confidence":1,"velocity":0.71,"phrase":2},{"time":26.7626,"midi":72,"duration":0.4697,"confidence":1,"velocity":0.71,"phrase":2},{"time":27.335,"midi":64,"duration":0.4697,"confidence":1,"velocity":0.71,"phrase":2},{"time":27.9074,"midi":69,"duration":0.4697,"confidence":1,"velocity":0.71,"phrase":2},{"time":28.4799,"midi":69,"duration":1.1201,"confidence":1,"velocity":0.71,"phrase":2}],"duration":30,"artist":"Mr. Siro","kind":"30-second-practice-arrangement","timing":"repeated-existing-theme-simplified-rhythm","audio":"locally-synthesized-notes","rights":"Composition belongs to its respective rightsholders. No full recording or full score is bundled.","originalDuration":12.25,"repeats":2,"tempoScale":1.30097,"arrangement":"2 lượt chủ đề từ đoạn demo có sẵn; không phải 30 giây bản thu gốc."},{"id":"lang-nghe","title":"Lắng Nghe Nước Mắt","tag":"Một chuyến đi thật khẽ","url":"https://camamsao.io.vn/cam-am-lang-nghe-nuoc-mat-mr-siro/","publisher":"Cảm Âm Sáo","section":"Hai câu đầu phần verse; nốt luyến giản lược.","notes":[{"time":0.55,"midi":71,"duration":0.3926,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.0283,"midi":72,"duration":0.3926,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.5066,"midi":71,"duration":0.3926,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.9849,"midi":72,"duration":0.7354,"confidence":1,"velocity":0.65,"phrase":1},{"time":2.8817,"midi":71,"duration":0.3926,"confidence":1,"velocity":0.65,"phrase":1},{"time":3.3601,"midi":69,"duration":0.3926,"confidence":1,"velocity":0.65,"phrase":1},{"time":3.8384,"midi":67,"duration":0.4903,"confidence":1,"velocity":0.65,"phrase":1},{"time":4.4362,"midi":69,"duration":0.294,"confidence":1,"velocity":0.65,"phrase":1},{"time":4.795,"midi":71,"duration":0.8988,"confidence":1,"velocity":0.65,"phrase":1},{"time":5.8911,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":1},{"time":6.3295,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":1},{"time":6.768,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":1},{"time":7.2064,"midi":74,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":1},{"time":7.6449,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":1},{"time":8.0833,"midi":74,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":1},{"time":8.5218,"midi":76,"duration":0.4086,"confidence":1,"velocity":0.65,"phrase":1},{"time":9.02,"midi":76,"duration":0.9466,"confidence":1,"velocity":0.65,"phrase":1},{"time":10.3667,"midi":71,"duration":0.3926,"confidence":1,"velocity":0.71,"phrase":2},{"time":10.845,"midi":72,"duration":0.3926,"confidence":1,"velocity":0.71,"phrase":2},{"time":11.3233,"midi":71,"duration":0.3926,"confidence":1,"velocity":0.71,"phrase":2},{"time":11.8016,"midi":72,"duration":0.7354,"confidence":1,"velocity":0.71,"phrase":2},{"time":12.6984,"midi":71,"duration":0.3926,"confidence":1,"velocity":0.71,"phrase":2},{"time":13.1767,"midi":69,"duration":0.3926,"confidence":1,"velocity":0.71,"phrase":2},{"time":13.655,"midi":67,"duration":0.4903,"confidence":1,"velocity":0.71,"phrase":2},{"time":14.2529,"midi":69,"duration":0.294,"confidence":1,"velocity":0.71,"phrase":2},{"time":14.6116,"midi":71,"duration":0.8988,"confidence":1,"velocity":0.71,"phrase":2},{"time":15.7078,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.71,"phrase":2},{"time":16.1462,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.71,"phrase":2},{"time":16.5847,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.71,"phrase":2},{"time":17.0231,"midi":74,"duration":0.3597,"confidence":1,"velocity":0.71,"phrase":2},{"time":17.4616,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.71,"phrase":2},{"time":17.9,"midi":74,"duration":0.3597,"confidence":1,"velocity":0.71,"phrase":2},{"time":18.3384,"midi":76,"duration":0.4086,"confidence":1,"velocity":0.71,"phrase":2},{"time":18.8367,"midi":76,"duration":0.9466,"confidence":1,"velocity":0.71,"phrase":2},{"time":20.1833,"midi":71,"duration":0.3926,"confidence":1,"velocity":0.65,"phrase":3},{"time":20.6616,"midi":72,"duration":0.3926,"confidence":1,"velocity":0.65,"phrase":3},{"time":21.1399,"midi":71,"duration":0.3926,"confidence":1,"velocity":0.65,"phrase":3},{"time":21.6183,"midi":72,"duration":0.7354,"confidence":1,"velocity":0.65,"phrase":3},{"time":22.5151,"midi":71,"duration":0.3926,"confidence":1,"velocity":0.65,"phrase":3},{"time":22.9934,"midi":69,"duration":0.3926,"confidence":1,"velocity":0.65,"phrase":3},{"time":23.4717,"midi":67,"duration":0.4903,"confidence":1,"velocity":0.65,"phrase":3},{"time":24.0696,"midi":69,"duration":0.294,"confidence":1,"velocity":0.65,"phrase":3},{"time":24.4283,"midi":71,"duration":0.8988,"confidence":1,"velocity":0.65,"phrase":3},{"time":25.5244,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":3},{"time":25.9629,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":3},{"time":26.4013,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":3},{"time":26.8398,"midi":74,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":3},{"time":27.2782,"midi":72,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":3},{"time":27.7167,"midi":74,"duration":0.3597,"confidence":1,"velocity":0.65,"phrase":3},{"time":28.1551,"midi":76,"duration":0.4086,"confidence":1,"velocity":0.65,"phrase":3},{"time":28.6534,"midi":76,"duration":0.9466,"confidence":1,"velocity":0.65,"phrase":3}],"duration":30,"artist":"Mr. Siro","kind":"30-second-practice-arrangement","timing":"repeated-existing-theme-simplified-rhythm","audio":"locally-synthesized-notes","rights":"Composition belongs to its respective rightsholders. No full recording or full score is bundled.","originalDuration":10.75,"repeats":3,"tempoScale":0.99647,"arrangement":"3 lượt chủ đề từ đoạn demo có sẵn; không phải 30 giây bản thu gốc."},{"id":"duoi-mua","title":"Dưới Những Cơn Mưa","tag":"Những hạt mưa trên phím đàn","url":"https://khaithieugia.blogspot.com/2017/09/cam-am-duoi-nhung-con-mua-mr-siro.html","publisher":"Cảm âm sáo trúc Vũ Gia","section":"Hai câu mở đầu; nhịp thực hành giản lược.","notes":[{"time":0.55,"midi":60,"duration":0.5427,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.2112,"midi":69,"duration":0.5427,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.8724,"midi":69,"duration":0.5427,"confidence":1,"velocity":0.65,"phrase":1},{"time":2.5337,"midi":65,"duration":0.5427,"confidence":1,"velocity":0.65,"phrase":1},{"time":3.1949,"midi":67,"duration":1.083,"confidence":1,"velocity":0.65,"phrase":1},{"time":5.2469,"midi":60,"duration":0.4298,"confidence":1,"velocity":0.65,"phrase":1},{"time":5.7713,"midi":69,"duration":0.4298,"confidence":1,"velocity":0.65,"phrase":1},{"time":6.2958,"midi":69,"duration":0.4298,"confidence":1,"velocity":0.65,"phrase":1},{"time":6.8202,"midi":69,"duration":0.4298,"confidence":1,"velocity":0.65,"phrase":1},{"time":7.3446,"midi":67,"duration":0.6544,"confidence":1,"velocity":0.65,"phrase":1},{"time":8.1426,"midi":72,"duration":0.6076,"confidence":1,"velocity":0.65,"phrase":1},{"time":8.8836,"midi":69,"duration":1.083,"confidence":1,"velocity":0.65,"phrase":1},{"time":10.3667,"midi":60,"duration":0.5427,"confidence":1,"velocity":0.71,"phrase":2},{"time":11.0279,"midi":69,"duration":0.5427,"confidence":1,"velocity":0.71,"phrase":2},{"time":11.6891,"midi":69,"duration":0.5427,"confidence":1,"velocity":0.71,"phrase":2},{"time":12.3503,"midi":65,"duration":0.5427,"confidence":1,"velocity":0.71,"phrase":2},{"time":13.0115,"midi":67,"duration":1.083,"confidence":1,"velocity":0.71,"phrase":2},{"time":15.0636,"midi":60,"duration":0.4298,"confidence":1,"velocity":0.71,"phrase":2},{"time":15.588,"midi":69,"duration":0.4298,"confidence":1,"velocity":0.71,"phrase":2},{"time":16.1124,"midi":69,"duration":0.4298,"confidence":1,"velocity":0.71,"phrase":2},{"time":16.6368,"midi":69,"duration":0.4298,"confidence":1,"velocity":0.71,"phrase":2},{"time":17.1613,"midi":67,"duration":0.6544,"confidence":1,"velocity":0.71,"phrase":2},{"time":17.9593,"midi":72,"duration":0.6076,"confidence":1,"velocity":0.71,"phrase":2},{"time":18.7003,"midi":69,"duration":1.083,"confidence":1,"velocity":0.71,"phrase":2},{"time":20.1833,"midi":60,"duration":0.5427,"confidence":1,"velocity":0.65,"phrase":3},{"time":20.8446,"midi":69,"duration":0.5427,"confidence":1,"velocity":0.65,"phrase":3},{"time":21.5058,"midi":69,"duration":0.5427,"confidence":1,"velocity":0.65,"phrase":3},{"time":22.167,"midi":65,"duration":0.5427,"confidence":1,"velocity":0.65,"phrase":3},{"time":22.8282,"midi":67,"duration":1.083,"confidence":1,"velocity":0.65,"phrase":3},{"time":24.8803,"midi":60,"duration":0.4298,"confidence":1,"velocity":0.65,"phrase":3},{"time":25.4047,"midi":69,"duration":0.4298,"confidence":1,"velocity":0.65,"phrase":3},{"time":25.9291,"midi":69,"duration":0.4298,"confidence":1,"velocity":0.65,"phrase":3},{"time":26.4535,"midi":69,"duration":0.4298,"confidence":1,"velocity":0.65,"phrase":3},{"time":26.9779,"midi":67,"duration":0.6544,"confidence":1,"velocity":0.65,"phrase":3},{"time":27.7759,"midi":72,"duration":0.6076,"confidence":1,"velocity":0.65,"phrase":3},{"time":28.517,"midi":69,"duration":1.083,"confidence":1,"velocity":0.65,"phrase":3}],"duration":30,"artist":"Mr. Siro","kind":"30-second-practice-arrangement","timing":"repeated-existing-theme-simplified-rhythm","audio":"locally-synthesized-notes","rights":"Composition belongs to its respective rightsholders. No full recording or full score is bundled.","originalDuration":10.16,"repeats":3,"tempoScale":1.14003,"arrangement":"3 lượt chủ đề từ đoạn demo có sẵn; không phải 30 giây bản thu gốc."},{"id":"buc-tranh","title":"Bức Tranh Từ Nước Mắt","tag":"Vẽ một đoạn ký ức","url":"https://hocthoisao.com/top-5-cam-am-sao-truc-buon/","publisher":"Sáo Trúc Hoàng Anh","section":"Hai câu đầu phần lời 1; chỉ lấy cao độ giai điệu.","notes":[{"time":0.55,"midi":69,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.0018,"midi":71,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.4535,"midi":72,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.9053,"midi":71,"duration":0.6425,"confidence":1,"velocity":0.65,"phrase":1},{"time":2.6883,"midi":69,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":1},{"time":3.1401,"midi":67,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":1},{"time":3.5918,"midi":69,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":1},{"time":4.0436,"midi":64,"duration":0.9537,"confidence":1,"velocity":0.65,"phrase":1},{"time":5.3487,"midi":64,"duration":0.3293,"confidence":1,"velocity":0.65,"phrase":1},{"time":5.7502,"midi":67,"duration":0.3293,"confidence":1,"velocity":0.65,"phrase":1},{"time":6.1518,"midi":69,"duration":0.3293,"confidence":1,"velocity":0.65,"phrase":1},{"time":6.5534,"midi":71,"duration":0.3293,"confidence":1,"velocity":0.65,"phrase":1},{"time":6.9549,"midi":72,"duration":0.3293,"confidence":1,"velocity":0.65,"phrase":1},{"time":7.3565,"midi":71,"duration":0.5351,"confidence":1,"velocity":0.65,"phrase":1},{"time":8.009,"midi":72,"duration":0.4116,"confidence":1,"velocity":0.65,"phrase":1},{"time":8.511,"midi":74,"duration":0.4116,"confidence":1,"velocity":0.65,"phrase":1},{"time":9.013,"midi":76,"duration":0.9537,"confidence":1,"velocity":0.65,"phrase":1},{"time":10.3667,"midi":69,"duration":0.3704,"confidence":1,"velocity":0.71,"phrase":2},{"time":10.8184,"midi":71,"duration":0.3704,"confidence":1,"velocity":0.71,"phrase":2},{"time":11.2702,"midi":72,"duration":0.3704,"confidence":1,"velocity":0.71,"phrase":2},{"time":11.7219,"midi":71,"duration":0.6425,"confidence":1,"velocity":0.71,"phrase":2},{"time":12.505,"midi":69,"duration":0.3704,"confidence":1,"velocity":0.71,"phrase":2},{"time":12.9568,"midi":67,"duration":0.3704,"confidence":1,"velocity":0.71,"phrase":2},{"time":13.4085,"midi":69,"duration":0.3704,"confidence":1,"velocity":0.71,"phrase":2},{"time":13.8603,"midi":64,"duration":0.9537,"confidence":1,"velocity":0.71,"phrase":2},{"time":15.1654,"midi":64,"duration":0.3293,"confidence":1,"velocity":0.71,"phrase":2},{"time":15.5669,"midi":67,"duration":0.3293,"confidence":1,"velocity":0.71,"phrase":2},{"time":15.9685,"midi":69,"duration":0.3293,"confidence":1,"velocity":0.71,"phrase":2},{"time":16.37,"midi":71,"duration":0.3293,"confidence":1,"velocity":0.71,"phrase":2},{"time":16.7716,"midi":72,"duration":0.3293,"confidence":1,"velocity":0.71,"phrase":2},{"time":17.1732,"midi":71,"duration":0.5351,"confidence":1,"velocity":0.71,"phrase":2},{"time":17.8257,"midi":72,"duration":0.4116,"confidence":1,"velocity":0.71,"phrase":2},{"time":18.3277,"midi":74,"duration":0.4116,"confidence":1,"velocity":0.71,"phrase":2},{"time":18.8296,"midi":76,"duration":0.9537,"confidence":1,"velocity":0.71,"phrase":2},{"time":20.1833,"midi":69,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":3},{"time":20.6351,"midi":71,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":3},{"time":21.0869,"midi":72,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":3},{"time":21.5386,"midi":71,"duration":0.6425,"confidence":1,"velocity":0.65,"phrase":3},{"time":22.3217,"midi":69,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":3},{"time":22.7734,"midi":67,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":3},{"time":23.2252,"midi":69,"duration":0.3704,"confidence":1,"velocity":0.65,"phrase":3},{"time":23.6769,"midi":64,"duration":0.9537,"confidence":1,"velocity":0.65,"phrase":3},{"time":24.982,"midi":64,"duration":0.3293,"confidence":1,"velocity":0.65,"phrase":3},{"time":25.3836,"midi":67,"duration":0.3293,"confidence":1,"velocity":0.65,"phrase":3},{"time":25.7851,"midi":69,"duration":0.3293,"confidence":1,"velocity":0.65,"phrase":3},{"time":26.1867,"midi":71,"duration":0.3293,"confidence":1,"velocity":0.65,"phrase":3},{"time":26.5883,"midi":72,"duration":0.3293,"confidence":1,"velocity":0.65,"phrase":3},{"time":26.9898,"midi":71,"duration":0.5351,"confidence":1,"velocity":0.65,"phrase":3},{"time":27.6424,"midi":72,"duration":0.4116,"confidence":1,"velocity":0.65,"phrase":3},{"time":28.1443,"midi":74,"duration":0.4116,"confidence":1,"velocity":0.65,"phrase":3},{"time":28.6463,"midi":76,"duration":0.9537,"confidence":1,"velocity":0.65,"phrase":3}],"duration":30,"artist":"Mr. Siro","kind":"30-second-practice-arrangement","timing":"repeated-existing-theme-simplified-rhythm","audio":"locally-synthesized-notes","rights":"Composition belongs to its respective rightsholders. No full recording or full score is bundled.","originalDuration":10.68,"repeats":3,"tempoScale":1.00391,"arrangement":"3 lượt chủ đề từ đoạn demo có sẵn; không phải 30 giây bản thu gốc."},{"id":"tu-lau","title":"Tự Lau Nước Mắt","tag":"Từng nốt, rồi nhẹ lòng","url":"https://saotruc007.blogspot.com/2018/01/cam-am-tu-lau-nuoc-mat-mr-siro.html","publisher":"Sáo trúc 007","section":"Hai câu mở đầu; cao độ từ cảm âm công khai.","notes":[{"time":0.55,"midi":65,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.1693,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.7886,"midi":65,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":2.4079,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":3.0273,"midi":62,"duration":1.1592,"confidence":1,"velocity":0.65,"phrase":1},{"time":4.4409,"midi":65,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":5.0602,"midi":65,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":5.6795,"midi":67,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":6.2988,"midi":65,"duration":1.2696,"confidence":1,"velocity":0.65,"phrase":1},{"time":7.8471,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":8.4664,"midi":62,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":9.0858,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":9.7051,"midi":62,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":10.3244,"midi":60,"duration":1.1592,"confidence":1,"velocity":0.65,"phrase":1},{"time":11.738,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":12.3574,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":12.9767,"midi":65,"duration":0.5076,"confidence":1,"velocity":0.65,"phrase":1},{"time":13.596,"midi":64,"duration":1.279,"confidence":1,"velocity":0.65,"phrase":1},{"time":15.275,"midi":65,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":15.8943,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":16.5136,"midi":65,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":17.1329,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":17.7523,"midi":62,"duration":1.1592,"confidence":1,"velocity":0.71,"phrase":2},{"time":19.1659,"midi":65,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":19.7852,"midi":65,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":20.4045,"midi":67,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":21.0238,"midi":65,"duration":1.2696,"confidence":1,"velocity":0.71,"phrase":2},{"time":22.5721,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":23.1914,"midi":62,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":23.8108,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":24.4301,"midi":62,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":25.0494,"midi":60,"duration":1.1592,"confidence":1,"velocity":0.71,"phrase":2},{"time":26.463,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":27.0824,"midi":64,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":27.7017,"midi":65,"duration":0.5076,"confidence":1,"velocity":0.71,"phrase":2},{"time":28.321,"midi":64,"duration":1.279,"confidence":1,"velocity":0.71,"phrase":2}],"duration":30,"artist":"Mr. Siro","kind":"30-second-practice-arrangement","timing":"repeated-existing-theme-simplified-rhythm","audio":"locally-synthesized-notes","rights":"Composition belongs to its respective rightsholders. No full recording or full score is bundled.","originalDuration":11.94,"repeats":2,"tempoScale":1.34633,"arrangement":"2 lượt chủ đề từ đoạn demo có sẵn; không phải 30 giây bản thu gốc."},{"id":"day-dut","title":"Day Dứt Nỗi Đau","tag":"Một đoạn điệp khúc","url":"https://kalinh.com/tab-kalimba/day-dut-noi-dau-cam-am-kalimba.html","publisher":"KaLinh Tab","section":"Hai câu đầu phần điệp khúc; ký âm số chuyển sang cao độ MIDI.","notes":[{"time":0.55,"midi":60,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.1145,"midi":60,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":1.6791,"midi":60,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":2.2436,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":2.8081,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":3.3727,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":3.9372,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":4.5017,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":5.0663,"midi":65,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":5.6308,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":6.1953,"midi":74,"duration":0.5786,"confidence":1,"velocity":0.65,"phrase":1},{"time":6.901,"midi":72,"duration":1.273,"confidence":1,"velocity":0.65,"phrase":1},{"time":8.4534,"midi":60,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":9.018,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":9.5825,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":10.147,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.65,"phrase":1},{"time":10.7116,"midi":65,"duration":0.5786,"confidence":1,"velocity":0.65,"phrase":1},{"time":11.4172,"midi":65,"duration":0.5786,"confidence":1,"velocity":0.65,"phrase":1},{"time":12.1229,"midi":67,"duration":0.5786,"confidence":1,"velocity":0.65,"phrase":1},{"time":12.8286,"midi":69,"duration":0.5786,"confidence":1,"velocity":0.65,"phrase":1},{"time":13.5342,"midi":69,"duration":1.3408,"confidence":1,"velocity":0.65,"phrase":1},{"time":15.275,"midi":60,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":15.8395,"midi":60,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":16.4041,"midi":60,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":16.9686,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":17.5331,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":18.0977,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":18.6622,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":19.2267,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":19.7913,"midi":65,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":20.3558,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":20.9203,"midi":74,"duration":0.5786,"confidence":1,"velocity":0.71,"phrase":2},{"time":21.626,"midi":72,"duration":1.273,"confidence":1,"velocity":0.71,"phrase":2},{"time":23.1784,"midi":60,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":23.743,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":24.3075,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":24.872,"midi":67,"duration":0.4629,"confidence":1,"velocity":0.71,"phrase":2},{"time":25.4366,"midi":65,"duration":0.5786,"confidence":1,"velocity":0.71,"phrase":2},{"time":26.1422,"midi":65,"duration":0.5786,"confidence":1,"velocity":0.71,"phrase":2},{"time":26.8479,"midi":67,"duration":0.5786,"confidence":1,"velocity":0.71,"phrase":2},{"time":27.5536,"midi":69,"duration":0.5786,"confidence":1,"velocity":0.71,"phrase":2},{"time":28.2592,"midi":69,"duration":1.3408,"confidence":1,"velocity":0.71,"phrase":2}],"duration":30,"artist":"Mr. Siro","kind":"30-second-practice-arrangement","timing":"repeated-existing-theme-simplified-rhythm","audio":"locally-synthesized-notes","rights":"Composition belongs to its respective rightsholders. No full recording or full score is bundled.","originalDuration":11.45,"repeats":2,"tempoScale":1.41133,"arrangement":"2 lượt chủ đề từ đoạn demo có sẵn; không phải 30 giây bản thu gốc."}];
+window.RRSiroCatalog=Object.freeze(songs.map(s=>Object.freeze({...s,notes:Object.freeze(s.notes.map(Object.freeze))})));
+})();
+
+</script>
+<script>
+/* Rue Radio 1.5 — 30-second practice arrangements + local-file transcription.
+ * No Spotify/YouTube embedding and no transfer of the visitor's audio.
+ */
+(function(){
+  'use strict';
+  const $=id=>document.getElementById(id),T=window.RRTranscribe,LEAD=2.5;
+  const clock=t=>`${Math.floor(Math.max(0,t)/60)}:${String(Math.floor(Math.max(0,t)%60)).padStart(2,'0')}`;
+  class RRMusic{
+    constructor(bridge){
+      Object.assign(this,{bridge,mode:'default',ready:false,playing:false,muted:false,volume:55,buffer:null,raw:null,chart:[],source:null,gain:null,cursor:-LEAD,epoch:0,started:false,ended:false,worker:null,generation:0,busy:false,fileName:'',renderMode:'melody',difficulty:'normal',offset:0});
+      $('music-btn').onclick=()=>bridge.open();$('music-close').onclick=()=>bridge.close();
+      $('settings-music-btn').onclick=()=>bridge.fromSettings();
+      $('music-dialog').addEventListener('cancel',e=>{e.preventDefault();bridge.close();});
+      $('music-file').onchange=e=>{const f=e.target.files?.[0];if(f)this.selectFile(f);e.target.value='';};
+      $('music-demo').onclick=()=>this.loadDemo();
+      $('music-cancel').onclick=()=>this.cancelAnalysis();
+      $('music-default').onclick=()=>this.useDefault();
+      $('music-library-btn').onclick=()=>bridge.open();
+      $('music-stop').onclick=()=>this.useDefault();
+      $('music-play').onclick=()=>bridge.start(false);
+      $('music-tour').onclick=()=>bridge.start(true);
+      $('music-difficulty').onchange=e=>{this.difficulty=e.target.value;if(this.raw){this.chart=T.makeChart(this.raw,this.difficulty);this.started=false;bridge.prepare();this.renderResult();this.sync();}};
+      $('music-render-mode').onchange=e=>{this.renderMode=e.target.value;this.setVolume(this.volume);this.sync();};
+      $('music-offset').oninput=e=>{this.offset=Number(e.target.value)/1000;if(this.started){this.started=false;bridge.prepare();}$('music-offset-value').textContent=(this.offset>=0?'+':'')+Math.round(this.offset*1000)+' ms';};
+      $('music-midi').onclick=()=>this.download('mid',T.midiBytes(this.raw.notes),'audio/midi');
+      $('music-json').onclick=()=>this.download('json',JSON.stringify({title:this.fileName,...this.raw,chart:this.chart,difficulty:this.difficulty},null,2),'application/json');
+      this.preset=null;this.renderCatalog();this.sync();
+    }
+    renderCatalog(){
+      const list=$('preset-list');if(!list)return;list.replaceChildren();
+      for(const [i,preset] of (window.RRSiroCatalog||[]).entries()){
+        const row=document.createElement('article');row.className='preset-card';row.dataset.preset=preset.id;
+        const badge=document.createElement('span');badge.className='preset-index';badge.textContent=String(i+1).padStart(2,'0');
+        const copy=document.createElement('div');copy.className='preset-copy';
+        const title=document.createElement('h3');title.textContent=preset.title;
+        const meta=document.createElement('p');meta.textContent=Math.round(preset.duration)+' giây · '+preset.notes.length+' nốt · '+preset.repeats+' lượt chủ đề';
+        copy.append(title,meta);
+        const actions=document.createElement('div');actions.className='preset-actions';
+        const play=document.createElement('button');play.type='button';play.className='preset-play';play.textContent='Chơi →';play.setAttribute('aria-label','Chơi '+preset.title);play.onclick=()=>this.loadPreset(preset.id,'play');
+        const tour=document.createElement('button');tour.type='button';tour.className='preset-listen';tour.textContent='Tự lái ♫';tour.setAttribute('aria-label','Tự lái nghe '+preset.title);tour.onclick=()=>this.loadPreset(preset.id,'auto');
+        actions.append(play,tour);row.append(badge,copy,actions);list.append(row);
+      }
+    }
+    loadPreset(id,action='select'){
+      const preset=(window.RRSiroCatalog||[]).find(s=>s.id===id);if(!preset)return false;
+      this.cancelAnalysis();$('music-file-error').textContent='';
+      try{
+        // Complete asset lives in the app. No fetch, iframe, decoding or Worker.
+        const OAC=window.OfflineAudioContext||window.webkitOfflineAudioContext;
+        const sr=22050,o=new OAC(1,1,sr),buffer=o.createBuffer(1,Math.ceil(preset.duration*sr),sr),pcm=buffer.getChannelData(0);
+        for(const n of preset.notes){
+          const offset=Math.round(n.time*sr),f=440*Math.pow(2,(n.midi-69)/12),length=Math.min(sr*(n.duration+.18),pcm.length-offset);
+          for(let i=0;i<length;i++){
+            const t=i/sr,attack=Math.min(1,t/.008),release=Math.min(1,Math.max(0,(n.duration+.18-t)/.18));
+            pcm[offset+i]+=.23*attack*Math.exp(-t*3.8)*release*(Math.sin(2*Math.PI*f*t)+.24*Math.sin(4*Math.PI*f*t)+.07*Math.sin(6*Math.PI*f*t));
+          }
+        }
+        const waveform=Array.from({length:256},(_,j)=>{let peak=0;const a=Math.floor(j*pcm.length/256),b=Math.floor((j+1)*pcm.length/256);for(let k=a;k<b;k+=8)peak=Math.max(peak,Math.abs(pcm[k]));return Math.min(1,peak*3);});
+        const raw={version:1,algorithm:'repeated-theme-practice-30s-v2',duration:buffer.duration,sampleRate:sr,notes:preset.notes.map(n=>({...n})),waveform,bpm:null,confidence:null,presetId:preset.id,source:preset.url,timing:preset.timing};
+        this.renderMode='melody';this.difficulty='dense';$('music-render-mode').value='melody';$('music-difficulty').value='dense';
+        this.acceptResult(buffer,preset.title+' · 30 giây',raw);
+        if(action==='play'||action==='auto')this.bridge.start(action==='auto');
+        return true;
+      }catch(e){$('music-file-error').textContent='Chưa mở được bản nốt: '+(e.message||'lỗi âm thanh');this.finishAnalysis();return false;}
+    }
+    get custom(){return this.mode==='song'&&this.ready;}
+    get title(){return this.custom?this.fileName:'Radio Papier';}
+    get duration(){return this.buffer?.duration||0;}
+    get lead(){return LEAD;}
+    get clock(){const c=this.bridge.context();if(this.ended&&this.started&&c)return this.duration+Math.min(1,c.currentTime-this.tailEpoch);return this.source&&c?Math.max(-LEAD,Math.min(this.duration,c.currentTime-this.epoch)):this.cursor;}
+    get noteClock(){return this.clock-this.offset;}
+    get snapshot(){return {presetId:this.preset?.id||null,catalogCount:window.RRSiroCatalog?.length||0,mode:this.mode,ready:this.ready,playing:this.playing,muted:this.muted,title:this.title,clock:this.clock,duration:this.duration,notes:this.chart.length,detected:this.raw?.notes.length||0,renderMode:this.renderMode,busy:this.busy,started:this.started,ended:this.ended,algorithm:this.raw?.algorithm,analysisBackend:this.analysisBackend||'none'};}
+    iframeFocused(){return false;}
+    status(text){$('music-status').textContent=text;}
+    sync(){
+      $('music-dock').hidden=!this.custom;
+      $('music-title').textContent=this.title;
+      $('music-source').textContent=this.renderMode==='melody'?'THU NỐT → TIẾNG ĐÀN':(this.preset?'TIẾNG ĐÀN + NỐT ĐỒNG BỘ':'BÀI GỐC + NỐT ĐỒNG BỘ');
+      $('music-live-dot').classList.toggle('on',this.playing&&!this.muted);
+      $('music-btn').setAttribute('aria-label',this.custom?'Bài nhạc và bản nốt: '+this.title:'Đưa bài hát vào đường đua');
+      $('music-play').disabled=!this.custom||this.busy;
+      $('music-tour').disabled=!this.custom||this.busy;
+      $('music-difficulty').disabled=this.busy;
+      document.body.dataset.music=this.custom?'song':'default';
+      this.bridge.changed();
+    }
+    resetSource(){if(this.source){this.cursor=this.clock;const old=this.source;this.source=null;old.onended=null;try{old.stop();}catch{}old.disconnect();}this.playing=false;}
+    startGame(){if(!this.custom)return;this.resetSource();this.cursor=-LEAD;this.started=true;this.ended=false;}
+    pauseForGame(){this.resetSource();this.sync();}
+    resumeFromGame(){
+      if(!this.custom||!this.started||this.ended||this.source||!this.bridge.isPlaying()||document.hidden)return;
+      const c=this.bridge.context();if(!c||c.state==='closed')return;
+      try{
+        if(navigator.audioSession)navigator.audioSession.type='playback';
+        if(!this.gain||this.gain.context!==c){this.gain=c.createGain();this.gain.connect(c.destination);}
+        this.applyVolume();
+        const s=c.createBufferSource();s.buffer=this.buffer;s.connect(this.gain);this.source=s;
+        this.epoch=c.currentTime-this.cursor;this.playing=true;
+        s.onended=()=>{if(s!==this.source)return;this.cursor=this.duration;this.tailEpoch=c.currentTime;this.ended=true;this.playing=false;this.source=null;s.disconnect();this.sync();};
+        s.start(c.currentTime+Math.max(0,-this.cursor),Math.max(0,this.cursor));this.sync();
+      }catch(e){this.resetSource();this.status('Chưa bật được âm thanh. Bấm tạm dừng rồi Tiếp tục để thử lại.');console.warn(e);}
+    }
+    applyVolume(){if(this.gain){const v=this.muted||this.renderMode==='melody'?0:this.volume/100;this.gain.gain.setTargetAtTime(v,this.gain.context.currentTime,.02);}}
+    setVolume(v){this.volume=Math.max(0,Math.min(100,Number(v)||0));this.applyVolume();}
+    setMuted(muted){this.muted=!!muted;this.applyVolume();this.sync();}
+    useDefault(){this.cancelAnalysis();this.resetSource();this.ready=false;this.mode='default';this.started=false;this.buffer=null;this.raw=null;this.preset=null;this.chart=[];$('music-result').hidden=true;this.sync();this.bridge.home();}
+    cancelAnalysis(){++this.generation;if(this.abortAnalysis){this.abortAnalysis();this.abortAnalysis=null;}if(this.worker){this.worker.terminate();this.worker=null;}this.busy=false;$('music-progress').hidden=true;$('music-file').disabled=false;$('music-demo').disabled=false;this.sync();}
+    progress(value,label){$('music-progress').hidden=false;$('analysis-bar').value=Math.max(0,Math.min(1,value));$('analysis-label').textContent=label;$('analysis-percent').textContent=Math.round(value*100)+'%';}
+    async selectFile(file){
+      const error=$('music-file-error');error.textContent='';
+      if(!file.size){error.textContent='File trống. Hãy chọn một file âm thanh khác.';return;}
+      if(file.size>40*1024*1024){error.textContent='Giới hạn 40 MB để tránh quá tải bộ nhớ điện thoại.';return;}
+      if(!/^audio\//.test(file.type)&&!/\.(mp3|m4a|wav|aac|ogg|flac|opus|aif|aiff)$/i.test(file.name)){error.textContent='Chọn file âm thanh MP3, M4A hoặc WAV, không phải link Spotify/YouTube.';return;}
+      this.cancelAnalysis();const token=this.generation;this.busy=true;this.sync();$('music-file').disabled=true;$('music-demo').disabled=true;this.progress(.02,'Đọc file âm thanh…');
+      try{
+        // Preflight metadata before allocating the large decoded PCM buffer.
+        const meta=await this.metadata(file);if(token!==this.generation)return;
+        if(meta>480)throw new Error('Bản này hỗ trợ tối đa 8 phút mỗi bài. Hãy cắt một đoạn ngắn hơn.');
+        this.progress(.08,'Giải mã âm thanh trên thiết bị…');
+        const bytes=await file.arrayBuffer();if(token!==this.generation)return;
+        const OAC=window.OfflineAudioContext||window.webkitOfflineAudioContext;
+        if(!OAC)throw new Error('Trình duyệt chưa hỗ trợ giải mã. Hãy mở bằng Safari hoặc Chrome mới.');
+        const offline=new OAC(1,1,22050);let decoded=await offline.decodeAudioData(bytes);if(token!==this.generation)return;
+        if(decoded.duration<1||decoded.duration>480)throw new Error('Chọn bài dài từ 1 giây đến 8 phút.');
+        const mono=offline.createBuffer(1,decoded.length,decoded.sampleRate),pcm=mono.getChannelData(0);
+        for(let ch=0;ch<decoded.numberOfChannels;ch++){const part=decoded.getChannelData(ch);for(let i=0;i<pcm.length;i++)pcm[i]+=part[i]/decoded.numberOfChannels;}
+        decoded=null;
+        await this.analyze(mono,file.name.replace(/\.[^.]+$/,''),token);
+      }catch(e){if(token!==this.generation)return;error.textContent=e.message||'Không giải mã được file này. Thử MP3 hoặc WAV khác.';this.finishAnalysis();}
+    }
+    metadata(file){return new Promise((resolve,reject)=>{const el=document.createElement('audio'),url=URL.createObjectURL(file);let done=false;const end=(err,value)=>{if(done)return;done=true;clearTimeout(timer);el.removeAttribute('src');el.load();URL.revokeObjectURL(url);err?reject(err):resolve(value);};const timer=setTimeout(()=>end(null,0),5000);el.preload='metadata';el.onloadedmetadata=()=>end(null,Number.isFinite(el.duration)?el.duration:0);el.onerror=()=>end(null,0);el.src=url;});}
+    loadDemo(autostart=false){
+      this.cancelAnalysis();const token=this.generation;this.busy=true;$('music-file-error').textContent='';$('music-file').disabled=true;$('music-demo').disabled=true;this.sync();
+      try{
+        const OAC=window.OfflineAudioContext||window.webkitOfflineAudioContext,o=new OAC(1,1,22050),sr=22050,buffer=o.createBuffer(1,sr*24,sr),x=buffer.getChannelData(0);
+        const pitches=[60,64,67,69,67,64,62,64,65,69,72,71,69,67,64,62,60,62,64,67,64,62,60,55,60,64,67,72,71,67,64,60];
+        pitches.forEach((m,j)=>{const start=Math.floor((.65+j*.69)*sr),f=440*2**((m-69)/12);for(let i=0;i<sr*.53&&start+i<x.length;i++){const t=i/sr,en=Math.min(1,t/.009)*Math.exp(-t*4);x[start+i]+=.37*en*(Math.sin(2*Math.PI*f*t)+.22*Math.sin(4*Math.PI*f*t)+.07*Math.sin(6*Math.PI*f*t));}});
+        const raw={version:1,algorithm:'composed-demo-exact',duration:24,sampleRate:sr,notes:pitches.map((m,j)=>({time:.65+j*.69,midi:m,duration:.53,confidence:1,velocity:.65})),waveform:Array.from({length:256},(_,i)=>.25+.4*Math.abs(Math.sin(i*.8))),bpm:87,confidence:1};
+        this.acceptResult(buffer,'Paper Melody · giai điệu mẫu',raw);
+        if(autostart)this.bridge.start(true);
+      }catch(e){$('music-file-error').textContent=e.message;this.finishAnalysis();}
+    }
+    acceptResult(buffer,title,result){
+      if(result.notes.length<3)throw new Error('Chưa tìm được đủ giai điệu rõ. Thử đoạn có giọng hát hoặc nhạc cụ đơn.');
+      const chart=T.makeChart(result,this.difficulty);
+      if(chart.length<3)throw new Error('Bản nốt quá ít để chơi. Thử file khác.');
+      this.preset=(window.RRSiroCatalog||[]).find(p=>p.id===result.presetId)||null;
+      this.resetSource();this.buffer=buffer;this.raw=result;this.chart=chart;this.fileName=title;
+      this.mode='song';this.ready=true;this.started=false;this.ended=false;this.cursor=-LEAD;
+      this.bridge.prepare();this.renderResult();this.finishAnalysis();this.status('Bản nốt sẵn sàng. Chạm Chơi bản nốt.');
+      $('music-result').scrollIntoView({block:'nearest'});
+    }
+    async analyze(buffer,title,token){
+      this.progress(.12,'Tìm cao độ, điểm bắt đầu và độ dài nốt…');
+      let result;
+      if(typeof Worker==='function'){
+        let url;
+        try{
+          const code='const steps='+T.analyzeSteps.toString()+';self.onmessage=e=>{try{const g=steps(e.data.pcm,e.data.rate);for(;;){const s=g.next();if(s.done){self.postMessage({result:s.value});break;}self.postMessage({progress:s.value});}}catch(e){self.postMessage({error:e.message});}}';
+          url=URL.createObjectURL(new Blob([code],{type:'text/javascript'}));
+          result=await new Promise((resolve,reject)=>{
+            const worker=new Worker(url);this.worker=worker;let timer,done=false;
+            const finish=(err,value)=>{if(done)return;done=true;clearTimeout(timer);worker.terminate();this.worker=null;this.abortAnalysis=null;err?reject(err):resolve(value);};
+            const watchdog=()=>{clearTimeout(timer);timer=setTimeout(()=>finish(new Error('Worker timeout')),20000);};
+            this.abortAnalysis=()=>finish(new Error('Cancelled'));
+            worker.onmessage=e=>{if(token!==this.generation){finish(new Error('Cancelled'));return;}watchdog();if(e.data.error)finish(new Error(e.data.error));else if(e.data.result)finish(null,e.data.result);else this.progress(.12+e.data.progress*.85,'Đang chuyển giai điệu thành nốt…');};
+            worker.onerror=()=>finish(new Error('Worker unavailable'));
+            const copy=buffer.getChannelData(0).slice();watchdog();worker.postMessage({pcm:copy,rate:buffer.sampleRate},[copy.buffer]);
+          });
+          this.analysisBackend='worker';
+        }catch(e){if(token!==this.generation)return;this.analysisBackend='cooperative';}
+        finally{if(url)URL.revokeObjectURL(url);}
+      }
+      if(!result){
+        this.analysisBackend='cooperative';
+        const steps=T.analyzeSteps(buffer.getChannelData(0),buffer.sampleRate);
+        for(;;){if(token!==this.generation)return;const step=steps.next();if(step.done){result=step.value;break;}
+          this.progress(.12+step.value*.85,'Đọc giai điệu trên thiết bị…');await new Promise(r=>setTimeout(r,0));}
+      }
+      if(token!==this.generation)return;
+      this.acceptResult(buffer,title,result);
+    }
+    finishAnalysis(){this.busy=false;$('music-progress').hidden=true;$('music-file').disabled=false;$('music-demo').disabled=false;this.sync();}
+    renderResult(){
+      $('music-result').hidden=false;$('chart-title').textContent=this.fileName;$('chart-count').textContent=this.chart.length;$('chart-duration').textContent=clock(this.duration);$('chart-raw').textContent=this.raw.notes.length+(this.preset?' nốt cảm âm':' nốt nhận diện');
+      const source=$('preset-source');source.hidden=!this.preset;if(this.preset){source.href=this.preset.url;source.textContent='Nguồn cao độ: '+this.preset.publisher+' ↗';}
+      $('music-render-mode').querySelector('[value=song]').textContent=this.preset?'Tiếng đàn tự phát + nốt':'Bài gốc + nốt đồng bộ';
+      $('result-origin').textContent=this.preset?'BẢN LUYỆN TẬP · 30 GIÂY':'LOCAL ANALYSIS';
+      const ps=this.raw.notes.map(n=>n.midi);$('chart-range').textContent=T.noteName(Math.min(...ps))+' – '+T.noteName(Math.max(...ps));
+      const canvas=$('chart-preview'),c=canvas.getContext('2d'),w=canvas.width,h=canvas.height;c.clearRect(0,0,w,h);c.fillStyle='#eee9d9';c.fillRect(0,0,w,h);
+      c.fillStyle='#c5cbb8';this.raw.waveform.forEach((v,i)=>{const bh=v*32;c.fillRect(i*w/256,35-bh/2,w/256-.5,bh);});
+      c.strokeStyle='#d3d7c6';for(let i=0;i<5;i++){const y=64+i*20;c.beginPath();c.moveTo(0,y);c.lineTo(w,y);c.stroke();}
+      c.fillStyle='#446f60';for(const n of this.chart){const x=n.time/this.duration*w,y=64+(2-n.lane)*20;c.fillRect(x,y-3,Math.max(3,n.duration/this.duration*w),6);}
+      $('chart-preview-caption').textContent=this.preset?'Bản chơi 30 giây: lặp chủ đề từ đoạn demo, nhịp giản lược; không phải 30 giây bản thu gốc. Thu nốt nào, đàn phát nốt đó.':'Cao độ thấp ở dưới, cao ở trên. Mỗi dấu là một nốt lấy từ file; đã giảm mật độ để lái được.';
+    }
+    download(ext,data,type){if(!this.raw)return;const url=URL.createObjectURL(new Blob([data],{type})),a=document.createElement('a');a.href=url;a.download=(this.fileName.replace(/[^\p{L}\p{N} _-]/gu,'').slice(0,70)||'rue-radio')+'.'+ext;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+  }
+  window.RRMusic=RRMusic;
+})();
+
+</script>
+<script>
+/* Rue Radio — gameplay, procedural audio, UI and input.
+   Default soundtrack is offline; external players are opt-in through music.js. */
+(function(){
+  'use strict';
+  const E=window.RREngine;
+  const {clamp,lerp,smooth,add,sub,mul,norm,mix,color,rng,local,shifted,yawFrame,identityFrame,Route,ZONES,zoneAt,routeLength,Batch,Renderer}=E;
+  const $=id=>document.getElementById(id);
+  const route=new Route();
+  const save={get(k,d){try{const v=localStorage.getItem('rue-radio:'+k);return v===null?d:JSON.parse(v);}catch{return d;}},set(k,v){try{localStorage.setItem('rue-radio:'+k,JSON.stringify(v));}catch{/* Storage can be blocked in private or file contexts. */}}};
+  const stored=save.get('settings',{});
+  const settings={volume:clamp(Number(stored.volume??55),0,100),quality:['auto','high','low'].includes(stored.quality)?stored.quality:'auto',comfort:stored.comfort??matchMedia('(prefers-reduced-motion: reduce)').matches};
+  const state={mode:'menu',s:47,x:0,vx:0,speed:0,energy:1,time:0,score:0,notes:0,combo:0,maxCombo:0,bumps:0,missed:0,perfect:0,zone:0,auto:false,boost:false,camera:0,invuln:0};
+  const input={left:false,right:false,up:false,down:false,boost:false,target:null};
+  let renderer,lite,world=[],backdrop,carTemplate,notesTemplates,obstacleTemplate;
+  let audio,music,raf=0,last=0,uiTime=0,uiFrame=0,toastUntil=0,bannerUntil=0,hitUntil=0,lastLane=0,camEye=null,camUp=null;
+  let notes=[],obstacles=[],particles=[];
+  let previousMode='menu',musicPreviousMode='menu',visualX=0;
+  let viewport={w:innerWidth,h:innerHeight};
+  const isTouch=()=>matchMedia('(pointer:coarse)').matches||innerWidth<=820;
+  const fmt=n=>Math.floor(n).toLocaleString('vi-VN');
+  const clock=s=>`${Math.floor(s/60).toString().padStart(2,'0')}:${Math.floor(s%60).toString().padStart(2,'0')}`;
+  const noteNames=['Đô','Rê','Mi','Sol','La'];
+  const keys=[...document.querySelectorAll('[data-lane]')];
+
+  class Sound {
+    constructor(){this.ctx=null;this.muted=true;this.paused=false;this.nextBeat=0;this.beat=0;this.lastError='';this.supported=!!(window.AudioContext||window.webkitAudioContext);}
+    configureSession(){
+      // WebKit bug 237322: Web Audio's default ambient session obeys Silent Mode.
+      // Request playback only after the user explicitly starts/unmutes audio.
+      // Feature detection keeps browsers without this experimental API working.
+      try{if(navigator.audioSession)navigator.audioSession.type='playback';}catch{/* Older browsers / restricted webviews. */}
+    }
+    async unlock(){
+      if(!this.supported){syncAudio();return false;}
+      this.muted=false;this.paused=false;this.lastError='';music?.setMuted(false);music?.resumeFromGame();
+      try{
+        this.configureSession();
+        if(!this.ctx||this.ctx.state==='closed'){
+          const AC=window.AudioContext||window.webkitAudioContext;this.ctx=new AC();const c=this.ctx;
+          this.master=c.createGain();this.master.gain.value=settings.volume/100*.44;this.master.connect(c.destination);
+          this.music=c.createGain();this.music.gain.value=.7;this.music.connect(this.master);
+          const delay=c.createDelay(.6);delay.delayTime.value=.28;const feedback=c.createGain();feedback.gain.value=.23;const wet=c.createGain();wet.gain.value=.17;delay.connect(feedback);feedback.connect(delay);delay.connect(wet);wet.connect(this.master);this.delay=delay;
+          // Stereo room tail, deterministically synthesized instead of a sound file.
+          const room=c.createConvolver(),length=Math.floor(c.sampleRate*1.35),buffer=c.createBuffer(2,length,c.sampleRate),rand=rng(2013);
+          for(let ch=0;ch<2;ch++){const data=buffer.getChannelData(ch);for(let i=0;i<length;i++)data[i]=(rand()*2-1)*Math.pow(1-i/length,2.4)*.12;}
+          room.buffer=buffer;const rGain=c.createGain();rGain.gain.value=.24;room.connect(rGain);rGain.connect(this.master);this.room=room;
+          c.onstatechange=()=>{
+            if(c!==this.ctx)return;
+            if(c.state==='running'){
+              if(this.paused||document.hidden){this.silence();return;}
+              this.nextBeat=c.currentTime+.08;
+            }
+            syncAudio();
+          };
+        }
+        const c=this.ctx;
+        // Both resume() and the short zero-valued buffer start synchronously
+        // in the click/touch handler, before the first await. No autoplay on load.
+        const resumed=c.state==='running'?Promise.resolve():c.resume();
+        const prime=c.createBufferSource();prime.buffer=c.createBuffer(1,1,c.sampleRate);
+        prime.connect(c.destination);prime.onended=()=>prime.disconnect();prime.start(0);
+        this.updateVolume();syncAudio();
+        await resumed;
+        if(c!==this.ctx)return false;
+        // A late resume promise must not undo pause, backgrounding or mute.
+        if(this.paused||document.hidden){this.silence();return false;}
+        this.nextBeat=c.currentTime+.08;music?.resumeFromGame();this.updateVolume();syncAudio();
+        return c.state==='running'&&!this.muted;
+      }catch(err){
+        this.lastError=err.name||'AudioError';console.warn('Audio unavailable:',err);
+        // Keep user intent so the next real tap can retry a blocked resume.
+        syncAudio();return false;
+      }
+    }
+    updateVolume(){if(this.ctx){const value=this.muted||music?.custom&&music.renderMode!=='melody'?0:settings.volume/100*(music?.custom&&music.renderMode==='melody'?.9:.44);this.master.gain.setTargetAtTime(value,this.ctx.currentTime,.08);}}
+    toggle(forceMute=false){if(music?.custom){this.muted=!music.muted;music.setMuted(this.muted);this.updateVolume();syncAudio();return Promise.resolve(!this.muted);}if(!this.ctx||this.muted||(!forceMute&&this.ctx.state!=='running')){return this.unlock();}this.muted=true;this.updateVolume();syncAudio();return Promise.resolve(false);}
+    tone(midi,t,duration=.65,vol=.26,type='sine',pan=0){
+      if(!this.ctx||this.muted||this.paused||document.hidden||this.ctx.state!=='running')return;
+      const c=this.ctx,o=c.createOscillator(),g=c.createGain(),p=c.createStereoPanner?c.createStereoPanner():null;
+      o.type=type;o.frequency.value=440*Math.pow(2,(midi-69)/12);
+      g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(Math.max(.001,vol),t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+duration);
+      o.connect(g);if(p){p.pan.value=pan;g.connect(p);p.connect(this.music);}else g.connect(this.music);
+      g.connect(this.delay);g.connect(this.room);o.start(t);o.stop(t+duration+.04);
+      o.onended=()=>{o.disconnect();g.disconnect();if(p)p.disconnect();};
+    }
+    note(lane,zone,perfect,chartNote){if(!this.ctx||this.muted)return;if(chartNote&&music?.custom){if(music.renderMode==='melody'){this.tone(chartNote.midi,this.ctx.currentTime,Math.min(1.2,Math.max(.12,chartNote.duration)),.45*(chartNote.velocity||.65),'triangle',lane*.16);}return;}const roots=[60,62,57,60],scales=[0,2,4,7,9],m=roots[zone]+scales[lane+2],t=this.ctx.currentTime;
+      this.tone(m+12,t,.9,perfect?.30:.22,'sine',lane*.22);this.tone(m+24,t,.24,.065,'triangle',lane*.2);
+    }
+    bump(){if(this.ctx&&!this.muted)this.tone(43,this.ctx.currentTime,.24,.13,'triangle');}
+    tick(){
+      if(music?.custom||!this.ctx||this.muted||this.paused||document.hidden||this.ctx.state!=='running'||state.mode!=='play')return;
+      const c=this.ctx,interval=60/ZONES[state.zone].bpm/2;
+      if(this.nextBeat<c.currentTime-.3)this.nextBeat=c.currentTime+.06;
+      while(this.nextBeat<c.currentTime+.12){
+        const t=this.nextBeat,b=this.beat++,root=[48,50,45,48][state.zone],chord=[[0,4,7,11],[0,5,7,9],[0,3,7,10],[0,4,7,9]][state.zone];
+        if(b%8===0){for(let i=0;i<4;i++)this.tone(root+12+chord[i],t+i*.013,2.7,.043,'sine',(i-1.5)*.25);}
+        if(b%4===0)this.tone(root-12+(b%16===12?7:0),t,.65,.16,'sine');
+        if(b%2===1)this.tone(root+24+chord[Math.floor(b/2)%4],t,.34,.022,'triangle',.2);
+        // Soft tick rather than an aggressive arcade soundtrack.
+        if(b%2===0)this.tone(87,t,.028,.015,'triangle',-.15);
+        this.nextBeat+=interval;
+      }
+    }
+    silence(){
+      this.paused=true;music?.pauseForGame();
+      if(this.ctx&&this.ctx.state!=='closed'&&this.ctx.state!=='suspended')this.ctx.suspend().then(()=>syncAudio()).catch(()=>syncAudio());
+      syncAudio();
+    }
+    resume(){if(music?.custom){this.paused=false;const c=this.ctx;if(!c)return this.unlock();music.resumeFromGame();return c.resume().then(()=>{syncAudio();return true;}).catch(()=>false);}music?.resumeFromGame();return this.ctx&&!this.muted?this.unlock():Promise.resolve(false);}
+  }
+  function syncAudio(){
+    const enabled=!!audio&&!audio.muted,context=audio?.ctx?.state||'not-started';
+    const running=music?.custom?music.playing&&!music.muted:enabled&&!audio.paused&&context==='running';
+    const blocked=!music?.custom&&enabled&&!audio.paused&&context!=='running';
+    const label=blocked?'Chạm để thử bật lại âm thanh':running?'Tắt âm thanh':'Bật âm thanh';
+    $('mute-slash').style.display=running?'none':'';
+    $('sound-btn').setAttribute('aria-label',label);$('sound-btn').title=label;
+    $('equalizer').classList.toggle('off',!running||settings.volume===0);
+    if($('audio-status'))$('audio-status').textContent=!audio?.supported?'Trình duyệt không hỗ trợ Web Audio.':
+      settings.volume===0?'Âm lượng đang ở 0%. Kéo thanh âm lượng lên rồi bấm Thử tiếng.':
+      blocked?'Bộ phát đang '+context+'. Bấm Thử tiếng để mở lại'+(audio.lastError?' ('+audio.lastError+')':'')+'.':
+      'Bộ phát: '+context+' · '+settings.volume+'%. Nếu chưa nghe, kiểm tra Silent Mode, âm lượng máy và loa/Bluetooth.';
+  }
+  function makeCollectibles(){
+    if(music?.custom){
+      const total=music.duration+music.lead+Math.max(0,music.offset)+.2;
+      notes=music.chart.map((n,i)=>{const s=(n.time+music.lead+music.offset)/total*routeLength;return {...n,s,zone:zoneAt(s),passed:false,collected:false,phase:i*.618};});
+      obstacles=[];return;
+    }
+    const random=rng(92526),pattern=[0,0,1,2,1,0,-1,-2,-1,0,1,0,-1,-2,-1,0];notes=[];obstacles=[];
+    for(let i=0,s=34;s<routeLength-14;i++,s+=7.2){
+      let lane=pattern[i%pattern.length];if(zoneAt(s)===2)lane=-lane;
+      notes.push({s,lane,zone:zoneAt(s),passed:false,collected:false,phase:random()*Math.PI*2});
+    }
+    for(let s=95;s<routeLength-30;s+=91){const near=notes.reduce((a,b)=>Math.abs(a.s-s)<Math.abs(b.s-s)?a:b);let lane=near.lane>0?-2:2;obstacles.push({s,lane,hit:false});}
+  }
+  function releaseInput(){for(const k of ['left','right','up','down','boost'])input[k]=false;input.target=null;document.querySelectorAll('.pressed').forEach(b=>b.classList.remove('pressed'));}
+  function setVisible(){
+    $('audio-gate').hidden=!(state.mode==='play'&&music?.custom&&audio?.ctx?.state!=='running');
+    $('intro').classList.toggle('hidden',state.mode!=='menu');$('hud').classList.toggle('hidden',state.mode==='menu');$('pause-btn').classList.toggle('hidden',state.mode==='menu'||state.mode==='finished');
+    $('song-countdown').hidden=!(music?.custom&&state.mode==='play'&&music.clock<0);$('touch-controls').classList.toggle('hidden',state.mode!=='play'||!isTouch()||state.auto);$('takeover-btn').classList.toggle('hidden',!state.auto||state.mode==='menu');document.body.dataset.mode=state.mode;
+  }
+  function begin(auto=false){
+    closeAll();Object.assign(state,{mode:'play',s:0,x:0,vx:0,speed:13,energy:1,time:0,score:0,notes:0,combo:0,maxCombo:0,bumps:0,missed:0,perfect:0,zone:0,auto,boost:false,invuln:0});
+    if(music?.custom&&auto){music.renderMode='song';$('music-render-mode').value='song';music.setVolume(settings.volume);music.sync();}
+    music?.startGame();state.songTime=-music.lead;particles=[];visualX=0;camEye=null;camUp=null;makeCollectibles();releaseInput();bannerUntil=0;toastUntil=0;setVisible();audio.unlock();showZone(0);updateHUD();$('world').focus({preventScroll:true});
+  }
+  function toMenu(){
+    closeAll();state.mode='menu';state.s=47;state.x=0;state.speed=0;state.auto=false;state.zone=0;particles=[];releaseInput();const mode=music?.mode;if(music)music.mode='default';makeCollectibles();if(music)music.mode=mode;camEye=null;camUp=null;setVisible();audio.silence();$('intro-upload').focus({preventScroll:true});
+  }
+  function pause(){if(state.mode!=='play')return;state.mode='paused';releaseInput();setVisible();audio.silence();$('pause-dialog').showModal();}
+  function resume(){if(state.mode!=='paused')return;$('pause-dialog').close();state.mode='play';last=performance.now();releaseInput();setVisible();audio.resume();}
+  function closeAll(){document.querySelectorAll('dialog[open]').forEach(d=>d.close());}
+  function openSettings(){
+    music?.pauseForGame();previousMode=state.mode;if(state.mode==='play'){state.mode='settings';releaseInput();audio.silence();}setVisible();$('settings-dialog').showModal();
+  }
+  function openMusic(){music?.pauseForGame();musicPreviousMode=state.mode;if(state.mode==='play'){state.mode='music';releaseInput();audio.silence();}setVisible();$('music-dialog').showModal();}
+  function closeMusic(){if(!$('music-dialog').open)return;$('music-dialog').close();if(state.mode==='music'){state.mode=musicPreviousMode;audio.resume();last=performance.now();}else if(music)music.resumeFromGame();setVisible();}
+  function closeSettings(){
+    $('settings-dialog').close();if(state.mode==='settings'){state.mode=previousMode;audio.resume();last=performance.now();}else music?.resumeFromGame();setVisible();
+  }
+  function finish(){
+    if(state.mode!=='play')return;
+    state.mode='finished';releaseInput();setVisible();audio.silence();
+    $('final-score').textContent=fmt(state.score);$('final-notes').textContent=`${state.notes} / ${notes.length}`;$('final-combo').textContent=state.maxCombo;$('final-time').textContent=clock(state.time);
+    const ratio=state.notes/Math.max(1,notes.length);
+    $('finish-message').textContent=state.auto?'Chuyến tham quan hoàn tất. Lần tới, thử tự cầm vô-lăng nhé.':ratio>.8?'Tuyệt vời. Anh đã biến con phố thành một bản hòa âm.':ratio>.5?'Một giai điệu đẹp, cùng vài khúc cua đáng nhớ.':'Vẫn còn nhiều nốt nhạc chờ anh ở chuyến sau.';
+    const bestKey=music?.custom?'song-best:'+music.title+':'+music.difficulty+':'+notes.length:'best';const best=Number(save.get(bestKey,0))||0;
+    if(state.auto){$('best-score').textContent='Chế độ tham quan · không lưu kỷ lục.';}
+    else if(state.score>best){save.set(bestKey,state.score);$('best-score').textContent=`Kỷ lục mới trên thiết bị này: ${fmt(state.score)} điểm ✳`;}
+    else $('best-score').textContent=`Kỷ lục trên thiết bị này: ${fmt(best)} điểm`;
+    $('finish-dialog').showModal();
+  }
+  function toast(text){$('event-toast').textContent=text;toastUntil=uiTime+1.1;$('event-toast').classList.add('show');}
+  function showZone(z){if(music?.custom){$('zone-banner').classList.remove('show');return;}const desc=['Theo nốt nhạc. Để đường dẫn lối.','Trọng lực chỉ là một gợi ý.','Bầu trời bây giờ ở dưới bánh xe.','Mỗi làn đường là một phím đàn.'];$('zone-kicker').textContent=`CHƯƠNG 0${z+1} / 04`;$('zone-title').textContent=ZONES[z].name;$('zone-description').textContent=desc[z];$('zone-banner').classList.add('show');bannerUntil=uiTime+3.4;}
+  function burst(s,lane,c,amount=12){const fr=route.at(s),random=rng(Math.floor(s*100)+state.score);for(let i=0;i<amount;i++){particles.push({p:local(fr,lane*2.1,1.1,0),v:add(add(mul(fr.r,(random()-.5)*4),mul(fr.u,1+random()*2.2)),mul(fr.f,(random()-.5)*4)),life:.65+random()*.5,total:1.2,c});}if(particles.length>110)particles.splice(0,particles.length-110);}
+  function collect(n,x){
+    n.passed=true;n.collected=true;state.notes++;state.combo++;state.maxCombo=Math.max(state.maxCombo,state.combo);const mult=Math.min(5,1+Math.floor(state.combo/8)),perfect=Math.abs(n.lane*2.1-x)<.38;state.score+=(perfect?30:20)*mult;state.perfect+=perfect?1:0;state.energy=clamp(state.energy+.024,0,1);audio.note(n.lane,n.zone,perfect,n.midi===undefined?undefined:n);if(n.midi!==undefined)$('song-note-now').textContent=window.RRTranscribe.noteName(n.midi);lastLane=n.lane;hitUntil=uiTime+.28;burst(n.s,n.lane,color(['#cead5e','#af8a4e','#739c99','#c99578'][n.zone]),8);
+    if(state.combo%8===0)toast(`${state.combo} nốt liền nhau · ×${mult}`);
+    else if(perfect&&state.combo%3===0)toast(`${n.midi!==undefined?window.RRTranscribe.noteName(n.midi):noteNames[n.lane+2]} — đúng nhịp!`);
+  }
+  function updateSong(dt){
+    const prevT=state.songTime,t=music.noteClock;let prevX=state.x;
+    state.songTime=t;state.time=clamp(music.clock,0,music.duration);state.boost=false;
+    if(state.auto){const next=notes.find(n=>!n.passed&&n.time>=t-.02)||notes.find(n=>!n.passed);if(next){input.target=next.lane*2.1;state.x=input.target;prevX=state.x;state.vx=0;}}
+    let steer=(input.right?1:0)-(input.left?1:0);
+    if(steer!==0)input.target=null;
+    if(input.target!==null){state.x=input.target;state.vx=0;steer=0;}
+    state.vx=lerp(state.vx,steer*8.5,1-Math.exp(-12*dt));state.x=clamp(state.x+state.vx*dt,-5.35,5.35);
+    const total=music.duration+music.lead+Math.max(0,music.offset)+.2;
+    state.speed=routeLength/total;state.s=clamp((music.clock+music.lead)/total,0,1)*routeLength;
+    const z=zoneAt(state.s);if(z!==state.zone){state.zone=z;showZone(z);}
+    for(const n of notes){
+      if(n.passed)continue;if(n.time>t+.001)break;
+      // Autopilot catches every elapsed note even if the GPU drops frames.
+      if(state.auto){collect(n,n.lane*2.1);continue;}
+      if(t-n.time<=.20||n.time>=prevT){const f=clamp((n.time-prevT)/Math.max(.001,t-prevT),0,1),x=lerp(prevX,state.x,f);if(Math.abs(n.lane*2.1-x)<.91){collect(n,x);continue;}}
+      if(t-n.time>.20){n.passed=true;state.missed++;state.combo=0;}
+    }
+    for(const p of particles){p.life-=dt;p.p=add(p.p,mul(p.v,dt));}particles=particles.filter(p=>p.life>0);
+    if(music.ended&&music.clock>=music.duration+Math.max(0,music.offset)+.16)finish();
+  }
+  function update(dt){
+    if(state.mode!=='play')return;
+    if(music?.custom){updateSong(dt);return;}
+
+    state.time+=dt;state.invuln=Math.max(0,state.invuln-dt);
+    const prevS=state.s,prevX=state.x;
+    if(state.auto){
+      const n=notes.find(n=>!n.passed&&n.s>state.s+2);
+      if(n)input.target=n.lane*2.1;
+    }
+    let steer=(input.right?1:0)-(input.left?1:0);
+    if(steer!==0)input.target=null;
+    if(input.target!==null)steer=clamp((input.target-state.x)*2.8,-1,1);
+    const desiredV=steer*8.5;
+    state.vx=lerp(state.vx,desiredV,1-Math.exp(-12*dt));state.x=clamp(state.x+state.vx*dt,-5.35,5.35);
+    if((state.x<=-5.35&&state.vx<0)||(state.x>=5.35&&state.vx>0))state.vx=0;
+    state.boost=input.boost&&state.energy>.025&&!state.auto;
+    const target=state.boost?34:input.down?5.5:input.up?25:state.auto?18:16;
+    state.speed=lerp(state.speed,target,1-Math.exp(-(input.down?4:1.5)*dt));state.energy=clamp(state.energy+(state.boost?-.17:.055)*dt,0,1);
+    state.s=Math.min(routeLength,state.s+state.speed*dt);
+    const z=zoneAt(state.s);if(z!==state.zone){state.zone=z;showZone(z);}
+    for(const n of notes){
+      if(n.passed)continue;
+      if(n.s>state.s+1.35)break;
+      if(n.s>=prevS-1.35){
+        const t=clamp((n.s-prevS)/Math.max(.001,state.s-prevS),0,1),x=lerp(prevX,state.x,t);
+        if(Math.abs(n.lane*2.1-x)<.91){collect(n,x);continue;}
+      }
+      if(n.s<state.s-1.35){n.passed=true;state.combo=0;state.missed++;}
+    }
+    for(const o of obstacles){
+      if(o.hit||o.s<prevS-1.35||o.s>state.s+1.35)continue;
+      if(Math.abs(o.lane*2.1-state.x)<.96){
+        o.hit=true;if(state.invuln<=0){state.invuln=1.4;state.bumps++;state.combo=0;state.speed*=.52;state.energy=Math.max(0,state.energy-.16);audio.bump();burst(o.s,o.lane,color('#697b6b'),12);toast('Một vệt mực. Đi tiếp nào!');}
+      }
+    }
+    for(const p of particles){p.life-=dt;p.p=add(p.p,mul(p.v,dt));}particles=particles.filter(p=>p.life>0);
+    if(state.s>=routeLength)finish();
+  }
+  function updateHUD(){
+    const song=music?.custom;
+    $('audio-gate').hidden=!(song&&state.mode==='play'&&audio?.ctx?.state!=='running');
+    $('song-countdown').hidden=!(song&&state.mode==='play'&&music.clock<0);
+    if(song){
+      $('countdown-number').textContent=String(Math.max(1,Math.ceil(-music.clock)));
+      $('song-fill').style.width=clamp(music.clock/music.duration*100,0,100)+'%';
+      $('music-status').textContent=clock(Math.max(0,music.clock))+' / '+clock(music.duration)+' · '+state.notes+' / '+notes.length+' nốt';
+    }
+    const labels=song?['Thấp','Trầm','Vừa','Cao','Bổng']:noteNames;
+    if(document.body.dataset.noteLabels!==(song?'song':'default')){
+      document.body.dataset.noteLabels=song?'song':'default';
+      keys.forEach((key,i)=>{key.innerHTML='<small>'+(i+1)+'</small>'+labels[i];key.setAttribute('aria-label','Làn '+(i+1)+', '+labels[i]);});
+      document.querySelector('.melody>span').textContent=song?'THẤP ← CAO ĐỘ TỪ BÀI HÁT → CAO':'THU NỐT NHẠC TRÊN ĐƯỜNG';
+    }
+    $('score').textContent=fmt(state.score);$('notes-count').textContent=state.notes;$('combo').textContent='×'+Math.min(5,1+Math.floor(state.combo/8));$('speed').textContent=Math.round(state.speed*3.6).toString().padStart(2,'0');$('drive-status').textContent=song?'MUSIC SYNC':state.boost?'ENCORE!':input.down?'DOUCEMENT':state.auto?'AUTOPILOT':'CRUISING';
+    $('boost-fill').style.width=`${state.energy*100}%`;$('boost-percent').textContent=Math.round(state.energy*100)+'%';$('progress-fill').style.width=`${state.s/routeLength*100}%`;$('distance').textContent=song?'TỐC ĐỘ KHÓA THEO NHẠC':`${fmt(state.s)} / 1.450 m`;$('elapsed').textContent=clock(state.time);
+    $('chapter-label').textContent=`0${state.zone+1} / 04 — ${ZONES[state.zone].name.toLocaleUpperCase('vi')}`;$('chapter-sub').textContent=ZONES[state.zone].sub;$('radio-station').textContent=music?.custom?music.title:ZONES[state.zone].bpm+'.0 FM';
+    const lane=clamp(Math.round(state.x/2.1),-2,2);keys.forEach(k=>{k.classList.toggle('active',Number(k.dataset.lane)===lane);k.classList.toggle('hit',uiTime<hitUntil&&Number(k.dataset.lane)===lastLane);});
+    if(uiTime>toastUntil)$('event-toast').classList.remove('show');if(uiTime>bannerUntil)$('zone-banner').classList.remove('show');
+  }
+  function resize(){
+    viewport={w:innerWidth,h:innerHeight};let dpr=settings.quality==='low'?1:settings.quality==='high'?Math.min(devicePixelRatio||1,2):Math.min(devicePixelRatio||1,isTouch()?1.25:1.6);if(renderer)renderer.resize(viewport.w,viewport.h,dpr);if(lite)lite.resize(viewport.w,viewport.h,dpr);setVisible();
+  }
+  function render(dt){
+    const useLite=!renderer;
+    $('note-world').hidden=!useLite;$('world').hidden=useLite;
+    if(document.body.dataset.renderer!==(useLite?'canvas2d':'webgl')){document.body.dataset.renderer=useLite?'canvas2d':'webgl';document.querySelector('.offline-mark').innerHTML='<i></i> '+(useLite?'CHẾ ĐỘ NHẸ · 2D':'3D · OFFLINE');$('graphics-notice').hidden=!useLite;}
+    if(useLite){lite?.paint(state,notes,obstacles,music,uiTime,dt);return;}
+    visualX=lerp(visualX,state.x,1-Math.exp(-18*Math.max(.001,dt)));
+    const fr=route.at(state.s),look=route.at(state.s+17);
+    const menu=state.mode==='menu',portrait=viewport.w/viewport.h<.8;
+    const cameraSide=state.camera===1?7.6:0,camHeight=state.camera===1?9.5:portrait?8.5:6.7;
+    let eye,target,up=fr.u;
+    if(menu){eye=local(fr,4.3+Math.sin(uiTime*.11)*.9,7.1,-14);target=local(fr,portrait?-5.2:-8,1.8,14);}
+    else{
+      eye=local(fr,visualX*.65+cameraSide,camHeight+(settings.comfort?0:Math.sin(state.s*.95)*.045),state.camera===1?-18:portrait?-17:-13.5);
+      // Keep the car framed at a fold; looking fully along the bent road
+      // would pitch the camera up and push the car below the viewport.
+      target=mix(local(fr,visualX*.3,1.15,17),local(look,visualX*.3,1.15,0),.18);
+      if(!settings.comfort)up=norm(add(fr.u,mul(fr.r,-state.vx*.003)));
+    }
+    if(music?.custom||!camEye||!camUp||dt>.2){camEye=eye;camUp=up;}else{const f=1-Math.exp(-(settings.comfort?9:6)*Math.max(dt,.001));camEye=mix(camEye,eye,f);camUp=norm(mix(camUp,up,f));}
+    const fog=state.zone===1?[.946,.913,.797]:state.zone===2?[.907,.925,.875]:[.949,.931,.871];
+    renderer.begin(camEye,target,camUp,menu?57:portrait?59:54+(state.boost?3:0),fog,settings.quality==='low'?.4:1);
+    const visible=world.filter(c=>{const distance=Math.hypot(...sub(c.center,camEye));return distance<238;});
+    renderer.drawPart(backdrop.vertices);
+    for(const c of visible)renderer.drawPart(c.mesh.vertices);
+    const dynamic=new Batch();
+    // Baked contact shadow: deterministic, inexpensive, and valid on every surface.
+    dynamic.disc(fr,visualX,.044,0,1.18,1.72,color('#8b927b',.44));
+    const carFr=yawFrame(shifted(fr,visualX,settings.comfort?0:Math.sin(state.s*1.7)*.023,0),-state.vx*.009);
+    dynamic.transformed(carTemplate,carFr);
+    const t=state.mode==='play'?state.time:uiTime;
+    for(const n of notes){if(n.collected||n.s<state.s-6||n.s>state.s+146)continue;
+      const nf=route.at(n.s),lift=1.1+Math.sin(t*2+n.phase)*.12;
+      dynamic.disc(nf,n.lane*2.1,.052,0,.47,.61,color('#bcad78',.5));
+      const facing=yawFrame(shifted(nf,n.lane*2.1,lift,0),Math.sin(t*.8+n.phase)*.16);
+      dynamic.transformed(notesTemplates[n.zone],facing);
+    }
+    for(const o of obstacles){if(o.hit||o.s<state.s-9||o.s>state.s+146)continue;const of=route.at(o.s);dynamic.disc(of,o.lane*2.1,.055,0,1,.82,'#899a87');dynamic.transformed(obstacleTemplate,shifted(of,o.lane*2.1,0,0));}
+    for(const p of particles)dynamic.sphere({...identityFrame,p:p.p},0,0,0,.055+p.life*.03,.055+p.life*.03,.055+p.life*.03,[...p.c.slice(0,3),Math.min(.9,p.life*1.4)],5,3);
+    // A small flock of paper birds drifts over the next bend.
+    for(let i=0;i<5;i++){const bf=shifted(route.at(state.s+64+i*7),Math.sin(t*.17+i)*8,12+i*.9,0),flap=Math.sin(t*4+i)*.35;
+      dynamic.polygon(bf,[[0,0,0],[-.75,flap,-.24],[-.32,.03,.28]],'#fbf4df',[0,1,0],true);dynamic.polygon(bf,[[0,0,0],[.75,flap,-.24],[.32,.03,.28]],'#fbf4df',[0,1,0],true);
+    }
+    renderer.update(renderer.dynamic,dynamic);renderer.drawPart(renderer.dynamic.vertices);
+    renderer.drawPart(backdrop.edges,true);for(const c of visible)renderer.drawPart(c.mesh.edges,true);renderer.drawPart(renderer.dynamic.edges,true);
+  }
+  function frame(now){
+    const elapsed=Math.min(.06,Math.max(0,(now-last)/1000));last=now;uiTime+=elapsed;
+    // Fixed small substeps make collection/collision reliable on slow displays.
+    if(music?.custom)update(elapsed);else{let remain=elapsed;while(remain>.00001){const dt=Math.min(remain,1/60);update(dt);remain-=dt;}}
+    render(elapsed);audio.tick();if(uiFrame++%3===0)updateHUD();raf=requestAnimationFrame(frame);
+  }
+  function bindHold(id,key){const el=$(id);el.addEventListener('pointerdown',ev=>{ev.preventDefault();if(state.mode!=='play')return;input[key]=true;input.target=null;el.classList.add('pressed');try{el.setPointerCapture(ev.pointerId);}catch{}});const up=()=>{input[key]=false;el.classList.remove('pressed');};['pointerup','pointercancel','lostpointercapture'].forEach(n=>el.addEventListener(n,up));}
+  const codeKeys={KeyA:'left',ArrowLeft:'left',KeyD:'right',ArrowRight:'right',KeyW:'up',ArrowUp:'up',KeyS:'down',ArrowDown:'down',ShiftLeft:'boost',ShiftRight:'boost'};
+  function bindUI(){
+    $('start-btn').onclick=()=>music.loadPreset('lang-nghe','play');$('tour-btn').onclick=()=>{music.useDefault();begin(false);};$('brand').onclick=()=>{if(state.mode==='play')pause();else if(state.mode==='menu')return;else toMenu();};$('sound-btn').onclick=()=>audio.toggle();$('settings-btn').onclick=openSettings;$('close-settings').onclick=closeSettings;$('pause-btn').onclick=pause;$('resume-btn').onclick=resume;$('restart-btn').onclick=()=>begin(state.auto);$('home-btn').onclick=toMenu;$('again-btn').onclick=()=>begin(false);$('finish-home').onclick=toMenu;
+    $('camera-btn').onclick=()=>{state.camera=1-state.camera;camEye=null;};$('takeover-btn').onclick=()=>{state.auto=false;releaseInput();setVisible();toast('Đến lượt anh! A / D để lái.');};
+    const pickLane=(lane)=>{if(state.mode!=='play'||state.auto)return;input.target=lane*2.1;if(music?.custom){state.x=input.target;state.vx=0;}audioRecover();};
+    keys.forEach(k=>{k.onpointerdown=e=>{e.preventDefault();pickLane(Number(k.dataset.lane));};k.onclick=()=>pickLane(Number(k.dataset.lane));});
+    $('note-world').onpointerdown=e=>{if(!music?.custom)return;const lane=Math.max(-2,Math.min(2,Math.floor(e.clientX/innerWidth*5)-2));pickLane(lane);};
+    $('quick-demo').onclick=()=>music.loadPreset('lang-nghe','auto');
+    $('audio-gate').onclick=()=>{audio.unlock().then(()=>setVisible());};
+    function audioRecover(){if(audio.ctx?.state!=='running'&&!audio.muted)audio.resume();}
+
+    $('volume').value=settings.volume;$('quality').value=settings.quality;$('comfort').checked=settings.comfort;
+    $('volume').oninput=ev=>{settings.volume=Number(ev.target.value);audio.updateVolume();music?.setVolume(settings.volume);syncAudio();save.set('settings',settings);};
+    $('audio-test-btn').onclick=()=>{
+      const previousRender=music?.renderMode;if(music?.custom){music.renderMode='melody';}
+      audio.unlock().then(ok=>{
+        if(!ok)return;
+        const c=audio.ctx,t=c.currentTime;
+        [72,76,79].forEach((m,i)=>audio.tone(m,t+i*.16,.35,.24));
+        setTimeout(()=>{if(music?.custom)music.renderMode=previousRender;if(audio.ctx===c&&state.mode!=='play')audio.silence();audio.updateVolume();},1100);
+      });
+    };
+    // Retry only after trusted interaction, while playing, and only when the
+    // user has audio enabled. Never turn a deliberately muted game back on.
+    const recoverAudio=ev=>{
+      if(ev.isTrusted&&!ev.repeat&&ev.code!=='KeyM'&&!document.hidden&&state.mode==='play'&&
+        audio.ctx&&!audio.muted&&!audio.paused&&audio.ctx.state!=='running'&&
+        !ev.target.closest?.('#sound-btn'))audio.resume();
+    };
+    ['pointerup','touchend','keydown'].forEach(type=>document.addEventListener(type,recoverAudio,{capture:true,passive:true}));
+    $('quality').onchange=ev=>{settings.quality=ev.target.value;save.set('settings',settings);resize();};$('comfort').onchange=ev=>{settings.comfort=ev.target.checked;save.set('settings',settings);};
+    $('pause-dialog').addEventListener('cancel',ev=>{ev.preventDefault();resume();});$('settings-dialog').addEventListener('cancel',ev=>{ev.preventDefault();closeSettings();});$('finish-dialog').addEventListener('cancel',ev=>{ev.preventDefault();toMenu();});
+    bindHold('left-btn','left');bindHold('right-btn','right');bindHold('touch-boost','boost');
+    document.addEventListener('keydown',ev=>{
+      if(ev.target.matches('input,select'))return;
+      if(ev.code==='KeyM'&&!ev.repeat){audio.toggle(true);return;}
+      if(document.querySelector('dialog[open]'))return;
+      if(state.mode==='menu'&&ev.code==='Enter'&&!ev.target.closest('button')){begin(false);return;}
+      if(state.mode!=='play')return;
+      if(codeKeys[ev.code]){ev.preventDefault();input[codeKeys[ev.code]]=true;if(ev.code==='KeyA'||ev.code==='KeyD'||ev.code==='ArrowLeft'||ev.code==='ArrowRight')input.target=null;}
+      if(ev.code==='Escape'||ev.code==='KeyP'){ev.preventDefault();pause();}
+      if(ev.code==='KeyC'&&!ev.repeat){state.camera=1-state.camera;camEye=null;}
+      if(/^Digit[1-5]$/.test(ev.code)){ev.preventDefault();pickLane(Number(ev.code.slice(-1))-3);}
+    });
+    document.addEventListener('keyup',ev=>{if(codeKeys[ev.code])input[codeKeys[ev.code]]=false;});
+    window.addEventListener('blur',()=>{releaseInput();setTimeout(()=>{if(state.mode==='play'&&!music?.iframeFocused())pause();},0);});
+    document.addEventListener('visibilitychange',()=>{if(document.hidden){releaseInput();if(state.mode==='play')pause();audio.silence();}else last=performance.now();});
+    window.addEventListener('pageshow',()=>{last=performance.now();if(!document.hidden&&state.mode==='play')audio.resume();});
+    window.addEventListener('resize',resize);
+    $('world').addEventListener('webglcontextlost',ev=>{ev.preventDefault();if(state.mode==='play')pause();renderer=null;document.documentElement.dataset.graphicsFallback='true';$('graphics-notice').hidden=false;toast('Đồ họa 3D tạm ngắt · đang dùng chế độ nhẹ');});
+  }
+  function showError(message){$('loading').classList.add('hidden');$('error-text').textContent=message;$('error').classList.remove('hidden');}
+  async function init(){
+    try{
+      lite=new window.RRLite($('note-world'));
+      try{if(new URLSearchParams(location.search).get('graphics')==='lite')throw new Error('Requested lightweight mode');renderer=new Renderer($('world'));}catch(e){renderer=null;document.documentElement.dataset.graphicsFallback='true';console.info('Rue Radio: using the Canvas 2D fallback.');}
+      audio=new Sound();music=new window.RRMusic({context:()=>audio.ctx,start:begin,home:toMenu,prepare(){audio.silence();state.mode='menu';state.s=47;state.x=0;state.zone=0;state.auto=false;state.speed=0;state.score=0;state.notes=0;musicPreviousMode='menu';releaseInput();setVisible();},open:openMusic,close:closeMusic,fromSettings(){closeSettings();openMusic();},isPlaying:()=>state.mode==='play',canPlay:()=>!document.hidden&&!document.querySelector('dialog[open]'),wake:()=>audio.unlock(),changed(){audio.updateVolume();syncAudio();}});music.setVolume(settings.volume);bindUI();resize();makeCollectibles();
+      if(renderer){
+      carTemplate=E.carModel();obstacleTemplate=E.obstacleModel();notesTemplates=['#c5a053','#ab7f41','#65928e','#c98a68'].map(c=>E.noteModel(c));
+      const random=rng(6725),chunkSize=48;
+      for(let s=-48;s<routeLength+96;s+=chunkSize){
+        const batch=E.roadChunk(route,s,s+chunkSize,random);
+        world.push({start:s,end:s+chunkSize,center:route.at(s+chunkSize/2).p,mesh:renderer.upload(batch)});
+        $('loading-fill').style.width=Math.min(96,(s+48)/(routeLength+144)*100)+'%';
+        if(Math.floor(s/chunkSize)%4===0)await new Promise(resolve=>setTimeout(resolve,0));
+      }
+      backdrop=renderer.upload(E.backdrop(route));}
+      $('loading-fill').style.width='100%';
+      $('loading').classList.add('hidden');$('intro').classList.remove('hidden');syncAudio();setVisible();last=performance.now();raf=requestAnimationFrame(frame);
+      document.documentElement.dataset.ready='true';
+      // Explicit test interface is absent unless launched with ?debug=1.
+      if(new URLSearchParams(location.search).has('debug'))window.__RR_TEST__={
+        state,route,music,sound:audio,notes:()=>notes,obstacles:()=>obstacles,settings,input,
+        get musicState(){return music.snapshot;},
+        stopLoop(){cancelAnimationFrame(raf);},
+        get activeRenderer(){return renderer;},
+        get audioState(){return {supported:audio.supported,muted:audio.muted,context:audio.ctx?.state,paused:audio.paused,session:navigator.audioSession?.type||'unavailable',error:audio.lastError,build:'1.5.0-3d-30s'};},
+        start:begin,home:toMenu,pause,resume,
+        jump(s,x=0){state.s=clamp(s,0,routeLength);state.x=x;state.zone=zoneAt(state.s);camEye=null;camUp=null;notes.forEach(n=>{if(n.s<state.s-3)n.passed=true;});render(1);updateHUD();},
+        advance(seconds){for(let t=0;t<seconds;t+=1/60){uiTime+=1/60;update(Math.min(1/60,seconds-t));}render(1);updateHUD();},
+        render(){render(1);},get stats(){return {renderer:document.body.dataset.renderer,paintFrames:lite?.paints,drawCalls:renderer?.drawCalls||0,triangles:renderer?.triangles||0,worldChunks:world.length,canvasWidth:renderer?renderer.canvas.width:lite.canvas.width,canvasHeight:renderer?renderer.canvas.height:lite.canvas.height};}
+      };
+    }catch(err){console.error(err);showError(err.message||'Không thể khởi tạo đồ họa. Hãy thử Chrome, Edge hoặc Safari có bật WebGL.');}
+  }
+  init();
+})();
+
+</script>
+</body>
+</html>
