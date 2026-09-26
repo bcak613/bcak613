@@ -1,0 +1,93 @@
+name: Rue Radio public game verification
+on:
+  push:
+    branches: [rue-radio-deploy-v150]
+    paths: ['.github/workflows/rue-radio-preview-check.yml']
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install browser tools
+        run: |
+          python3 -m pip -q install playwright
+          python3 -m playwright install --with-deps chromium
+          npm install -g agent-browser
+      - name: Check public source and play the hosted game
+        shell: bash
+        run: |
+          mkdir -p evidence
+          python3 - <<'PY'
+          from playwright.sync_api import sync_playwright
+          import hashlib,json,pathlib,subprocess,os,urllib.request
+          root=pathlib.Path('evidence')
+          raw='https://raw.githubusercontent.com/bcak613/bcak613/78a861de76fdfcce32a556f684048600a50f2b2d/public/index.html'
+          url='https://htmlpreview.github.io/?'+raw
+          debug=url+'?probe=1&debug=1'
+          target='701d1fcba386b13fce9eacb0b727c5a9011fd5b82836db1a01d972672f20eb88'
+          report={'playUrl':url,'sourceUrl':raw,'host':'GitHub HTML Preview','limitations':['Not deployed to the old Vercel domain','No physical iPhone test; browser audio signal only']}
+          page=None;errors=[]
+          try:
+            with urllib.request.urlopen(raw,timeout=30) as r:
+              source=r.read();report['sourceHTTP']=r.status;report['sourceSha256']=hashlib.sha256(source).hexdigest()
+            assert report['sourceSha256']==target
+            with sync_playwright() as p:
+              env=dict(os.environ);env['AGENT_BROWSER_EXECUTABLE_PATH']=p.chromium.executable_path
+              for cmd in [['agent-browser','open',url],['agent-browser','wait','#quick-demo'],['agent-browser','snapshot','-i'],['agent-browser','close']]:
+                try:
+                  r=subprocess.run(cmd,env=env,capture_output=True,text=True,timeout=40)
+                  with (root/'agent-browser.txt').open('a') as f:f.write(' '.join(cmd)+'\n'+r.stdout+r.stderr+'\n')
+                except Exception as e:
+                  with (root/'agent-browser.txt').open('a') as f:f.write(str(e)+'\n')
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+              context=browser.new_context(viewport={'width':1365,'height':850})
+              page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)))
+              page.goto(debug,wait_until='domcontentloaded',timeout=45000)
+              page.wait_for_function('!!window.__RR_TEST__',timeout=45000)
+              report['build']=page.locator('meta[name="rue-radio-build"]').get_attribute('content')
+              report['renderer']=page.evaluate('__RR_TEST__.stats.renderer')
+              assert report['build']=='1.5.0-3d-30s'
+              page.screenshot(path=str(root/'desktop-menu.png'))
+              page.click('#intro-upload');report['presetCount']=page.locator('.preset-card').count();assert report['presetCount']==6
+              report['titles']=page.locator('.preset-card h3').all_text_contents()
+              page.screenshot(path=str(root/'song-library.png'))
+              page.locator('[data-preset="lang-nghe"] .preset-listen').click()
+              page.wait_for_function('__RR_TEST__.sound.ctx?.state==="running"')
+              page.evaluate('''()=>{const c=__RR_TEST__.sound.ctx;window.meterNode=c.createAnalyser();meterNode.fftSize=2048;__RR_TEST__.sound.master.connect(meterNode);if(__RR_TEST__.music.gain)__RR_TEST__.music.gain.connect(meterNode);window.audioPeak=0;window.meterTimer=setInterval(()=>{const a=new Float32Array(2048);meterNode.getFloatTimeDomainData(a);audioPeak=Math.max(audioPeak,Math.sqrt(a.reduce((s,x)=>s+x*x,0)/a.length));},25)}''')
+              page.wait_for_timeout(6500);page.screenshot(path=str(root/'desktop-game.png'))
+              page.wait_for_function('__RR_TEST__.state.mode==="finished"',timeout=45000)
+              report['round']=page.evaluate('({notes:__RR_TEST__.state.notes,total:__RR_TEST__.notes().length,missed:__RR_TEST__.state.missed,time:__RR_TEST__.state.time,audioPeak,renderer:__RR_TEST__.stats.renderer})')
+              assert report['round']['time']==30 and report['round']['notes']==report['round']['total']
+              assert report['round']['audioPeak']>.001
+              page.screenshot(path=str(root/'desktop-result.png'));context.close()
+              context=browser.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True)
+              page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)))
+              page.goto(debug,wait_until='domcontentloaded',timeout=45000);page.wait_for_function('!!window.__RR_TEST__',timeout=45000)
+              page.tap('#intro-upload');page.locator('[data-preset="lang-nghe"] .preset-play').tap()
+              page.locator('[data-lane="2"]').tap();assert page.evaluate('__RR_TEST__.state.x')==4.2
+              page.locator('[data-lane="-2"]').tap();assert page.evaluate('__RR_TEST__.state.x')==-4.2
+              page.wait_for_timeout(4000);page.screenshot(path=str(root/'mobile-game.png'))
+              report['touchLaneControl']=True;report['mobileOverflow']=page.evaluate('document.documentElement.scrollWidth>innerWidth');report['errors']=errors
+              assert not report['mobileOverflow'] and not errors
+              report['passed']=True;browser.close()
+          except Exception as e:
+            report['error']=str(e);report['errors']=errors
+            if page:
+              try:
+                page.screenshot(path=str(root/'failure.png'))
+                (root/'failure-body.txt').write_text(page.locator('body').inner_text())
+              except Exception:pass
+            raise
+          finally:
+            (root/'browser-results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False))
+          PY
+      - name: Save browser verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rue-radio-playable-public-preview
+          path: evidence/
+          retention-days: 7
