@@ -2,24 +2,80 @@ name: Rue Radio 1.5 deployment
 on:
   push:
     branches: [rue-radio-deploy-v150]
+    paths: ['deployment/**', '.github/workflows/rue-radio-deploy.yml']
 permissions:
   contents: read
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
-      - name: Check deployment network and recover current public build
+      - name: Restore exact recovered artifact and deploy to Vercel
+        id: publish
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p staging
-          curl -L --connect-timeout 10 --max-time 40 -sS -o staging/current.html -w 'Current game HTTP %{http_code}\n' https://rue-radio-demo.vercel.app/ || true
-          if [ -f staging/current.html ]; then sha256sum staging/current.html; wc -c staging/current.html; fi
-          curl --connect-timeout 10 --max-time 30 -sS -o staging/endpoint-status.txt -w 'Deploy service HTTP %{http_code}\n' https://codex-deploy-skills.vercel.sh/api/deploy || true
-      - uses: actions/upload-artifact@v4
+          mkdir -p result public
+          python3 - <<'PY'
+          import base64, ctypes as C, ctypes.util, hashlib, io, json, pathlib, tarfile, time, urllib.request, urllib.error, uuid
+          ROOT=pathlib.Path('result'); report={}; root=pathlib.Path('public')
+          BASE='69de7d8cfcb50271984d951fb1fe9532909caec187582033204d1b1678e5aac5'
+          TARGET='701d1fcba386b13fce9eacb0b727c5a9011fd5b82836db1a01d972672f20eb88'
+          def save(): (ROOT/'verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+          try:
+            with urllib.request.urlopen('https://rue-radio-demo.vercel.app/',timeout=35) as r: old=r.read()
+            assert hashlib.sha256(old).hexdigest()==BASE, 'Base build changed; stopping without publishing incorrect code'
+            delta=base64.b64decode(pathlib.Path('deployment/game.delta.b64').read_text(),validate=False)
+            z=C.CDLL(ctypes.util.find_library('zstd'))
+            z.ZSTD_createDCtx.restype=C.c_void_p
+            z.ZSTD_decompress_usingDict.argtypes=[C.c_void_p,C.c_void_p,C.c_size_t,C.c_void_p,C.c_size_t,C.c_void_p,C.c_size_t]
+            z.ZSTD_decompress_usingDict.restype=C.c_size_t
+            z.ZSTD_freeDCtx.argtypes=[C.c_void_p]
+            out=C.create_string_buffer(177312); ctx=z.ZSTD_createDCtx()
+            n=z.ZSTD_decompress_usingDict(ctx,out,len(out),delta,len(delta),old,len(old));z.ZSTD_freeDCtx(ctx)
+            assert n==177312, 'Delta decompression failed'
+            source=out.raw[:n]
+            assert hashlib.sha256(source).hexdigest()==TARGET, 'Recovered artifact checksum mismatch'
+            (root/'index.html').write_bytes(source)
+            version={'build':'1.5.0-3d-30s','sha256':TARGET,'presetCount':6,'durationSeconds':30}
+            (root/'version.json').write_text(json.dumps(version))
+            report.update(version,artifactBytes=n)
+            save();print('Exact recovered 1.5.0 HTML verified:',TARGET)
+            bundle=io.BytesIO()
+            with tarfile.open(fileobj=bundle,mode='w:gz') as t:
+              for p in root.iterdir():t.add(p,arcname=p.name)
+            boundary='RueRadio'+uuid.uuid4().hex
+            body=(('--'+boundary+'\r\nContent-Disposition: form-data; name="framework"\r\n\r\nnull\r\n--'+boundary+'\r\nContent-Disposition: form-data; name="file"; filename="project.tgz"\r\nContent-Type: application/gzip\r\n\r\n').encode()+bundle.getvalue()+('\r\n--'+boundary+'--\r\n').encode())
+            # Official endpoint from vercel-labs/agent-skills deploy-codex.sh.
+            req=urllib.request.Request('https://codex-deploy-skills.vercel.sh/api/deploy',data=body,headers={'Content-Type':'multipart/form-data; boundary='+boundary},method='POST')
+            with urllib.request.urlopen(req,timeout=120) as r:
+              result=json.load(r);report['deployHTTP']=r.status
+            (ROOT/'deployment.json').write_text(json.dumps(result,indent=2))
+            assert result.get('previewUrl'), 'Deploy service returned no preview URL'
+            url=result['previewUrl'];report['previewUrl']=url;print('Vercel preview:',url);save()
+            assert url.startswith('https://') and urllib.request.urlparse(url).hostname.endswith('.vercel.app'), 'Unexpected preview URL'
+            for attempt in range(36):
+              try:
+                with urllib.request.urlopen(url,timeout=20) as r:
+                  live=r.read();report['liveHTTP']=r.status
+                  report['liveSha256']=hashlib.sha256(live).hexdigest()
+                  if r.status==200 and report['liveSha256']==TARGET:
+                    report['verified']=True;save();print('LIVE HTML VERIFIED, HTTP 200, exact original SHA256');break
+              except Exception as e:report['lastFetchError']=str(e)
+              save();time.sleep(5)
+            else:raise RuntimeError('Deployment returned a URL but live content has not matched the original artifact')
+          except urllib.error.HTTPError as e:
+            report['error']=str(e);report['errorResponse']=e.read().decode(errors='replace')[:6000];save();raise
+          except Exception as e:
+            report['error']=str(e);save();raise
+          PY
+      - name: Save deploy receipt and exact recovered game
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          name: rue-radio-deploy-preflight
-          path: staging/
-          retention-days: 1
+          name: rue-radio-150-deployment
+          path: |
+            result/
+            public/
+          retention-days: 7
