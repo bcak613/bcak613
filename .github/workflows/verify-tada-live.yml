@@ -1,0 +1,37 @@
+name: Verify live TADA site
+on:
+  push:
+    branches: [tada-phuong-light]
+    paths: ['.github/workflows/verify-tada-live.yml']
+permissions:
+  contents: read
+jobs:
+  verify-public-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check public HTTPS response and full application checksum
+        run: |
+          python3 - <<'PY'
+          import hashlib, time, urllib.request
+          url = 'https://bcak613.github.io/bcak613/'
+          expected = 'abab809341f0418bce63675fb03c38b47f7ffc671b376b56d61c80033e391eac'
+          for attempt in range(6):
+              try:
+                  request = urllib.request.Request(url, headers={'User-Agent':'TADA-Deployment-Check/1.0','Cache-Control':'no-cache'})
+                  with urllib.request.urlopen(request, timeout=15) as response:
+                      data = response.read()
+                      status = response.status
+                  assert status == 200, f'HTTP {status}'
+                  assert hashlib.sha256(data).hexdigest() == expected, 'Unexpected application checksum'
+                  text = data.decode('utf-8')
+                  assert 'Lê Minh Diệu Phương' in text
+                  assert 'color-scheme:only light' in text or 'color-scheme: only light' in text
+                  print(f'LIVE VERIFIED: {url}')
+                  print(f'HTTP {status}; {len(data)} bytes; SHA256 {expected}')
+                  print('Default profile and light-mode application match tested build.')
+                  break
+              except Exception:
+                  if attempt == 5:
+                      raise
+                  time.sleep(5)
+          PY
